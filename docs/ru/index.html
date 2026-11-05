@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — Android-планшет как второй дисплей для Mac</title>
+  <meta name="description" content="Используйте Android-планшет как второй дисплей для Mac. Подключение по USB или без проводов в той же сети Wi‑Fi. Приложение для Mac само устанавливает и открывает приложение на планшете, а измеренная задержка по USB — около 20–25 ms.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — Android-планшет как второй дисплей для Mac">
+  <meta property="og:description" content="Подключение USB-кабелем или без проводов в той же сети Wi‑Fi. Приложение для Mac само установит и откроет приложение на планшете.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="На этой странице">
+      <a href="#setup">Настройка</a>
+      <a href="#speed">Скорость</a>
+      <a href="#wireless">Без проводов</a>
+      <a href="#quality">Качество</a>
+      <a href="#touch">Касания</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <a class="button button-small" href="#download">Загрузить</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Android-планшет<br>как второй дисплей для Mac.</h1>
+      <p class="lede">Подключите USB-кабель — и планшет станет дисплеем для Mac. Отсоедините его, и экран продолжит работать в той же сети Wi‑Fi. Приложение для Mac само устанавливает и открывает приложение на планшете, а учетная запись не нужна.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Загрузить для Mac</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Смотреть видео<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">Версия <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 или новее · чип Apple</p>
+      <p class="after-download" data-after-download hidden>Откройте ZIP-архив, переместите приложение в папку «Программы» и откройте его. О первом подключении — в разделе «<a href="#setup">Настройка</a>».</p>
+      <p class="not-mac-note">Это приложение для Mac. Откройте эту страницу на Mac, чтобы загрузить его. <button class="link-button" type="button" data-send-link data-copied="Ссылка скопирована">Отправить ссылку на Mac</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Планшет с рабочим столом Mac, на котором открыты папка «Программы» в Finder и окно Калькулятора.">
+      </div>
+      <figcaption>Экран Mac на Lenovo Pad Pro 12.7, снято на самом планшете.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">Настройка</h2>
+      <div class="row-body">
+        <p class="deck">Настройка нужна только один раз. Затем при подключении кабеля дисплей добавляется сам, а в той же сети Wi‑Fi подключение работает без кабеля.</p>
+        <ol class="steps">
+          <li>
+            <h3>Установите приложение для Mac</h3>
+            <p>Откройте загруженный ZIP-архив, переместите BecomeMyScreen в папку «Программы» и откройте его. Разрешите запись экрана, затем откройте приложение еще раз.</p>
+          </li>
+          <li>
+            <h3>Включите отладку по USB на планшете</h3>
+            <p>Откройте «Настройки» › «О планшете» и семь раз нажмите «Номер сборки», чтобы появился раздел «Для разработчиков». На Galaxy Tab этот пункт находится в разделе «Сведения о ПО». Затем включите отладку по USB в разделе «Для разработчиков».</p>
+          </li>
+          <li>
+            <h3>Подключите кабель</h3>
+            <p>Когда планшет спросит, разрешить ли отладку по USB, отметьте «Всегда разрешать отладку с этого компьютера» и нажмите «Разрешить». Mac установит и откроет приложение на планшете, а затем добавит дисплей. Отдельно загружать приложение для планшета не нужно.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ru/onboarding.png" width="520" height="573" alt="Окно приветствия BecomeMyScreen с четырьмя шагами: включить отладку по USB на планшете, разрешить запись экрана, разрешить универсальный доступ (необязательно) и подключить кабель.">
+          <figcaption>Руководство, которое появляется при первом запуске. Выполненные шаги отмечаются галочкой.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">Скорость</h2>
+      <div class="row-body">
+        <p class="deck">Время с момента, когда Mac захватывает экран, до момента, когда планшет его отрисовывает. Измерено на Lenovo Pad Pro 12.7 и Mac с M4 Pro.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">Задержка в зависимости от размера видео и частоты кадров</caption>
+            <thead>
+              <tr><th scope="col">Размер видео</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Аппаратный кодер чипа Apple сжимает изображение экрана в H.264 и передает его по USB, а аппаратный декодер планшета отрисовывает каждый кадр сразу по получении. При первом подключении режим «Авто» измеряет, сколько может обработать декодер, и выбирает максимальную частоту кадров без отставания. На этом планшете он выбрал 90 fps.</p>
+        <p class="note">Методика измерения: после поправки на разницу часов двух устройств мы измерили время между захватом кадра на Mac и отрисовкой этого кадра на планшете.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">Без проводов</h2>
+      <div class="row-body">
+        <p class="deck">Планшет, который хотя бы раз подключался по USB, работает и без проводов в той же сети Wi‑Fi. Отсоедините кабель во время работы — экран продолжит работать по Wi‑Fi.</p>
+        <dl class="specs">
+          <div>
+            <dt>Подключение</dt>
+            <dd>Откройте приложение на планшете, и он появится в списке «В той же сети Wi‑Fi» в строке меню Mac. Нажмите «Подключить» — и экран заработает.</dd>
+          </div>
+          <div>
+            <dt>Отсоединение кабеля</dt>
+            <dd>Переход на Wi‑Fi занимает меньше секунды. Виртуальный дисплей и расположение окон сохраняются, а при повторном подключении кабеля работа возвращается на USB.</dd>
+          </div>
+          <div>
+            <dt>Безопасность</dt>
+            <dd>Ключ для беспроводного подключения передается только по USB-кабелю. Подключение устанавливается лишь после проверки ключа, а изображение экрана и ввод полностью шифруются с помощью AES-256-GCM.</dd>
+          </div>
+          <div>
+            <dt>Адаптивная подача кадров</dt>
+            <dd>Планшет подтверждает каждый полученный кадр, а Mac пропускает столько кадров, на сколько отстал, и подстраивает битрейт. Даже если Wi‑Fi ненадолго замедлится, задержка не накапливается.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ru/panel-wifi.png" width="320" height="326" alt="Панель в строке меню Mac с надписью «Подключите планшет»: в списке «В той же сети Wi‑Fi» — Lenovo Pad Pro 12.7 и кнопка «Подключить».">
+            <figcaption>Откройте приложение на планшете, и он появится в списке</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/ru/panel-wifi-live.png" width="320" height="259" alt="Панель в строке меню Mac: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11,0 Mbps, 48 ms.">
+            <figcaption>Работа по Wi‑Fi · измерено в сети Wi‑Fi 5 GHz</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">Задержка в зависимости от типа подключения</caption>
+            <thead>
+              <tr><th scope="col">Подключение</th><th scope="col" class="num">Задержка</th><th scope="col">Примечания</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">Около 20–25 ms</td><td>Максимальная частота кадров планшета</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; битрейт автоматически растет до значения, заданного настройкой качества</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>Иногда задержка превышает 100 ms, что может выглядеть как подтормаживание</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Измерено на Lenovo Pad Pro 12.7 при 2560×1600 с постоянно меняющимся изображением. Если планшет подключен к Wi‑Fi 2,4 GHz, приложение предложит перейти на 5 GHz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">Качество и отклик</h2>
+      <div class="row-body">
+        <p class="deck">Выберите один из пяти уровней или оставьте «Авто». Меняйте настройку в строке меню Mac или в меню планшета — обе стороны меняются вместе.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">Частота кадров, размер видео и битрейт для каждого режима</caption>
+            <thead>
+              <tr><th scope="col">Режим</th><th scope="col">Частота кадров</th><th scope="col">Размер видео</th><th scope="col">Битрейт</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>Авто</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>Самый быстрый отклик</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>Быстрый отклик</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>Баланс</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>Высокое качество</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>Наилучшее качество</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Измерено на Lenovo Pad Pro 12.7 (2560×1600, 120 Hz), подключенном по USB к Mac с M4 Pro. Каждый режим — это цель: на другом Mac или планшете, а также по Wi‑Fi его значения подбираются заново по результатам измерений. Режим «Авто» совпадает с режимом «Баланс».</p>
+        <p>Размер видео задается отдельно от разрешения, которое видит Mac. Уменьшенное видео все равно заполняет экран планшета, снижая нагрузку на декодер и соответственно задержку.</p>
+        <p>При первом подключении приложение примерно за 10 секунд измеряет скорость кабеля, видеокодера Mac и декодера планшета во всех его режимах, а при первом подключении по Wi‑Fi — скорость сети. Каждый режим подстраивается под эти результаты отдельно для кабеля и Wi‑Fi, а на вкладке «Дополнения» в настройках можно вручную задать любое значение для каждого подключения. Если кабель медленный, приложение предложит его заменить.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ru/panel.png" width="320" height="259" alt="Панель в строке меню Mac: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13,4 Mbps, 31 ms. «Качество и скорость» — «Авто».">
+            <figcaption>Mac · панель в строке меню</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/ru/tablet-menu.png" width="360" height="354" alt="Меню планшета с текущими показателями (частота кадров, битрейт, задержка, частота обновления), «Качество и скорость» — «Авто», управление Mac касанием включено.">
+            <figcaption>Планшет · меню, которое открывается касанием тремя пальцами</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ru/settings.png" width="560" height="308" alt="Вкладка «Качество» в окне настроек: режим и разрешение, а под ними — параметры трансляции для каждого подключения, USB и Wi‑Fi: кодек, размер видео, частота кадров, битрейт и ожидаемая задержка.">
+          <figcaption>Вместо выбора режима можно задать разрешение, частоту кадров, размер видео и битрейт по отдельности.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">Касания</h2>
+      <div class="row-body">
+        <p class="deck">Касания планшета Mac получает как ввод с мыши. Функция включается, когда вы разрешите универсальный доступ на Mac.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">Жесты на планшете и их действие на Mac</caption>
+            <thead>
+              <tr><th scope="col">На планшете</th><th scope="col">На Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Касание</th><td>Нажатие</td></tr>
+              <tr><th scope="row">Перетаскивание</th><td>Перетаскивание</td></tr>
+              <tr><th scope="row">Перетаскивание двумя пальцами</th><td>Прокрутка</td></tr>
+              <tr><th scope="row">Касание двумя пальцами</th><td>Нажатие правой кнопкой</td></tr>
+              <tr><th scope="row">Касание тремя пальцами</th><td>Открывает меню планшета</td></tr>
+              <tr><th scope="row">Рисование стилусом</th><td>Поступает на Mac как ввод с графического планшета, с силой нажатия и наклоном</td></tr>
+              <tr><th scope="row">Наведение стилуса или мыши на экран</th><td>Перемещает указатель. Касание с нажатой кнопкой стилуса — нажатие правой кнопкой</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Указатель возвращается на место</h3>
+        <p>Когда вы касаетесь планшета, указатель Mac перемещается в эту точку. Если затем немного сдвинуть мышь, указатель вернется туда, где был до касания, — не придется тянуть его обратно к тому, чем вы занимались на основном дисплее. Эту функцию можно выключить в настройках.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">Подробности</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>Значок в строке меню</dt>
+            <dd>
+              Он отображается, только пока подключен планшет. Если значок скрыт, снова откройте приложение — он ненадолго появится с открытой панелью.
+              <ul class="glyphs" aria-label="Четыре состояния значка в строке меню">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>Ожидание</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>Подготовка</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>Используется</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>Требует внимания</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Открытие приложения на планшете</dt>
+            <dd>Если при подключении кабеля приложение на планшете не запущено, Mac откроет его и включит экран, если он выключен. Экран блокировки при этом никогда не обходится.</dd>
+          </div>
+          <div>
+            <dt>Обновления</dt>
+            <dd>Приложение для Mac проверяет новые версии и обновляется, когда вы решите. Если в нем есть более новое приложение для планшета, планшет обновляется по кабелю до запуска дисплея.</dd>
+          </div>
+          <div>
+            <dt>Книжная ориентация</dt>
+            <dd>Поверните планшет вертикально, и виртуальный дисплей тоже будет пересоздан в книжной ориентации.</dd>
+          </div>
+          <div>
+            <dt>Частота обновления и отключение экрана</dt>
+            <dd>Во время трансляции частота обновления планшета удерживается, чтобы не падать до 60 Hz, и экран не выключается.</dd>
+          </div>
+          <div>
+            <dt>Проверка кабеля</dt>
+            <dd>Если USB подключается на скорости ниже 480 Mbps, передача не превышает 8 MB/s или связь обрывается три раза за три минуты, приложение предложит попробовать другой кабель или порт.</dd>
+          </div>
+          <div>
+            <dt>Если связь оборвалась</dt>
+            <dd>Если кабель выпал, экран продолжит работать по Wi‑Fi. Если продолжить без проводов не получается, виртуальный дисплей некоторое время сохраняется, и если планшет за это время переподключится, расположение окон останется прежним.</dd>
+          </div>
+          <div>
+            <dt>«Отключить» и «Переподключить»</dt>
+            <dd>Нажмите «Отключить» в строке меню, и показ на планшете приостановится, даже если кабель подключен. Чтобы продолжить, нажмите «Переподключить».</dd>
+          </div>
+          <div>
+            <dt>Приложение на планшете закрывается само</dt>
+            <dd>Если к планшету ничего не подключено, даже зарядное устройство, приложение на планшете само закроется через 10 секунд. Если вместо этого можно ждать беспроводного подключения, оно ждет 2 минуты.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">Требования</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Mac с чипом Apple, macOS 14 или новее</dd></div>
+          <div><dt>Планшет</dt><dd>Android 8.0 или новее, на устройстве, где можно включить отладку по USB</dd></div>
+          <div><dt>Кабель</dt><dd>USB-кабель с поддержкой передачи данных. Кабели только для зарядки не подключатся. Порт на самом Mac надежнее, чем концентратор.</dd></div>
+          <div><dt>Без проводов</dt><dd>Mac и планшет должны быть в одной сети Wi‑Fi; рекомендуется 5 GHz. Первое подключение должно быть по USB.</dd></div>
+          <div><dt>Разрешения на Mac</dt><dd>Запись экрана. Также «Универсальный доступ» — для управления Mac касанием и «Локальная сеть» — для работы без проводов.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">Часто задаваемые вопросы</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>Нужно ли устанавливать приложение на планшет?</summary>
+          <p>Нет. Приложение для планшета входит в приложение для Mac, поэтому при подключении кабеля Mac сам установит и откроет его. После обновления приложения для Mac приложение на планшете обновится вместе с ним при следующем подключении.</p>
+        </details>
+        <details>
+          <summary>Работает ли по Wi‑Fi?</summary>
+          <p>Да. После одного подключения по USB в дальнейшем можно подключаться без проводов в той же сети Wi‑Fi. Откройте приложение на планшете и нажмите «Подключить» в строке меню Mac или просто отсоедините кабель во время работы. Задержка немного выше, чем по USB (40–55 ms в сети 5 GHz), а в Wi‑Fi 2,4 GHz изображение иногда подтормаживает, поэтому рекомендуется 5 GHz.</p>
+        </details>
+        <details>
+          <summary>Почему первое подключение должно быть по USB?</summary>
+          <p>Потому что ключ для беспроводного подключения передается только по кабелю. Так никакое другое устройство в той же сети Wi‑Fi не сможет выдать себя за ваш планшет и подключиться к вашему Mac. Заодно в этот момент на планшет устанавливается приложение.</p>
+        </details>
+        <details>
+          <summary>Работает ли сила нажатия стилуса?</summary>
+          <p>Да. Сила нажатия и наклон стилуса поступают в macOS как ввод с графического планшета (нажатие, наклон и приближение). Используется стандартный ввод стилуса Android, поэтому для S Pen и стилусов Lenovo не нужны дополнительные SDK или драйверы. Проверено со стилусом для Lenovo Pad Pro 12.7.</p>
+        </details>
+        <details>
+          <summary>С какими планшетами это работает?</summary>
+          <p>С любым планшетом на Android 8.0 или новее, где можно включить отладку по USB. Разработка и измерения велись на Lenovo Pad Pro 12.7 (2944×1840, 120 Hz); другие устройства пока лично не проверялись. Разрешение и ориентация виртуального дисплея при подключении соответствуют экрану планшета.</p>
+        </details>
+        <details>
+          <summary>Почему приложения нет в App Store?</summary>
+          <p>Для создания виртуального дисплея используется закрытая функция macOS, поэтому приложение нельзя опубликовать в App Store. Вместо этого оно подписано сертификатом разработчика Apple и нотаризовано Apple, поэтому открывается сразу после загрузки.</p>
+        </details>
+        <details>
+          <summary>Зачем нужны запись экрана и универсальный доступ?</summary>
+          <p>Запись экрана захватывает виртуальный дисплей для передачи на планшет, универсальный доступ превращает касания и стилус планшета во ввод на Mac, а локальная сеть нужна для поиска планшетов в той же сети Wi‑Fi. Изображение экрана передается только по USB-кабелю или внутри вашей сети Wi‑Fi (при беспроводном подключении — в зашифрованном виде) и никогда не уходит в интернет.</p>
+        </details>
+        <details>
+          <summary>Подключение постоянно обрывается.</summary>
+          <p>Попробуйте другой кабель с поддержкой передачи данных или подключите его напрямую к порту Mac, а не к концентратору. Приложение заранее сообщит, если USB подключается медленно или часто обрывается. После кратковременного обрыва виртуальный дисплей сохраняется 15 секунд и работа продолжается с того же места.</p>
+        </details>
+        <details>
+          <summary>Что, если планшет заблокирован?</summary>
+          <p>Mac включит экран и откроет приложение, но никогда не обходит блокировку. Разблокируйте планшет PIN-кодом или графическим ключом, и подключение произойдет сразу.</p>
+        </details>
+        <details>
+          <summary>Работает ли на Mac с процессором Intel?</summary>
+          <p>Текущая версия предназначена только для Mac с чипом Apple.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">Загрузка</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 или новее · чип Apple · нотаризовано Apple</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">Что нового в этой версии</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Загрузить для Mac</a>
+        </div>
+        <p class="not-mac-note">Это приложение для Mac. Откройте эту страницу на Mac, чтобы загрузить его. <button class="link-button" type="button" data-send-link data-copied="Ссылка скопирована">Отправить ссылку на Mac</button></p>
+        <p class="note">Откройте ZIP-архив, переместите приложение в папку «Программы» и откройте его. О первом подключении — в разделе «<a href="#setup">Настройка</a>».</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">Язык: </span>Русский</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru" aria-current="page">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS и Finder — товарные знаки Apple Inc. Android — товарный знак Google LLC. Lenovo — товарный знак Lenovo.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="Видео BecomeMyScreen">
+  <button class="film-close" type="button" aria-label="Закрыть" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

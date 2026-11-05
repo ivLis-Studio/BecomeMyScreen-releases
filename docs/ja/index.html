@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — AndroidタブレットをMacの2台目のディスプレイに</title>
+  <meta name="description" content="AndroidタブレットをMacの2台目のディスプレイとして使えます。USBで接続することも、同じWi‑Fi上でワイヤレス接続することもできます。タブレットアプリのインストールと起動はMacアプリが行い、USB接続時の実測遅延は約20–25msです。">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — AndroidタブレットをMacの2台目のディスプレイに">
+  <meta property="og:description" content="USBケーブルで接続することも、同じWi‑Fi上でワイヤレス接続することもできます。タブレットアプリのインストールと起動はMacアプリが行います。">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/ja.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">コンテンツにスキップ</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="このページの内容">
+      <a href="#setup">セットアップ</a>
+      <a href="#speed">速度</a>
+      <a href="#wireless">ワイヤレス</a>
+      <a href="#quality">画質</a>
+      <a href="#touch">タッチ</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="button button-small" href="#download">ダウンロード</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Androidタブレットを<br>Macの2台目のディスプレイに。</h1>
+      <p class="lede">USBケーブルを接続すると、タブレットがMacのディスプレイになります。ケーブルを抜いても、同じWi‑Fi経由で表示が続きます。タブレットアプリのインストールと起動はMacアプリが行い、アカウントの作成は不要です。</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac版をダウンロード</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>ビデオを見る<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">バージョン <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14以降 · Appleシリコン</p>
+      <p class="after-download" data-after-download hidden>zipを開き、アプリをアプリケーションフォルダに移動して開きます。初回の接続方法は<a href="#setup">セットアップ</a>を参照してください。</p>
+      <p class="not-mac-note">このアプリはMac用です。ダウンロードするには、Macでこのページを開いてください。 <button class="link-button" type="button" data-send-link data-copied="リンクをコピーしました">Macにリンクを送る</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Macのデスクトップが表示されたタブレット。Finderのアプリケーションフォルダと計算機のウインドウが開いています。">
+      </div>
+      <figcaption>Lenovo Pad Pro 12.7に表示したMacの画面。タブレット本体でキャプチャしたものです。</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">セットアップ</h2>
+      <div class="row-body">
+        <p class="deck">セットアップは最初の1回だけです。その後は、ケーブルを接続するとディスプレイが追加され、同じWi‑Fi上ではケーブルなしで接続されます。</p>
+        <ol class="steps">
+          <li>
+            <h3>Macアプリをインストール</h3>
+            <p>ダウンロードしたzipを開き、BecomeMyScreenをアプリケーションフォルダに移動して開きます。画面収録を許可したら、アプリをもう一度開きます。</p>
+          </li>
+          <li>
+            <h3>タブレットでUSB デバッグをオンにする</h3>
+            <p>設定 › タブレット情報で「ビルド番号」を7回タップすると、開発者向けオプションが有効になります。Galaxy Tabでは「ソフトウェア情報」の中にあります。次に、開発者向けオプションで「USB デバッグ」をオンにします。</p>
+          </li>
+          <li>
+            <h3>ケーブルを接続</h3>
+            <p>タブレットにUSB デバッグを許可するかどうかの確認が表示されたら、「このパソコンからのアクセスを常に許可する」にチェックを入れて「許可」をタップします。Macがタブレットアプリをインストールして開き、ディスプレイを追加します。タブレットアプリを別途ダウンロードする必要はありません。</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ja/onboarding.png" width="520" height="495" alt="BecomeMyScreenのようこそ画面。タブレットでUSB デバッグをオンにする、画面収録を許可、アクセシビリティを許可（オプション）、ケーブルを接続、の4つのステップがあります。">
+          <figcaption>初回起動時に表示されるガイド。完了したステップにはチェックマークが付きます。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">速度</h2>
+      <div class="row-body">
+        <p class="deck">Macが画面をキャプチャしてから、タブレットが描画するまでの時間です。Lenovo Pad Pro 12.7とM4 Pro搭載Macで測定しました。</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">映像サイズとフレームレート別の遅延</caption>
+            <thead>
+              <tr><th scope="col">映像サイズ</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Appleシリコンのハードウェアエンコーダが画面をH.264に圧縮してUSBで送り、タブレットのハードウェアデコーダが届いたフレームを順に描画します。初回接続時、「自動」はデコーダの処理能力を測定し、遅れが出ない範囲で最も高いフレームレートを選びます。このタブレットでは90fpsが選ばれました。</p>
+        <p class="note">測定方法：2台のデバイスの時計のずれを補正したうえで、Macがフレームをキャプチャしてから、タブレットがそのフレームを描画するまでの時間を測定しました。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">ワイヤレス</h2>
+      <div class="row-body">
+        <p class="deck">USBで一度接続したタブレットは、同じWi‑Fi上でワイヤレスでも使えます。作業中にケーブルを抜いても、Wi‑Fi経由で表示が続きます。</p>
+        <dl class="specs">
+          <div>
+            <dt>接続</dt>
+            <dd>タブレットでアプリを開くと、Macのメニューバーの「同じWi‑Fi上」リストに表示されます。「接続」をクリックすると画面が表示されます。</dd>
+          </div>
+          <div>
+            <dt>ケーブルを抜いたとき</dt>
+            <dd>1秒以内にWi‑Fiに切り替わります。仮想ディスプレイとウインドウの配置はそのままで、ケーブルを接続し直すとUSBに戻ります。</dd>
+          </div>
+          <div>
+            <dt>セキュリティ</dt>
+            <dd>ワイヤレス接続用のキーは、USBケーブル経由でのみ交換されます。キーが確認できた場合にのみ接続され、画面と入力はすべてAES-256-GCMで暗号化されます。</dd>
+          </div>
+          <div>
+            <dt>送信ペースの自動調整</dt>
+            <dd>タブレットは受信したフレームを1つずつ確認応答し、Macは遅れた分だけフレームをスキップしてビットレートを調整します。Wi‑Fiが一時的に遅くなっても、遅延がたまりません。</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ja/panel-wifi.png" width="320" height="326" alt="「タブレットを接続してください」と表示されたMacのメニューバーパネル。「同じWi‑Fi上」リストにLenovo Pad Pro 12.7と「接続」ボタンがあります。">
+            <figcaption>タブレットでアプリを開くと、リストに表示されます</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/ja/panel-wifi-live.png" width="320" height="259" alt="Macのメニューバーパネル：Lenovo Pad Pro 12.7、Wi‑Fi、2560×1600 Retina、90Hz、52fps、11.0Mbps、48ms。">
+            <figcaption>Wi‑Fiで使用中 · 5GHzのWi‑Fiで測定</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">接続方法別の遅延</caption>
+            <thead>
+              <tr><th scope="col">接続</th><th scope="col" class="num">遅延</th><th scope="col">備考</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">約20–25ms</td><td>タブレットの最大フレームレート</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40〜55ms</td><td>60fps。ビットレートは画質設定の上限まで自動で上がります</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40〜65ms</td><td>遅延がときどき100msを超えて跳ね上がり、カクついて見えることがあります</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Lenovo Pad Pro 12.7、2560×1600、画面が絶えず変化する状態で測定しました。タブレットが2.4GHzのWi‑Fiに接続されている場合は、5GHzへの切り替えが提案されます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">画質と応答速度</h2>
+      <div class="row-body">
+        <p class="deck">5段階から選ぶか、「自動」のままにします。Macのメニューバーからでもタブレットのメニューからでも変更でき、両方が連動して変わります。</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">プリセットごとのフレームレート、映像サイズ、ビットレート</caption>
+            <thead>
+              <tr><th scope="col">プリセット</th><th scope="col">フレームレート</th><th scope="col">映像サイズ</th><th scope="col">ビットレート</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>自動</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>応答速度最優先</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>応答速度優先</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>バランス</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>画質優先</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>画質最優先</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Lenovo Pad Pro 12.7（2560×1600、120Hz）とM4 Pro搭載MacをUSBで接続して測定しました。各プリセットは目標を表すもので、ほかのMacやタブレット、またWi‑Fi接続では、それぞれの測定結果から独自の値が割り出されます。「自動」は「バランス」と同じです。</p>
+        <p>映像サイズは、Macから見える解像度とは別に設定されます。映像を小さくしてもタブレットの画面全体に表示され、その分デコーダの負荷と遅延が減ります。</p>
+        <p>初回接続時に、ケーブル、このMacのビデオエンコーダ、タブレットのデコーダの各モードを約10秒で測定します。Wi‑Fiで初めて接続したときは、ネットワークを測定します。すべてのプリセットはこれらの数値に合わせて、ケーブルとWi‑Fiで別々に調整されます。「詳細」設定では、接続ごとに任意の値を固定できます。ケーブルが遅い場合は交換するよう案内されます。</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ja/panel.png" width="320" height="259" alt="Macのメニューバーパネル：Lenovo Pad Pro 12.7、2560×1600 Retina、90Hz、61fps、13.4Mbps、31ms。「画質と速度」は「自動」に設定。">
+            <figcaption>Mac · メニューバーパネル</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/ja/tablet-menu.png" width="360" height="357" alt="リアルタイムの数値（フレームレート、ビットレート、遅延、リフレッシュレート）が表示されたタブレットのメニュー。「画質と速度」は「自動」、「タッチでMacを操作」はオン。">
+            <figcaption>タブレット · 3本指でタップすると開くメニュー</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ja/settings.png" width="560" height="291" alt="設定ウインドウの「画質」タブ：プリセットと解像度、続いてUSBとWi‑Fiの各接続のストリーミングに使われるコーデック、映像サイズ、フレームレート、ビットレート、予想される遅延。">
+          <figcaption>プリセットを使わずに、解像度、フレームレート、映像サイズ、ビットレートを個別に設定することもできます。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">タッチ</h2>
+      <div class="row-body">
+        <p class="deck">タブレットに触れると、Macはそれをマウス入力として受け取ります。Macでアクセシビリティを許可すると有効になります。</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">タブレットでの操作とMacでの動作</caption>
+            <thead>
+              <tr><th scope="col">タブレットでの操作</th><th scope="col">Macでの動作</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">タップ</th><td>クリック</td></tr>
+              <tr><th scope="row">ドラッグ</th><td>ドラッグ</td></tr>
+              <tr><th scope="row">2本指でドラッグ</th><td>スクロール</td></tr>
+              <tr><th scope="row">2本指でタップ</th><td>右クリック</td></tr>
+              <tr><th scope="row">3本指でタップ</th><td>タブレットのメニューを開く</td></tr>
+              <tr><th scope="row">ペンで描く</th><td>筆圧と傾きを含め、Macでペンタブレットの入力として届きます</td></tr>
+              <tr><th scope="row">ペンやマウスを画面の上にかざす</th><td>ポインタを移動します。ペンのボタンを押しながらタッチすると右クリック</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>元の位置に戻るポインタ</h3>
+        <p>タブレットに触れると、Macのポインタがその位置に移動します。その後マウスを少し動かすと、ポインタはタッチする前の位置に戻るので、メインディスプレイでの作業に引き戻す必要はありません。この機能は設定でオフにできます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">詳しい動作</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>メニューバーアイコン</dt>
+            <dd>
+              タブレットの接続中にのみ表示されます。非表示のときにアプリをもう一度開くと、パネルが開いた状態でしばらく表示されます。
+              <ul class="glyphs" aria-label="メニューバーアイコンの4つの状態">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>待機中</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>準備中</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>使用中</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>要確認</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>タブレットアプリの起動</dt>
+            <dd>ケーブルを接続したときにタブレットアプリが起動していなければ、Macがアプリを開き、画面がオフならスリープを解除します。ロック画面を回避することはありません。</dd>
+          </div>
+          <div>
+            <dt>アップデート</dt>
+            <dd>Macアプリは新しいバージョンを確認し、選んだときに自分でアップデートします。新しいタブレットアプリが含まれていれば、表示を始める前にケーブル経由でタブレットのアプリもアップデートします。</dd>
+          </div>
+          <div>
+            <dt>縦向き</dt>
+            <dd>タブレットを縦向きにすると、仮想ディスプレイも縦向きで作り直されます。</dd>
+          </div>
+          <div>
+            <dt>リフレッシュレートと画面のタイムアウト</dt>
+            <dd>ストリーミング中は、タブレットのリフレッシュレートが60Hzに下がらないよう固定され、画面もオフになりません。</dd>
+          </div>
+          <div>
+            <dt>ケーブルのチェック</dt>
+            <dd>USBが480Mbps未満で接続された場合、転送速度が8MB/sに届かない場合、または3分以内に接続が3回切れた場合は、別のケーブルやポートを試すよう提案されます。</dd>
+          </div>
+          <div>
+            <dt>接続が切れたとき</dt>
+            <dd>ケーブルが抜けると、Wi‑Fi経由で表示が続きます。ワイヤレスで続けられない場合は仮想ディスプレイがしばらく維持され、その間にタブレットが再接続すれば、ウインドウの配置はそのまま引き継がれます。</dd>
+          </div>
+          <div>
+            <dt>接続解除と再接続</dt>
+            <dd>メニューバーで「接続解除」をクリックすると、ケーブルが接続されたままでもタブレットへの表示が止まります。続けるには「再接続」をクリックします。</dd>
+          </div>
+          <div>
+            <dt>タブレットアプリの自動終了</dt>
+            <dd>充電器も含め、タブレットに何も接続されていない状態が続くと、タブレットアプリは10秒後に自動で閉じます。代わりにワイヤレス接続を待機できる場合は、2分間待機します。</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">動作環境</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Appleシリコン搭載Mac、macOS 14以降</dd></div>
+          <div><dt>タブレット</dt><dd>Android 8.0以降、USB デバッグをオンにできるデバイス</dd></div>
+          <div><dt>ケーブル</dt><dd>データ転送に対応したUSBケーブル。充電専用ケーブルでは接続できません。ハブよりもMac本体のポートのほうが安定します。</dd></div>
+          <div><dt>ワイヤレス</dt><dd>Macとタブレットが同じWi‑Fiに接続されている必要があります（5GHz推奨）。初回接続はUSBで行う必要があります。</dd></div>
+          <div><dt>Macのアクセス許可</dt><dd>画面収録。タッチでMacを操作するにはアクセシビリティ、ワイヤレスで使うにはローカルネットワークも必要です。</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">よくある質問</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>タブレットにアプリをインストールする必要はありますか？</summary>
+          <p>いいえ。タブレットアプリはMacアプリに含まれているため、ケーブルを接続するとMacがインストールして開きます。Macアプリをアップデートすると、次回接続時にタブレットアプリも一緒にアップデートされます。</p>
+        </details>
+        <details>
+          <summary>Wi‑Fiでも使えますか？</summary>
+          <p>はい。USBで一度接続すれば、それ以降は同じWi‑Fi上でワイヤレス接続できます。タブレットでアプリを開いてMacのメニューバーで「接続」をクリックするか、使用中にケーブルを抜くだけです。遅延はUSBより少し大きく（5GHzで40〜55ms）、2.4GHzのWi‑Fiではときどきカクつくことがあるため、5GHzを推奨します。</p>
+        </details>
+        <details>
+          <summary>初回接続をUSBで行う必要があるのはなぜですか？</summary>
+          <p>ワイヤレス接続用のキーは、ケーブル経由でのみ交換されるためです。これにより、同じWi‑Fi上のほかのデバイスがタブレットになりすましてMacに接続することはできません。タブレットアプリもこのときにインストールされます。</p>
+        </details>
+        <details>
+          <summary>ペンの筆圧には対応していますか？</summary>
+          <p>はい。ペンの筆圧と傾きは、ペンタブレットの入力（筆圧、傾き、近接）としてmacOSに届きます。Android標準のスタイラス入力を使うため、S PenやLenovoのペンに追加のSDKやドライバは不要です。Lenovo Pad Pro 12.7用のペンで動作を確認しています。</p>
+        </details>
+        <details>
+          <summary>どのタブレットで使えますか？</summary>
+          <p>Android 8.0以降で、USB デバッグをオンにできるタブレットなら使えます。開発と測定はLenovo Pad Pro 12.7（2944×1840、120Hz）で行っており、ほかのデバイスはまだ実際には試していません。仮想ディスプレイの解像度と向きは、接続時のタブレットの画面に合わせて決まります。</p>
+        </details>
+        <details>
+          <summary>App Storeで配信していないのはなぜですか？</summary>
+          <p>仮想ディスプレイの作成にmacOSの非公開機能を使っているため、App Storeでは公開できません。その代わり、Appleのデベロッパ証明書で署名し、Appleの公証を受けているので、ダウンロードしてすぐに開けます。</p>
+        </details>
+        <details>
+          <summary>画面収録とアクセシビリティが必要なのはなぜですか？</summary>
+          <p>画面収録はタブレットに送る仮想ディスプレイをキャプチャするため、アクセシビリティはタブレットのタッチやペンをMacの入力に変換するため、ローカルネットワークは同じWi‑Fi上のタブレットを見つけるために使います。画面はUSBケーブルまたはお使いのWi‑Fi内でのみやり取りされ（ワイヤレスの場合は暗号化）、インターネットに送られることはありません。</p>
+        </details>
+        <details>
+          <summary>接続が何度も切れます。</summary>
+          <p>データ転送に対応した別のケーブルを試すか、ハブを使わずにMac本体のポートに直接接続してください。USBの接続が遅い場合や頻繁に切れる場合は、アプリが事前に知らせます。一時的に切れた場合は、仮想ディスプレイが15秒間維持され、中断したところから再開します。</p>
+        </details>
+        <details>
+          <summary>タブレットがロックされている場合は？</summary>
+          <p>Macは画面のスリープを解除してアプリを開きますが、ロックを回避することはありません。PINまたはパターンでロックを解除すると、すぐに接続されます。</p>
+        </details>
+        <details>
+          <summary>Intel搭載Macでも使えますか？</summary>
+          <p>現在のリリースはAppleシリコン搭載Mac専用です。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">ダウンロード</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14以降 · Appleシリコン · Appleによる公証済み</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">このバージョンの新機能</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac版をダウンロード</a>
+        </div>
+        <p class="not-mac-note">このアプリはMac用です。ダウンロードするには、Macでこのページを開いてください。 <button class="link-button" type="button" data-send-link data-copied="リンクをコピーしました">Macにリンクを送る</button></p>
+        <p class="note">zipを開き、アプリをアプリケーションフォルダに移動して開きます。初回の接続方法は<a href="#setup">セットアップ</a>を参照してください。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">言語: </span>日本語</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja" aria-current="page">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple、Mac、macOS、Finderは、Apple Inc.の商標です。Androidは、Google LLCの商標です。Lenovoは、Lenovoの商標です。</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="BecomeMyScreenのビデオ">
+  <button class="film-close" type="button" aria-label="閉じる" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

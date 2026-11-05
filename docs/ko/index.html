@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — 안드로이드 태블릿을 Mac의 보조 모니터로</title>
+  <meta name="description" content="안드로이드 태블릿을 Mac의 보조 모니터로 씁니다. USB로 연결하고, 같은 Wi‑Fi에서는 무선으로도 이어집니다. 태블릿 앱 설치와 실행은 Mac 앱이 맡고, USB 실측 지연은 약 20–25ms입니다.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — 안드로이드 태블릿을 Mac의 보조 모니터로">
+  <meta property="og:description" content="USB 케이블로 연결하고, 같은 Wi‑Fi에서는 무선으로도 씁니다. 태블릿 앱 설치와 실행은 Mac 앱이 맡습니다.">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/ko.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="이 페이지">
+      <a href="#setup">시작하기</a>
+      <a href="#speed">속도</a>
+      <a href="#wireless">무선</a>
+      <a href="#quality">화질</a>
+      <a href="#touch">터치</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="button button-small" href="#download">다운로드</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>안드로이드 태블릿을<br>Mac의 보조 모니터로.</h1>
+      <p class="lede">USB 케이블로 연결하면 태블릿이 Mac의 디스플레이가 됩니다. 케이블을 뽑아도 같은 Wi‑Fi로 그대로 이어집니다. 태블릿 앱 설치와 실행은 Mac 앱이 맡고, 계정은 필요 없습니다.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac용 다운로드</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>영상 보기<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">버전 <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 이상 · Apple Silicon</p>
+      <p class="after-download" data-after-download hidden>zip을 열어 응용 프로그램 폴더로 옮긴 뒤 실행합니다. 처음 연결하는 방법은 <a href="#setup">시작하기</a>에 있습니다.</p>
+      <p class="not-mac-note">Mac용 앱입니다. Mac에서 이 페이지를 열어 내려받으세요. <button class="link-button" type="button" data-send-link data-copied="링크를 복사했습니다">Mac으로 링크 보내기</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="태블릿에 Mac 데스크톱이 떠 있는 모습. Finder의 응용 프로그램 폴더와 계산기 창이 열려 있습니다.">
+      </div>
+      <figcaption>Lenovo Pad Pro 12.7에 띄운 Mac 화면. 태블릿에서 그대로 캡처했습니다.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">시작하기</h2>
+      <div class="row-body">
+        <p class="deck">처음 한 번만 준비하면 됩니다. 그다음부터는 케이블을 꽂으면 모니터가 생기고, 같은 Wi‑Fi에서는 케이블 없이도 연결됩니다.</p>
+        <ol class="steps">
+          <li>
+            <h3>Mac 앱 설치</h3>
+            <p>내려받은 zip을 열어 BecomeMyScreen을 응용 프로그램 폴더로 옮기고 실행합니다. 화면 기록 권한을 허용한 뒤 앱을 한 번 다시 엽니다.</p>
+          </li>
+          <li>
+            <h3>태블릿에서 USB 디버깅 켜기</h3>
+            <p>설정 › 태블릿 정보에서 빌드 번호를 일곱 번 누르면 개발자 옵션이 열립니다. 갤럭시 탭은 소프트웨어 정보 안에 있습니다. 개발자 옵션에서 USB 디버깅을 켭니다.</p>
+          </li>
+          <li>
+            <h3>케이블 연결</h3>
+            <p>태블릿에 USB 디버깅 허용 창이 뜨면 ‘이 컴퓨터에서 항상 허용’에 체크하고 허용을 누릅니다. Mac이 태블릿 앱을 설치하고 실행한 뒤 모니터를 추가합니다. 태블릿 앱을 따로 내려받을 필요는 없습니다.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ko/onboarding.png" width="520" height="481" alt="BecomeMyScreen 첫 실행 안내 창. 태블릿에서 USB 디버깅 켜기, 화면 기록 허용, 손쉬운 사용 허용(선택), 케이블 연결의 네 단계가 있습니다.">
+          <figcaption>처음 실행하면 나오는 안내 창. 끝낸 단계에는 체크 표시가 붙습니다.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">속도</h2>
+      <div class="row-body">
+        <p class="deck">Mac이 화면을 캡처한 순간부터 태블릿에 그려지기까지 걸린 시간입니다. Lenovo Pad Pro 12.7과 M4 Pro Mac에서 쟀습니다.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">영상 크기와 프레임 레이트별 지연 시간</caption>
+            <thead>
+              <tr><th scope="col">영상 크기</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>화면은 Apple Silicon의 하드웨어 인코더가 H.264로 압축해 USB로 보내고, 태블릿의 하드웨어 디코더가 받아서 바로 그립니다. 자동 모드는 처음 연결할 때 디코더가 감당하는 양을 재고, 밀리지 않는 범위에서 프레임을 고릅니다. 이 태블릿에서는 90fps를 골랐습니다.</p>
+        <p class="note">측정 방법: 두 기기의 시계 차이를 보정한 뒤, Mac이 프레임을 캡처한 시각과 태블릿이 그 프레임을 그린 시각의 차이를 쟀습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">무선</h2>
+      <div class="row-body">
+        <p class="deck">USB로 한 번 연결한 태블릿은 같은 Wi‑Fi에서 무선으로도 씁니다. 화면을 쓰다가 케이블을 뽑으면 Wi‑Fi로 그대로 이어집니다.</p>
+        <dl class="specs">
+          <div>
+            <dt>연결</dt>
+            <dd>태블릿에서 앱을 열면 Mac 메뉴 막대의 ‘같은 Wi‑Fi’ 목록에 나타납니다. 연결을 누르면 화면이 뜹니다.</dd>
+          </div>
+          <div>
+            <dt>케이블을 뽑으면</dt>
+            <dd>1초 안에 Wi‑Fi로 넘어갑니다. 가상 모니터와 창 배치는 그대로이고, 다시 꽂으면 USB로 돌아옵니다.</dd>
+          </div>
+          <div>
+            <dt>보안</dt>
+            <dd>무선 연결에 쓰는 키는 USB 케이블로만 주고받습니다. 키를 확인한 뒤에만 연결되고, 화면과 입력은 모두 AES-256-GCM으로 암호화됩니다.</dd>
+          </div>
+          <div>
+            <dt>자동 조절</dt>
+            <dd>태블릿이 받은 프레임을 하나하나 알려 주고, Mac은 밀린 만큼 프레임을 건너뛰며 비트레이트를 맞춥니다. 무선이 잠깐 느려져도 지연이 쌓이지 않습니다.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ko/panel-wifi.png" width="320" height="312" alt="Mac 메뉴 막대 패널. 태블릿을 연결하세요. 같은 Wi‑Fi 목록에 Lenovo Pad Pro 12.7과 연결 버튼이 있습니다.">
+            <figcaption>태블릿에서 앱을 열면 목록에 나타납니다</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/ko/panel-wifi-live.png" width="320" height="245" alt="Mac 메뉴 막대 패널. Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90Hz, 52fps, 11.0Mbps, 48ms.">
+            <figcaption>무선으로 쓰는 중 · 5GHz Wi‑Fi 실측</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">연결 방식별 지연</caption>
+            <thead>
+              <tr><th scope="col">연결</th><th scope="col" class="num">지연</th><th scope="col">비고</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">약 20–25ms</td><td>태블릿 최대 프레임</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40~55ms</td><td>60fps, 비트레이트는 화질 설정까지 자동으로 올라감</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40~65ms</td><td>지연이 가끔 100ms 넘게 튀어 끊겨 보일 수 있음</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Lenovo Pad Pro 12.7, 2560×1600, 화면이 계속 바뀌는 상태에서 쟀습니다. 태블릿이 2.4GHz Wi‑Fi에 연결되어 있으면 5GHz로 바꾸라고 알려 줍니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">화질과 반응 속도</h2>
+      <div class="row-body">
+        <p class="deck">다섯 단계 중에서 고르거나 자동에 맡깁니다. Mac 메뉴 막대에서 바꿔도, 태블릿 메뉴에서 바꿔도 양쪽이 같이 바뀝니다.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">프리셋별 프레임, 영상 크기, 비트레이트</caption>
+            <thead>
+              <tr><th scope="col">프리셋</th><th scope="col">프레임</th><th scope="col">영상 크기</th><th scope="col">비트레이트</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>자동</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>반응 속도 최우선</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>반응 속도 우선</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>균형</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>화질 우선</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>화질 최우선</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Lenovo Pad Pro 12.7(2560×1600, 120Hz)을 M4 Pro Mac에 USB로 연결해 측정한 값입니다. 프리셋은 목표라서, 다른 Mac이나 태블릿, Wi‑Fi에서는 측정한 결과에 맞춰 값을 스스로 정합니다. 자동은 균형과 같습니다.</p>
+        <p>영상 크기는 Mac에 보이는 해상도와 따로 정해집니다. 영상 크기를 줄여도 태블릿은 화면을 꽉 채워서 보여 주고, 줄인 만큼 디코더 부담과 지연이 줄어듭니다.</p>
+        <p>처음 연결할 때 약 10초 동안 케이블, 이 Mac의 비디오 인코더, 태블릿 디코더의 모드별 성능을 잽니다. Wi‑Fi는 처음 무선으로 연결할 때 네트워크를 잽니다. 모든 프리셋은 이 수치를 바탕으로 케이블과 Wi‑Fi에 따로 맞춰지며, 고급 설정에서는 연결마다 원하는 값을 고정할 수 있습니다. 케이블이 느리면 바꾸라는 알림이 뜹니다.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ko/panel.png" width="320" height="245" alt="Mac 메뉴 막대 패널. Lenovo Pad Pro 12.7, 2560×1600 Retina, 90Hz, 61fps, 13.4Mbps, 31ms. 화질·속도는 자동.">
+            <figcaption>Mac · 메뉴 막대 패널</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/ko/tablet-menu.png" width="360" height="355" alt="태블릿 메뉴. 프레임, 비트레이트, 지연, 화면 주사율이 실시간으로 보이고, 화질·속도는 자동, 터치로 Mac 조작이 켜져 있습니다.">
+            <figcaption>태블릿 · 세 손가락으로 탭하면 열리는 메뉴</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ko/settings.png" width="560" height="275" alt="설정 창의 화질 탭. 프리셋과 해상도, 그리고 USB와 Wi‑Fi 연결이 각각 쓰는 코덱, 영상 크기, 프레임, 비트레이트와 예상 지연 시간.">
+          <figcaption>프리셋 대신 해상도, 프레임, 영상 크기, 비트레이트를 하나씩 정할 수도 있습니다.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">터치</h2>
+      <div class="row-body">
+        <p class="deck">태블릿을 만지면 Mac이 마우스 입력으로 받습니다. Mac에서 손쉬운 사용 권한을 허용하면 켜집니다.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">태블릿 동작과 Mac에서의 결과</caption>
+            <thead>
+              <tr><th scope="col">태블릿에서</th><th scope="col">Mac에서</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">탭</th><td>클릭</td></tr>
+              <tr><th scope="row">끌기</th><td>드래그</td></tr>
+              <tr><th scope="row">두 손가락으로 끌기</th><td>스크롤</td></tr>
+              <tr><th scope="row">두 손가락으로 탭</th><td>오른쪽 클릭</td></tr>
+              <tr><th scope="row">세 손가락으로 탭</th><td>태블릿 메뉴 열기</td></tr>
+              <tr><th scope="row">펜으로 그리기</th><td>필압과 기울기까지 Mac의 그림 태블릿 입력으로 전달</td></tr>
+              <tr><th scope="row">펜이나 마우스를 화면 위에 띄우기</th><td>커서 이동. 펜 버튼을 누른 채 터치하면 오른쪽 클릭</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>터치하기 전 자리로 돌아가는 커서</h3>
+        <p>태블릿을 누르면 Mac의 커서가 그 자리로 옮겨 갑니다. 그다음 마우스를 조금 움직이면 커서는 누르기 전에 있던 자리로 돌아갑니다. 메인 모니터에서 하던 작업으로 마우스를 끌고 올 필요가 없습니다. 설정에서 끌 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">세부 동작</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>메뉴 막대 아이콘</dt>
+            <dd>
+              태블릿이 연결돼 있을 때만 보입니다. 숨어 있을 때 앱을 다시 열면 잠깐 나타나 패널을 엽니다.
+              <ul class="glyphs" aria-label="메뉴 막대 아이콘의 네 가지 상태">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>대기</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>준비 중</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>사용 중</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>확인 필요</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>태블릿 앱 실행</dt>
+            <dd>케이블을 꽂았을 때 태블릿 앱이 꺼져 있으면 Mac이 실행하고, 화면이 꺼져 있으면 깨웁니다. 잠금 화면은 우회하지 않습니다.</dd>
+          </div>
+          <div>
+            <dt>업데이트</dt>
+            <dd>Mac 앱이 새 버전을 확인하고, 원할 때 스스로 업데이트합니다. 더 새로운 태블릿 앱이 들어 있으면 화면을 띄우기 전에 케이블로 태블릿 앱부터 업데이트합니다.</dd>
+          </div>
+          <div>
+            <dt>세로 방향</dt>
+            <dd>태블릿을 세로로 돌리면 가상 모니터도 세로로 다시 만듭니다.</dd>
+          </div>
+          <div>
+            <dt>주사율과 화면 꺼짐</dt>
+            <dd>보내는 동안 태블릿의 주사율이 60Hz로 내려가지 않게 고정하고, 화면이 꺼지지 않게 합니다.</dd>
+          </div>
+          <div>
+            <dt>케이블 점검</dt>
+            <dd>USB가 480Mbps보다 느린 속도로 잡히거나, 전송 속도가 8MB/s에 못 미치거나, 3분 안에 세 번 끊기면 케이블이나 포트를 바꿔 보라고 알립니다.</dd>
+          </div>
+          <div>
+            <dt>연결이 끊겼을 때</dt>
+            <dd>케이블이 빠지면 Wi‑Fi로 이어 갑니다. 무선으로 이어 갈 수 없으면 가상 모니터를 잠시 유지하고, 그 안에 다시 연결되면 창 배치가 그대로 이어집니다.</dd>
+          </div>
+          <div>
+            <dt>끊기와 다시 연결</dt>
+            <dd>메뉴 막대에서 끊기를 누르면 케이블이 꽂혀 있어도 태블릿 화면만 내려놓고 기다립니다. 다시 연결을 누르면 이어집니다.</dd>
+          </div>
+          <div>
+            <dt>태블릿 앱 자동 종료</dt>
+            <dd>태블릿에 충전기를 포함해 아무것도 연결되지 않은 상태가 10초 이어지면 태블릿 앱이 스스로 닫힙니다. 무선 연결을 기다릴 수 있으면 2분 동안 기다립니다.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">요구 사항</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Apple Silicon Mac, macOS 14 이상</dd></div>
+          <div><dt>태블릿</dt><dd>Android 8.0 이상, USB 디버깅을 켤 수 있는 기기</dd></div>
+          <div><dt>케이블</dt><dd>데이터 전송을 지원하는 USB 케이블. 충전 전용 케이블로는 연결되지 않습니다. 허브보다 Mac 본체 포트가 안정적입니다.</dd></div>
+          <div><dt>무선</dt><dd>Mac과 태블릿이 같은 Wi‑Fi에 있어야 합니다. 5GHz를 권합니다. 처음 한 번은 USB로 연결해야 합니다.</dd></div>
+          <div><dt>Mac 권한</dt><dd>화면 기록. 터치로 Mac을 조작하려면 손쉬운 사용, 무선으로 쓰려면 로컬 네트워크도 필요합니다.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">자주 묻는 질문</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>태블릿에 앱을 따로 설치해야 하나요?</summary>
+          <p>아니요. 태블릿 앱은 Mac 앱 안에 들어 있어서, 케이블을 꽂으면 Mac이 설치하고 실행합니다. Mac 앱을 업데이트하면 다음 연결 때 태블릿 앱도 함께 업데이트됩니다.</p>
+        </details>
+        <details>
+          <summary>Wi‑Fi로도 쓸 수 있나요?</summary>
+          <p>네. 처음 한 번 USB로 연결하면 그다음부터는 같은 Wi‑Fi에서 무선으로 연결됩니다. 태블릿에서 앱을 열고 Mac 메뉴 막대에서 연결을 누르거나, 쓰는 중에 케이블을 뽑으면 됩니다. 지연은 USB보다 조금 길고(5GHz에서 40~55ms), 2.4GHz Wi‑Fi에서는 가끔 끊겨 보일 수 있어 5GHz를 권합니다.</p>
+        </details>
+        <details>
+          <summary>처음 한 번은 왜 USB로 연결해야 하나요?</summary>
+          <p>무선 연결에 쓰는 키를 케이블로만 주고받기 때문입니다. 그래서 같은 Wi‑Fi에 있는 다른 기기가 태블릿인 척 Mac에 붙을 수 없습니다. 태블릿 앱도 이때 설치됩니다.</p>
+        </details>
+        <details>
+          <summary>펜 필압이 되나요?</summary>
+          <p>네. 펜의 필압과 기울기가 macOS의 그림 태블릿 입력(필압 · 기울기 · 근접)으로 전달됩니다. Android의 표준 펜 입력을 쓰기 때문에 S Pen이나 Lenovo 펜에 따로 SDK나 드라이버가 필요 없습니다. Lenovo Pad Pro 12.7의 펜으로 확인했습니다.</p>
+        </details>
+        <details>
+          <summary>어떤 태블릿에서 되나요?</summary>
+          <p>Android 8.0 이상이고 USB 디버깅을 켤 수 있으면 됩니다. 개발과 측정은 Lenovo Pad Pro 12.7(2944×1840, 120Hz)에서 했고, 다른 기기는 아직 직접 확인하지 못했습니다. 가상 모니터의 해상도와 방향은 연결할 때 태블릿 화면에 맞춰 정해집니다.</p>
+        </details>
+        <details>
+          <summary>왜 App Store에 없나요?</summary>
+          <p>가상 디스플레이를 만들 때 macOS의 비공개 기능을 쓰기 때문에 App Store에는 올릴 수 없습니다. 대신 Apple 개발자 인증서로 서명하고 Apple 공증을 받아, 내려받은 뒤 바로 열 수 있습니다.</p>
+        </details>
+        <details>
+          <summary>화면 기록과 손쉬운 사용 권한은 왜 필요한가요?</summary>
+          <p>화면 기록은 태블릿으로 보낼 가상 모니터 화면을 캡처하는 데, 손쉬운 사용은 태블릿 터치와 펜을 Mac의 입력으로 바꾸는 데, 로컬 네트워크는 같은 Wi‑Fi의 태블릿을 찾는 데 씁니다. 화면은 USB 케이블이나 같은 Wi‑Fi 안에서만 오가고(무선은 암호화), 인터넷으로 나가지 않습니다.</p>
+        </details>
+        <details>
+          <summary>연결이 자꾸 끊깁니다.</summary>
+          <p>데이터 전송을 지원하는 다른 케이블로 바꾸거나, 허브 대신 Mac 본체 포트에 바로 꽂아 보세요. USB가 느리게 잡히거나 자주 끊기면 앱이 먼저 알려 줍니다. 잠깐 끊긴 경우에는 가상 모니터를 15초 동안 유지했다가 그대로 이어 붙입니다.</p>
+        </details>
+        <details>
+          <summary>태블릿이 잠겨 있으면요?</summary>
+          <p>Mac이 화면을 깨우고 앱을 열지만 잠금은 우회하지 않습니다. PIN이나 패턴으로 잠금을 풀면 바로 연결됩니다.</p>
+        </details>
+        <details>
+          <summary>Intel Mac에서도 되나요?</summary>
+          <p>지금 배포하는 버전은 Apple Silicon Mac 전용입니다.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">다운로드</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 이상 · Apple Silicon · Apple 공증</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">이번 버전의 새 기능</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac용 다운로드</a>
+        </div>
+        <p class="not-mac-note">Mac용 앱입니다. Mac에서 이 페이지를 열어 내려받으세요. <button class="link-button" type="button" data-send-link data-copied="링크를 복사했습니다">Mac으로 링크 보내기</button></p>
+        <p class="note">zip을 열어 응용 프로그램 폴더로 옮긴 뒤 실행합니다. 처음 연결하는 방법은 <a href="#setup">시작하기</a>에 있습니다.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">언어: </span>한국어</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko" aria-current="page">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS, Finder는 Apple Inc.의 상표이고, Android는 Google LLC의 상표입니다. Lenovo는 Lenovo의 상표입니다.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="BecomeMyScreen 소개 영상">
+  <button class="film-close" type="button" aria-label="닫기" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — Android tabletiniz Mac için ikinci ekran</title>
+  <meta name="description" content="Android tableti Mac'iniz için ikinci ekran olarak kullanın. USB ile veya aynı Wi‑Fi ağında kablosuz bağlanın. Mac uygulaması tablet uygulamasını yükleyip açar; USB üzerinden ölçülen gecikme yaklaşık 20–25 ms'dir.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — Android tabletiniz Mac için ikinci ekran">
+  <meta property="og:description" content="USB kablosuyla veya aynı Wi‑Fi ağında kablosuz bağlanın. Mac uygulaması tablet uygulamasını sizin için yükleyip açar.">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/tr.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">İçeriğe atla</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="Bu sayfada">
+      <a href="#setup">Kurulum</a>
+      <a href="#speed">Hız</a>
+      <a href="#wireless">Kablosuz</a>
+      <a href="#quality">Kalite</a>
+      <a href="#touch">Dokunma</a>
+      <a href="#faq">SSS</a>
+    </nav>
+    <a class="button button-small" href="#download">İndir</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Android tabletiniz<br>Mac için ikinci ekran.</h1>
+      <p class="lede">USB kablosunu takın, tablet Mac'inizin ekranı olsun. Kabloyu çıkarın, görüntü aynı Wi‑Fi ağı üzerinden devam etsin. Mac uygulaması tablet uygulamasını yükleyip açar ve hesap oluşturmanız gerekmez.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac için indir</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Videoyu izle<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">Sürüm <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 veya sonrası · Apple Silicon çipli Mac</p>
+      <p class="after-download" data-after-download hidden>Zip dosyasını açın, uygulamayı Uygulamalar klasörüne taşıyın ve açın. İlk bağlantı için <a href="#setup">Kurulum</a> bölümüne bakın.</p>
+      <p class="not-mac-note">Bu uygulama Mac içindir. İndirmek için bu sayfayı bir Mac'te açın. <button class="link-button" type="button" data-send-link data-copied="Bağlantı kopyalandı">Bağlantıyı Mac'e gönder</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Mac masaüstünü gösteren bir tablet; Finder'da Uygulamalar klasörü ve bir Hesap Makinesi penceresi açık.">
+      </div>
+      <figcaption>Lenovo Pad Pro 12.7'de Mac ekranı; doğrudan tablette yakalandı.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">Kurulum</h2>
+      <div class="row-body">
+        <p class="deck">Kurulumu yalnızca bir kez yaparsınız. Sonrasında kabloyu takmak ekranı ekler; aynı Wi‑Fi ağında ise kablo olmadan bağlanır.</p>
+        <ol class="steps">
+          <li>
+            <h3>Mac uygulamasını yükleyin</h3>
+            <p>İndirilen zip dosyasını açın, BecomeMyScreen'i Uygulamalar klasörüne taşıyın ve açın. Ekran Kaydı'na izin verin, ardından uygulamayı bir kez daha açın.</p>
+          </li>
+          <li>
+            <h3>Tablette USB hata ayıklamayı açın</h3>
+            <p>Ayarlar › Tablet hakkında bölümünde Derleme numarası öğesine yedi kez dokunarak Geliştirici seçenekleri menüsünün kilidini açın. Galaxy Tab'de bu öğe Yazılım bilgileri altındadır. Ardından Geliştirici seçenekleri menüsünde USB hata ayıklama seçeneğini açın.</p>
+          </li>
+          <li>
+            <h3>Kabloyu takın</h3>
+            <p>Tablet USB hata ayıklamaya izin verilip verilmeyeceğini sorduğunda “Bu bilgisayardan her zaman izin ver” seçeneğini işaretleyin ve “İzin ver” düğmesine dokunun. Mac tablet uygulamasını yükleyip açar, ardından ekranı ekler. Ayrıca indirilecek bir tablet uygulaması yoktur.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/tr/onboarding.png" width="520" height="509" alt="Dört adımlı BecomeMyScreen karşılama penceresi: tablette USB hata ayıklamayı açma, Ekran Kaydı'na izin verme, Erişilebilirlik'e izin verme (isteğe bağlı) ve kabloyu takma.">
+          <figcaption>İlk açılışta görünen kılavuz. Tamamlanan adımlar onay işaretiyle gösterilir.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">Hız</h2>
+      <div class="row-body">
+        <p class="deck">Mac'in ekranı yakaladığı andan tabletin onu çizdiği ana kadar geçen süre. Lenovo Pad Pro 12.7 ve M4 Pro çipli bir Mac ile ölçüldü.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">Video boyutuna ve kare hızına göre gecikme</caption>
+            <thead>
+              <tr><th scope="col">Video boyutu</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Apple Silicon'daki donanım kodlayıcı ekranı H.264 olarak sıkıştırıp USB üzerinden gönderir; tabletin donanım kod çözücüsü de her kareyi geldiği anda çizer. İlk bağlantıda Otomatik, kod çözücünün ne kadarını kaldırabildiğini ölçer ve geride kalmayan en yüksek kare hızını seçer. Bu tablette 90 fps'yi seçti.</p>
+        <p class="note">Ölçüm yöntemi: İki aygıtın saatleri arasındaki fark düzeltildikten sonra, Mac'in bir kareyi yakalaması ile tabletin o kareyi çizmesi arasındaki süreyi ölçtük.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">Kablosuz</h2>
+      <div class="row-body">
+        <p class="deck">Bir kez USB ile bağlanan tablet, aynı Wi‑Fi ağında kablosuz da çalışır. Çalışırken kabloyu çıkarın, görüntü Wi‑Fi üzerinden devam etsin.</p>
+        <dl class="specs">
+          <div>
+            <dt>Bağlanma</dt>
+            <dd>Tablette uygulamayı açın; tablet, Mac menü çubuğundaki “Aynı Wi‑Fi ağında” listesinde görünür. Bağlan düğmesini tıklayın, görüntü gelir.</dd>
+          </div>
+          <div>
+            <dt>Kabloyu çıkarma</dt>
+            <dd>Bir saniye içinde Wi‑Fi'a geçer. Sanal ekran ve pencere düzeniniz olduğu gibi kalır; kabloyu yeniden takınca USB'ye döner.</dd>
+          </div>
+          <div>
+            <dt>Güvenlik</dt>
+            <dd>Kablosuz bağlantıların anahtarı yalnızca USB kablosu üzerinden paylaşılır. Bağlantı ancak anahtar doğrulandıktan sonra kurulur; görüntü ve girişlerin tamamı AES-256-GCM ile şifrelenir.</dd>
+          </div>
+          <div>
+            <dt>Uyarlanabilir hız</dt>
+            <dd>Tablet aldığı her kareyi onaylar; Mac ise geride kaldığı kadar kareyi atlar ve bit hızını ayarlar. Wi‑Fi bir anlığına yavaşlasa bile gecikme birikmez.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/tr/panel-wifi.png" width="320" height="326" alt="“Bir tablet bağlayın” yazan Mac menü çubuğu paneli; Aynı Wi‑Fi ağında listesinde Lenovo Pad Pro 12.7 ve Bağlan düğmesi var.">
+            <figcaption>Tablette uygulamayı açın, listede görünür</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/tr/panel-wifi-live.png" width="320" height="273" alt="Mac menü çubuğu paneli: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11,0 Mbps, 48 ms.">
+            <figcaption>Wi‑Fi üzerinden kullanımda · 5 GHz Wi‑Fi ağında ölçüldü</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">Bağlantı türüne göre gecikme</caption>
+            <thead>
+              <tr><th scope="col">Bağlantı</th><th scope="col" class="num">Gecikme</th><th scope="col">Notlar</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">Yaklaşık 20–25 ms</td><td>Tabletin maksimum kare hızı</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; bit hızı kalite ayarına kadar otomatik olarak yükselir</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>Gecikme ara sıra 100 ms'nin üzerine çıkar, bu da takılma gibi görünebilir</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Lenovo Pad Pro 12.7 ile 2560×1600 çözünürlükte, sürekli değişen içerikle ölçüldü. Tablet 2,4 GHz Wi‑Fi ağındaysa uygulama 5 GHz'e geçmeyi önerir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">Kalite ve tepki</h2>
+      <div class="row-body">
+        <p class="deck">Beş seviyeden birini seçin veya Otomatik'te bırakın. Mac menü çubuğundan ya da tablet menüsünden değiştirin; iki taraf birlikte değişir.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">Her ön ayar için kare hızı, video boyutu ve bit hızı</caption>
+            <thead>
+              <tr><th scope="col">Ön ayar</th><th scope="col">Kare hızı</th><th scope="col">Video boyutu</th><th scope="col">Bit hızı</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>Otomatik</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>En hızlı tepki</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>Hızlı tepki</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>Dengeli</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>Yüksek kalite</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>En iyi kalite</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">M4 Pro çipli bir Mac'te, USB üzerinden Lenovo Pad Pro 12.7 (2560×1600, 120 Hz) ile ölçüldü. Her ön ayar bir hedeftir: Başka bir Mac'te veya tablette ve Wi‑Fi üzerinden, ölçüm sonuçlarına göre kendi değerlerini hesaplar. Otomatik, Dengeli ile aynıdır.</p>
+        <p>Video boyutu, Mac'in gördüğü çözünürlükten ayrı olarak belirlenir. Daha küçük bir video da tablet ekranını doldurur; kod çözücünün yükünü hafifletir ve gecikmeyi buna göre azaltır.</p>
+        <p>İlk bağlantıda uygulama, yaklaşık 10 saniyede kabloyu, bu Mac'in video kodlayıcısını ve tabletin kod çözücüsünü her modunda ölçer; tablet Wi‑Fi üzerinden ilk kez bağlandığında ise ağı ölçer. Her ön ayar bu değerlere kablo ve Wi‑Fi için ayrı ayrı uyarlanır; İleri Düzey ayarlarında her bağlantı için istediğiniz değeri elle belirleyebilirsiniz. Kablo yavaşsa değiştirmeniz söylenir.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/tr/panel.png" width="320" height="273" alt="Mac menü çubuğu paneli: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13,4 Mbps, 31 ms. Kalite ve hız Otomatik olarak ayarlı.">
+            <figcaption>Mac · menü çubuğu paneli</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/tr/tablet-menu.png" width="360" height="354" alt="Canlı değerleri (kare hızı, bit hızı, gecikme, yenileme hızı) gösteren tablet menüsü; Kalite ve hız Otomatik olarak ayarlı ve Mac'i dokunarak denetle açık.">
+            <figcaption>Tablet · üç parmakla dokununca açılan menü</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/tr/settings.png" width="560" height="292" alt="Ayarlar penceresinin Kalite sekmesi: ön ayar ve çözünürlük, ardından USB ve Wi‑Fi bağlantılarının her biri için akış değerleri: kodek, video boyutu, kare hızı, bit hızı ve beklenen gecikme.">
+          <figcaption>Ön ayar yerine çözünürlüğü, kare hızını, video boyutunu ve bit hızını tek tek de ayarlayabilirsiniz.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">Dokunma</h2>
+      <div class="row-body">
+        <p class="deck">Tablete dokunun, Mac bunu fare girişi olarak alır. Mac'te Erişilebilirlik'e izin verdiğinizde açılır.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">Tablet hareketleri ve Mac'teki karşılıkları</caption>
+            <thead>
+              <tr><th scope="col">Tablette</th><th scope="col">Mac'te</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Dokunma</th><td>Tıklama</td></tr>
+              <tr><th scope="row">Sürükleme</th><td>Sürükleme</td></tr>
+              <tr><th scope="row">İki parmakla sürükleme</th><td>Kaydırma</td></tr>
+              <tr><th scope="row">İki parmakla dokunma</th><td>Sağ tıklama</td></tr>
+              <tr><th scope="row">Üç parmakla dokunma</th><td>Tablet menüsünü açar</td></tr>
+              <tr><th scope="row">Kalemle çizme</th><td>Mac'e basınç ve eğimle birlikte grafik tablet girişi olarak ulaşır</td></tr>
+              <tr><th scope="row">Kalemi veya fareyi ekranın üzerinde tutma</th><td>İmleci hareket ettirir. Kalem düğmesini basılı tutarak dokunmak sağ tıklar</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Eski yerine dönen imleç</h3>
+        <p>Tablete dokunduğunuzda Mac'in imleci o noktaya gider. Ardından fareyi biraz hareket ettirirseniz imleç dokunmadan önceki yerine döner; böylece ana ekranda yaptığınız işe imleci geri sürüklemeniz gerekmez. Bunu Ayarlar'da kapatabilirsiniz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">Ayrıntılar</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>Menü çubuğu simgesi</dt>
+            <dd>
+              Yalnızca bir tablet bağlıyken görünür. Gizliyken uygulamayı yeniden açarsanız paneli açık olarak kısa süreliğine görünür.
+              <ul class="glyphs" aria-label="Menü çubuğu simgesinin dört durumu">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>Bekliyor</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>Hazırlanıyor</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>Kullanımda</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>Dikkat gerekiyor</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Tablet uygulamasını açma</dt>
+            <dd>Kabloyu taktığınızda tablet uygulaması çalışmıyorsa Mac onu açar, ekran kapalıysa uyandırır. Kilit ekranını asla atlamaz.</dd>
+          </div>
+          <div>
+            <dt>Güncellemeler</dt>
+            <dd>Mac uygulaması yeni sürümleri denetler ve siz seçtiğinizde kendini günceller. Daha yeni bir tablet uygulaması getirirse, ekran başlamadan önce tablet kablo üzerinden güncellenir.</dd>
+          </div>
+          <div>
+            <dt>Dikey</dt>
+            <dd>Tableti dikey konuma çevirin, sanal ekran da dikey olarak yeniden oluşturulur.</dd>
+          </div>
+          <div>
+            <dt>Yenileme hızı ve ekran zaman aşımı</dt>
+            <dd>Akış sırasında tabletin yenileme hızı 60 Hz'e düşmemesi için sabit tutulur ve ekran kapanmaz.</dd>
+          </div>
+          <div>
+            <dt>Kablo kontrolü</dt>
+            <dd>USB 480 Mbps'nin altında bağlanırsa, aktarım hızı 8 MB/s'nin altında kalırsa veya bağlantı üç dakika içinde üç kez kesilirse uygulama başka bir kablo ya da bağlantı noktası denemenizi önerir.</dd>
+          </div>
+          <div>
+            <dt>Bağlantı kesildiğinde</dt>
+            <dd>Kablo çıkarsa görüntü Wi‑Fi üzerinden devam eder. Kablosuz devam edemiyorsa sanal ekran kısa bir süre korunur; tablet bu sürede yeniden bağlanırsa pencere düzeniniz olduğu gibi devam eder.</dd>
+          </div>
+          <div>
+            <dt>Bağlantıyı kes ve Yeniden bağlan</dt>
+            <dd>Menü çubuğunda Bağlantıyı kes düğmesini tıklarsanız kablo takılı olsa bile tabletin ekranı bir kenara bırakılır. Devam etmek için Yeniden bağlan düğmesini tıklayın.</dd>
+          </div>
+          <div>
+            <dt>Tablet uygulaması kendiliğinden kapanır</dt>
+            <dd>Tablete şarj aleti dahil hiçbir şey takılı değilse tablet uygulaması 10 saniye sonra kendiliğinden kapanır. Bunun yerine kablosuz bağlantı bekleyebiliyorsa 2 dakika bekler.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">Gereksinimler</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Apple Silicon çipli Mac, macOS 14 veya sonrası</dd></div>
+          <div><dt>Tablet</dt><dd>Android 8.0 veya sonrası; USB hata ayıklamanın açılabildiği bir aygıtta</dd></div>
+          <div><dt>Kablo</dt><dd>Veri aktarımını destekleyen bir USB kablosu. Yalnızca şarj kabloları bağlanmaz. Mac'in kendi bağlantı noktası, hub'a göre daha güvenilirdir.</dd></div>
+          <div><dt>Kablosuz</dt><dd>Mac ve tablet aynı Wi‑Fi ağında olmalıdır; 5 GHz önerilir. İlk bağlantı USB ile yapılmalıdır.</dd></div>
+          <div><dt>Mac izinleri</dt><dd>Ekran Kaydı. Ayrıca Mac'i dokunarak denetlemek için Erişilebilirlik, kablosuz kullanmak için Yerel Ağ.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">Sık sorulan sorular</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>Tablete uygulama yüklemem gerekiyor mu?</summary>
+          <p>Hayır. Tablet uygulaması Mac uygulamasının içinde gelir; kabloyu taktığınızda Mac onu yükleyip açar. Mac uygulamasını güncellediğinizde tablet uygulaması da bir sonraki bağlantıda onunla birlikte güncellenir.</p>
+        </details>
+        <details>
+          <summary>Wi‑Fi üzerinden çalışıyor mu?</summary>
+          <p>Evet. Bir kez USB ile bağladıktan sonra artık aynı Wi‑Fi ağında kablosuz bağlanır. Tablette uygulamayı açıp Mac menü çubuğunda Bağlan düğmesini tıklayın ya da kullanırken kabloyu çıkarmanız yeterli. Gecikme USB'ye göre biraz daha yüksektir (5 GHz'te 40–55 ms) ve 2,4 GHz Wi‑Fi zaman zaman takılabilir; bu nedenle 5 GHz önerilir.</p>
+        </details>
+        <details>
+          <summary>İlk bağlantı neden USB ile yapılmalı?</summary>
+          <p>Çünkü kablosuz bağlantıların anahtarı yalnızca kablo üzerinden paylaşılır. Böylece aynı Wi‑Fi ağındaki başka bir aygıt tabletiniz gibi davranıp Mac'inize bağlanamaz. Tablet uygulaması da bu sırada yüklenir.</p>
+        </details>
+        <details>
+          <summary>Kalem basıncı çalışıyor mu?</summary>
+          <p>Evet. Kalem basıncı ve eğimi macOS'e grafik tablet girişi (basınç, eğim ve yakınlık) olarak ulaşır. Android'in standart kalem girişini kullandığı için S Pen ve Lenovo kalemleri ek bir SDK veya sürücü gerektirmez. Lenovo Pad Pro 12.7'nin kalemiyle test edildi.</p>
+        </details>
+        <details>
+          <summary>Hangi tabletlerle çalışır?</summary>
+          <p>Android 8.0 veya sonrasını çalıştıran ve USB hata ayıklamanın açılabildiği her tabletle. Geliştirme ve ölçümler Lenovo Pad Pro 12.7 (2944×1840, 120 Hz) üzerinde yapıldı; diğer aygıtlar henüz bizzat test edilmedi. Sanal ekranın çözünürlüğü ve yönü, bağlantı sırasında tablet ekranına göre belirlenir.</p>
+        </details>
+        <details>
+          <summary>Neden App Store'da değil?</summary>
+          <p>Sanal ekranı oluşturmak macOS'in özel bir özelliğine dayandığından uygulama App Store'da yayımlanamaz. Bunun yerine Apple geliştirici sertifikasıyla imzalanmış ve Apple tarafından noter onayından geçirilmiştir; bu sayede indirdikten hemen sonra açılır.</p>
+        </details>
+        <details>
+          <summary>Neden Ekran Kaydı ve Erişilebilirlik gerekiyor?</summary>
+          <p>Ekran Kaydı tablete gönderilecek sanal ekranı yakalar, Erişilebilirlik tabletteki dokunuşları ve kalemi Mac girişine dönüştürür, Yerel Ağ ise aynı Wi‑Fi ağındaki tabletleri bulur. Görüntü yalnızca USB kablosu üzerinden veya Wi‑Fi ağınızın içinde iletilir (kablosuzken şifrelenir) ve asla internete çıkmaz.</p>
+        </details>
+        <details>
+          <summary>Bağlantı sürekli kesiliyor.</summary>
+          <p>Veri aktarımını destekleyen başka bir kablo deneyin veya hub yerine doğrudan Mac'teki bir bağlantı noktasına takın. USB yavaş bağlandığında veya sık sık kesildiğinde uygulama sizi önceden uyarır. Kısa bir kesintiden sonra sanal ekran 15 saniye korunur ve kaldığı yerden devam eder.</p>
+        </details>
+        <details>
+          <summary>Tablet kilitliyse ne olur?</summary>
+          <p>Mac ekranı uyandırır ve uygulamayı açar, ancak kilidi asla atlamaz. PIN veya deseninizle kilidi açın, hemen bağlanır.</p>
+        </details>
+        <details>
+          <summary>Intel işlemcili Mac'lerde çalışır mı?</summary>
+          <p>Geçerli sürüm yalnızca Apple Silicon çipli Mac'ler içindir.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">İndir</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 veya sonrası · Apple Silicon çipli Mac · Apple tarafından noter onaylı</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">Bu sürümdeki yenilikler</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac için indir</a>
+        </div>
+        <p class="not-mac-note">Bu uygulama Mac içindir. İndirmek için bu sayfayı bir Mac'te açın. <button class="link-button" type="button" data-send-link data-copied="Bağlantı kopyalandı">Bağlantıyı Mac'e gönder</button></p>
+        <p class="note">Zip dosyasını açın, uygulamayı Uygulamalar klasörüne taşıyın ve açın. İlk bağlantı için <a href="#setup">Kurulum</a> bölümüne bakın.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">Dil: </span>Türkçe</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr" aria-current="page">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS ve Finder, Apple Inc.'in ticari markalarıdır. Android, Google LLC'nin ticari markasıdır. Lenovo, Lenovo'nun ticari markasıdır.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="BecomeMyScreen videosu">
+  <button class="film-close" type="button" aria-label="Kapat" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

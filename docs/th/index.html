@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="th" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — แท็บเล็ต Android ของคุณเป็นจอภาพที่สองสำหรับ Mac</title>
+  <meta name="description" content="ใช้แท็บเล็ต Android เป็นจอภาพที่สองสำหรับ Mac ของคุณ เชื่อมต่อผ่าน USB หรือแบบไร้สายใน Wi‑Fi เดียวกัน แอป Mac จะติดตั้งและเปิดแอปแท็บเล็ตให้ และความหน่วงที่วัดได้ผ่าน USB อยู่ที่ประมาณ 20–25 ms">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — แท็บเล็ต Android ของคุณเป็นจอภาพที่สองสำหรับ Mac">
+  <meta property="og:description" content="เชื่อมต่อด้วยสาย USB หรือแบบไร้สายใน Wi‑Fi เดียวกัน แอป Mac จะติดตั้งและเปิดแอปแท็บเล็ตให้คุณ">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/th.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="ในหน้านี้">
+      <a href="#setup">การติดตั้ง</a>
+      <a href="#speed">ความเร็ว</a>
+      <a href="#wireless">ไร้สาย</a>
+      <a href="#quality">คุณภาพ</a>
+      <a href="#touch">การสัมผัส</a>
+      <a href="#faq">คำถามที่พบบ่อย</a>
+    </nav>
+    <a class="button button-small" href="#download">ดาวน์โหลด</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>แท็บเล็ต Android ของคุณ<br>เป็นจอภาพที่สองสำหรับ Mac</h1>
+      <p class="lede">เสียบสาย USB แล้วแท็บเล็ตจะกลายเป็นจอภาพสำหรับ Mac ของคุณ เมื่อถอดสาย หน้าจอก็ยังทำงานต่อผ่าน Wi‑Fi เดียวกัน แอป Mac จะติดตั้งและเปิดแอปแท็บเล็ตให้ และไม่ต้องสร้างบัญชี</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>ดาวน์โหลดสำหรับ Mac</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>ดูวิดีโอ<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">เวอร์ชัน <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 ขึ้นไป · Apple silicon</p>
+      <p class="after-download" data-after-download hidden>เปิดไฟล์ zip ย้ายแอปไปไว้ในโฟลเดอร์แอปพลิเคชันแล้วเปิดแอป สำหรับการเชื่อมต่อครั้งแรก ดูที่ <a href="#setup">การติดตั้ง</a></p>
+      <p class="not-mac-note">แอปนี้สำหรับ Mac เปิดหน้านี้บน Mac เพื่อดาวน์โหลด <button class="link-button" type="button" data-send-link data-copied="คัดลอกลิงก์แล้ว">ส่งลิงก์ไปยัง Mac ของคุณ</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="แท็บเล็ตที่แสดงเดสก์ท็อปของ Mac โดยเปิดโฟลเดอร์แอปพลิเคชันใน Finder และหน้าต่างเครื่องคิดเลขไว้">
+      </div>
+      <figcaption>หน้าจอ Mac บน Lenovo Pad Pro 12.7 จับภาพจากตัวแท็บเล็ตเอง</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">การติดตั้ง</h2>
+      <div class="row-body">
+        <p class="deck">ตั้งค่าเพียงครั้งเดียว หลังจากนั้นเมื่อเสียบสาย จอภาพจะถูกเพิ่มเข้ามา และใน Wi‑Fi เดียวกันจะเชื่อมต่อได้โดยไม่ต้องใช้สาย</p>
+        <ol class="steps">
+          <li>
+            <h3>ติดตั้งแอป Mac</h3>
+            <p>เปิดไฟล์ zip ที่ดาวน์โหลดมา ย้าย BecomeMyScreen ไปไว้ในโฟลเดอร์แอปพลิเคชันแล้วเปิดแอป อนุญาตการบันทึกหน้าจอ แล้วเปิดแอปอีกครั้ง</p>
+          </li>
+          <li>
+            <h3>เปิดการแก้ไขข้อบกพร่อง USB บนแท็บเล็ต</h3>
+            <p>ในการตั้งค่า › เกี่ยวกับแท็บเล็ต ให้แตะหมายเลขบิลด์เจ็ดครั้งเพื่อปลดล็อกตัวเลือกสำหรับนักพัฒนาซอฟต์แวร์ ใน Galaxy Tab หมายเลขบิลด์อยู่ในข้อมูลซอฟต์แวร์ จากนั้นเปิดการแก้ไขข้อบกพร่อง USB ในตัวเลือกสำหรับนักพัฒนาซอฟต์แวร์</p>
+          </li>
+          <li>
+            <h3>เสียบสายเคเบิล</h3>
+            <p>เมื่อแท็บเล็ตถามว่าจะอนุญาตการแก้ไขข้อบกพร่อง USB หรือไม่ ให้เลือก “อนุญาตจากคอมพิวเตอร์เครื่องนี้เสมอ” แล้วแตะ “อนุญาต” Mac จะติดตั้งและเปิดแอปแท็บเล็ต แล้วเพิ่มจอภาพ ไม่ต้องดาวน์โหลดแอปแท็บเล็ตแยกต่างหาก</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/th/onboarding.png" width="520" height="517" alt="หน้าต่างต้อนรับของ BecomeMyScreen ที่มีสี่ขั้นตอน ได้แก่ เปิดการแก้ไขข้อบกพร่อง USB บนแท็บเล็ต อนุญาตการบันทึกหน้าจอ อนุญาตการช่วยการเข้าถึง (ไม่บังคับ) และเสียบสายเคเบิล">
+          <figcaption>คู่มือที่แสดงเมื่อเปิดแอปครั้งแรก ขั้นตอนที่เสร็จแล้วจะมีเครื่องหมายถูก</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">ความเร็ว</h2>
+      <div class="row-body">
+        <p class="deck">เวลาตั้งแต่ Mac จับภาพหน้าจอจนถึงตอนที่แท็บเล็ตแสดงภาพนั้น วัดด้วย Lenovo Pad Pro 12.7 และ Mac ที่ใช้ M4 Pro</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">ความหน่วงตามขนาดวิดีโอและอัตราเฟรม</caption>
+            <thead>
+              <tr><th scope="col">ขนาดวิดีโอ</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>ตัวเข้ารหัสฮาร์ดแวร์ใน Apple silicon จะบีบอัดหน้าจอเป็น H.264 แล้วส่งผ่าน USB และตัวถอดรหัสฮาร์ดแวร์ของแท็บเล็ตจะแสดงแต่ละเฟรมทันทีที่ได้รับ ในการเชื่อมต่อครั้งแรก โหมดอัตโนมัติจะวัดว่าตัวถอดรหัสรองรับได้มากเท่าใด แล้วเลือกอัตราเฟรมสูงสุดที่ไม่ทำให้ล่าช้า สำหรับแท็บเล็ตนี้ระบบเลือก 90 fps</p>
+        <p class="note">วิธีการวัด: หลังจากชดเชยความต่างของนาฬิการะหว่างอุปกรณ์ทั้งสองแล้ว เราวัดเวลาระหว่างที่ Mac จับภาพเฟรมหนึ่งกับที่แท็บเล็ตแสดงเฟรมนั้น</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">ไร้สาย</h2>
+      <div class="row-body">
+        <p class="deck">แท็บเล็ตที่เคยเชื่อมต่อผ่าน USB หนึ่งครั้งแล้วจะใช้งานแบบไร้สายใน Wi‑Fi เดียวกันได้ด้วย หากถอดสายขณะทำงาน หน้าจอจะทำงานต่อผ่าน Wi‑Fi</p>
+        <dl class="specs">
+          <div>
+            <dt>การเชื่อมต่อ</dt>
+            <dd>เปิดแอปบนแท็บเล็ต แล้วแท็บเล็ตจะปรากฏในรายการ “ใน Wi‑Fi เดียวกัน” บนแถบเมนูของ Mac คลิก “เชื่อมต่อ” แล้วหน้าจอจะแสดงขึ้น</dd>
+          </div>
+          <div>
+            <dt>การถอดสาย</dt>
+            <dd>ระบบจะเปลี่ยนไปใช้ Wi‑Fi ภายในหนึ่งวินาที จอภาพเสมือนและการจัดวางหน้าต่างของคุณยังคงเหมือนเดิม และเมื่อเสียบสายกลับ ระบบจะกลับไปใช้ USB</dd>
+          </div>
+          <div>
+            <dt>ความปลอดภัย</dt>
+            <dd>คีย์สำหรับการเชื่อมต่อไร้สายจะแลกเปลี่ยนผ่านสาย USB เท่านั้น การเชื่อมต่อจะเกิดขึ้นหลังจากตรวจสอบคีย์แล้วเท่านั้น และทั้งหน้าจอและการป้อนข้อมูลจะเข้ารหัสด้วย AES-256-GCM</dd>
+          </div>
+          <div>
+            <dt>การปรับจังหวะอัตโนมัติ</dt>
+            <dd>แท็บเล็ตจะยืนยันทุกเฟรมที่ได้รับ และ Mac จะข้ามเฟรมเท่ากับจำนวนที่ล่าช้าไปพร้อมปรับบิตเรต แม้ Wi‑Fi จะช้าลงชั่วครู่ ความหน่วงก็จะไม่สะสม</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/th/panel-wifi.png" width="320" height="327" alt="แผงในแถบเมนูของ Mac ที่แสดง “เชื่อมต่อแท็บเล็ต” พร้อม Lenovo Pad Pro 12.7 และปุ่ม “เชื่อมต่อ” ในรายการ “ใน Wi‑Fi เดียวกัน”">
+            <figcaption>เปิดแอปบนแท็บเล็ต แล้วแท็บเล็ตจะปรากฏในรายการ</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/th/panel-wifi-live.png" width="320" height="290" alt="แผงในแถบเมนูของ Mac: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11.0 Mbps, 48 ms">
+            <figcaption>ใช้งานผ่าน Wi‑Fi · วัดบน Wi‑Fi 5 GHz</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">ความหน่วงตามประเภทการเชื่อมต่อ</caption>
+            <thead>
+              <tr><th scope="col">การเชื่อมต่อ</th><th scope="col" class="num">ความหน่วง</th><th scope="col">หมายเหตุ</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">ประมาณ 20–25 ms</td><td>อัตราเฟรมสูงสุดของแท็บเล็ต</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; บิตเรตจะเพิ่มขึ้นอัตโนมัติจนถึงค่าคุณภาพที่ตั้งไว้</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>บางครั้งความหน่วงพุ่งเกิน 100 ms ซึ่งอาจทำให้ดูกระตุก</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">วัดด้วย Lenovo Pad Pro 12.7 ที่ 2560×1600 โดยเนื้อหาบนหน้าจอเปลี่ยนแปลงตลอดเวลา หากแท็บเล็ตใช้ Wi‑Fi 2.4 GHz แอปจะแนะนำให้เปลี่ยนไปใช้ 5 GHz</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">คุณภาพและการตอบสนอง</h2>
+      <div class="row-body">
+        <p class="deck">เลือกหนึ่งในห้าระดับ หรือปล่อยไว้ที่อัตโนมัติ ปรับได้จากแถบเมนูของ Mac หรือจากเมนูบนแท็บเล็ต และทั้งสองฝั่งจะเปลี่ยนตามกัน</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">อัตราเฟรม ขนาดวิดีโอ และบิตเรตของแต่ละพรีเซ็ต</caption>
+            <thead>
+              <tr><th scope="col">พรีเซ็ต</th><th scope="col">อัตราเฟรม</th><th scope="col">ขนาดวิดีโอ</th><th scope="col">บิตเรต</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>อัตโนมัติ</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>ตอบสนองเร็วที่สุด</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>ตอบสนองเร็ว</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>สมดุล</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>คุณภาพสูง</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>คุณภาพสูงสุด</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">วัดด้วย Lenovo Pad Pro 12.7 (2560×1600, 120 Hz) ผ่าน USB บน Mac ที่ใช้ M4 Pro พรีเซ็ตแต่ละรายการคือเป้าหมาย บน Mac หรือแท็บเล็ตเครื่องอื่น รวมถึงเมื่อใช้ Wi‑Fi พรีเซ็ตจะคำนวณค่าของตัวเองจากผลการวัด “อัตโนมัติ” เหมือนกับ “สมดุล”</p>
+        <p>ขนาดวิดีโอตั้งค่าแยกจากความละเอียดที่ Mac เห็น วิดีโอที่เล็กลงยังคงเต็มหน้าจอแท็บเล็ต และช่วยลดภาระของตัวถอดรหัสและลดความหน่วงลงตามสัดส่วน</p>
+        <p>ในการเชื่อมต่อครั้งแรก แอปจะวัดสาย ตัวเข้ารหัสวิดีโอของ Mac เครื่องนี้ และตัวถอดรหัสของแท็บเล็ตในทุกโหมดที่รองรับ โดยใช้เวลาประมาณ 10 วินาที ส่วนในการเชื่อมต่อผ่าน Wi‑Fi ครั้งแรก แอปจะวัดเครือข่าย พรีเซ็ตทุกรายการจะปรับให้เข้ากับค่าเหล่านี้โดยแยกกันระหว่างสายกับ Wi‑Fi และคุณสามารถระบุค่าใดก็ได้สำหรับแต่ละการเชื่อมต่อในการตั้งค่าขั้นสูง หากสายช้า แอปจะแจ้งให้คุณเปลี่ยนสาย</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/th/panel.png" width="320" height="290" alt="แผงในแถบเมนูของ Mac: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13.4 Mbps, 31 ms โดยตั้งคุณภาพและความเร็วเป็นอัตโนมัติ">
+            <figcaption>Mac · แผงในแถบเมนู</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/th/tablet-menu.png" width="360" height="355" alt="เมนูบนแท็บเล็ตที่แสดงตัวเลขแบบเรียลไทม์ (อัตราเฟรม บิตเรต ความหน่วง อัตรารีเฟรช) โดยตั้งคุณภาพและความเร็วเป็นอัตโนมัติ และเปิดการควบคุม Mac ด้วยการสัมผัสไว้">
+            <figcaption>แท็บเล็ต · เมนูที่เปิดด้วยการแตะสามนิ้ว</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/th/settings.png" width="560" height="307" alt="แท็บคุณภาพในหน้าต่างการตั้งค่า: พรีเซ็ตและความละเอียด ตามด้วยค่าที่การเชื่อมต่อแต่ละแบบ ทั้ง USB และ Wi‑Fi ใช้ในการสตรีม ได้แก่ ตัวแปลงสัญญาณ ขนาดวิดีโอ อัตราเฟรม บิตเรต และความหน่วงโดยประมาณ">
+          <figcaption>นอกจากใช้พรีเซ็ตแล้ว คุณยังตั้งค่าความละเอียด อัตราเฟรม ขนาดวิดีโอ และบิตเรตทีละรายการได้</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">การสัมผัส</h2>
+      <div class="row-body">
+        <p class="deck">เมื่อสัมผัสแท็บเล็ต Mac จะรับเป็นการป้อนข้อมูลจากเมาส์ ฟีเจอร์นี้จะทำงานเมื่อคุณอนุญาตการช่วยการเข้าถึงบน Mac</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">ท่าทางบนแท็บเล็ตและผลที่เกิดบน Mac</caption>
+            <thead>
+              <tr><th scope="col">บนแท็บเล็ต</th><th scope="col">บน Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">แตะ</th><td>คลิก</td></tr>
+              <tr><th scope="row">ลาก</th><td>ลาก</td></tr>
+              <tr><th scope="row">ลากด้วยสองนิ้ว</th><td>เลื่อน</td></tr>
+              <tr><th scope="row">แตะด้วยสองนิ้ว</th><td>คลิกขวา</td></tr>
+              <tr><th scope="row">แตะด้วยสามนิ้ว</th><td>เปิดเมนูบนแท็บเล็ต</td></tr>
+              <tr><th scope="row">วาดด้วยปากกา</th><td>ส่งไปยัง Mac เป็นการป้อนข้อมูลแท็บเล็ตกราฟิก พร้อมแรงกดและความเอียง</td></tr>
+              <tr><th scope="row">วางปากกาหรือเมาส์ลอยเหนือหน้าจอ</th><td>เลื่อนตัวชี้ สัมผัสขณะกดปุ่มปากกาค้างไว้เพื่อคลิกขวา</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>ตัวชี้ที่กลับไปยังตำแหน่งเดิม</h3>
+        <p>เมื่อคุณสัมผัสแท็บเล็ต ตัวชี้ของ Mac จะย้ายไปยังจุดนั้น หลังจากนั้นเมื่อขยับเมาส์เล็กน้อย ตัวชี้จะกลับไปยังตำแหน่งก่อนการสัมผัส คุณจึงไม่ต้องลากตัวชี้กลับไปยังงานที่ทำอยู่บนจอภาพหลัก คุณปิดฟีเจอร์นี้ได้ในการตั้งค่า</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">รายละเอียด</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>ไอคอนในแถบเมนู</dt>
+            <dd>
+              ไอคอนจะแสดงเฉพาะเมื่อเชื่อมต่อแท็บเล็ตอยู่ เมื่อไอคอนซ่อนอยู่ ให้เปิดแอปอีกครั้ง แล้วไอคอนจะปรากฏชั่วครู่พร้อมเปิดแผงไว้
+              <ul class="glyphs" aria-label="สถานะสี่แบบของไอคอนในแถบเมนู">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>รอ</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>กำลังเตรียม</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>กำลังใช้งาน</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>ต้องตรวจสอบ</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>การเปิดแอปแท็บเล็ต</dt>
+            <dd>หากแอปแท็บเล็ตไม่ได้ทำงานอยู่เมื่อคุณเสียบสาย Mac จะเปิดแอปให้ และปลุกหน้าจอหากหน้าจอปิดอยู่ แต่จะไม่ข้ามหน้าจอล็อกเลย</dd>
+          </div>
+          <div>
+            <dt>การอัปเดต</dt>
+            <dd>แอป Mac จะตรวจหาเวอร์ชันใหม่และอัปเดตตัวเองเมื่อคุณเลือก หากมีแอปแท็บเล็ตที่ใหม่กว่ามาด้วย แท็บเล็ตจะได้รับการอัปเดตผ่านสายก่อนเริ่มแสดงผล</dd>
+          </div>
+          <div>
+            <dt>แนวตั้ง</dt>
+            <dd>หมุนแท็บเล็ตเป็นแนวตั้ง แล้วจอภาพเสมือนจะถูกสร้างใหม่เป็นแนวตั้งด้วย</dd>
+          </div>
+          <div>
+            <dt>อัตรารีเฟรชและการปิดหน้าจอ</dt>
+            <dd>ระหว่างสตรีม อัตรารีเฟรชของแท็บเล็ตจะถูกคงไว้ไม่ให้ลดลงเหลือ 60 Hz และหน้าจอจะไม่ดับ</dd>
+          </div>
+          <div>
+            <dt>การตรวจสอบสาย</dt>
+            <dd>หาก USB เชื่อมต่อที่ความเร็วต่ำกว่า 480 Mbps การรับส่งข้อมูลต่ำกว่า 8 MB/s หรือการเชื่อมต่อขาดหายสามครั้งภายในสามนาที แอปจะแนะนำให้ลองใช้สายหรือพอร์ตอื่น</dd>
+          </div>
+          <div>
+            <dt>เมื่อการเชื่อมต่อขาดหาย</dt>
+            <dd>หากสายหลุด หน้าจอจะทำงานต่อผ่าน Wi‑Fi หากทำงานต่อแบบไร้สายไม่ได้ จอภาพเสมือนจะถูกคงไว้ครู่หนึ่ง และหากแท็บเล็ตเชื่อมต่อใหม่ในช่วงเวลานั้น การจัดวางหน้าต่างของคุณจะยังคงเหมือนเดิม</dd>
+          </div>
+          <div>
+            <dt>“ตัดการเชื่อมต่อ” และ “เชื่อมต่อใหม่”</dt>
+            <dd>คลิก “ตัดการเชื่อมต่อ” ในแถบเมนู แล้วหน้าจอของแท็บเล็ตจะถูกพักไว้แม้ยังเสียบสายอยู่ คลิก “เชื่อมต่อใหม่” เพื่อใช้งานต่อ</dd>
+          </div>
+          <div>
+            <dt>แอปแท็บเล็ตปิดตัวเอง</dt>
+            <dd>เมื่อไม่มีอะไรเสียบอยู่กับแท็บเล็ตเลย แม้แต่ที่ชาร์จ แอปแท็บเล็ตจะปิดตัวเองหลังจาก 10 วินาที หากรอการเชื่อมต่อไร้สายได้ แอปจะรอ 2 นาทีแทน</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">ข้อกำหนด</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Mac ที่ใช้ Apple silicon, macOS 14 ขึ้นไป</dd></div>
+          <div><dt>แท็บเล็ต</dt><dd>Android 8.0 ขึ้นไป บนอุปกรณ์ที่เปิดการแก้ไขข้อบกพร่อง USB ได้</dd></div>
+          <div><dt>สายเคเบิล</dt><dd>สาย USB ที่รองรับการรับส่งข้อมูล สายที่ใช้ชาร์จได้อย่างเดียวจะเชื่อมต่อไม่ได้ พอร์ตบนตัว Mac เสถียรกว่าฮับ</dd></div>
+          <div><dt>ไร้สาย</dt><dd>Mac และแท็บเล็ตต้องอยู่ใน Wi‑Fi เดียวกัน แนะนำให้ใช้ 5 GHz การเชื่อมต่อครั้งแรกต้องทำผ่าน USB</dd></div>
+          <div><dt>สิทธิ์บน Mac</dt><dd>การบันทึกหน้าจอ รวมถึงการช่วยการเข้าถึงเพื่อควบคุม Mac ด้วยการสัมผัส และเครือข่ายเฉพาะที่เพื่อใช้งานแบบไร้สาย</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">คำถามที่พบบ่อย</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>ต้องติดตั้งแอปบนแท็บเล็ตหรือไม่</summary>
+          <p>ไม่ต้อง แอปแท็บเล็ตมาพร้อมกับแอป Mac เมื่อคุณเสียบสาย Mac จะติดตั้งและเปิดแอปให้ และเมื่อคุณอัปเดตแอป Mac แอปแท็บเล็ตจะได้รับการอัปเดตไปด้วยในการเชื่อมต่อครั้งถัดไป</p>
+        </details>
+        <details>
+          <summary>ใช้งานผ่าน Wi‑Fi ได้หรือไม่</summary>
+          <p>ได้ หลังจากเชื่อมต่อผ่าน USB หนึ่งครั้ง ครั้งต่อๆ ไปจะเชื่อมต่อแบบไร้สายใน Wi‑Fi เดียวกันได้ เปิดแอปบนแท็บเล็ตแล้วคลิก “เชื่อมต่อ” ในแถบเมนูของ Mac หรือเพียงถอดสายขณะใช้งาน ความหน่วงจะสูงกว่าผ่าน USB เล็กน้อย (40–55 ms บน 5 GHz) และ Wi‑Fi 2.4 GHz อาจกระตุกเป็นครั้งคราว จึงแนะนำให้ใช้ 5 GHz</p>
+        </details>
+        <details>
+          <summary>ทำไมการเชื่อมต่อครั้งแรกต้องทำผ่าน USB</summary>
+          <p>เพราะคีย์สำหรับการเชื่อมต่อไร้สายจะแลกเปลี่ยนผ่านสายเท่านั้น ด้วยวิธีนี้ อุปกรณ์อื่นใน Wi‑Fi เดียวกันจึงแอบอ้างเป็นแท็บเล็ตของคุณเพื่อเชื่อมต่อกับ Mac ไม่ได้ แอปแท็บเล็ตก็จะถูกติดตั้งในตอนนั้นด้วย</p>
+        </details>
+        <details>
+          <summary>รองรับแรงกดปากกาหรือไม่</summary>
+          <p>รองรับ แรงกดและความเอียงของปากกาจะส่งไปยัง macOS เป็นการป้อนข้อมูลแท็บเล็ตกราฟิก (แรงกด ความเอียง และระยะใกล้) เนื่องจากใช้การป้อนข้อมูลสไตลัสมาตรฐานของ Android ทั้ง S Pen และปากกา Lenovo จึงไม่ต้องใช้ SDK หรือไดรเวอร์เพิ่มเติม ทดสอบแล้วกับปากกาสำหรับ Lenovo Pad Pro 12.7</p>
+        </details>
+        <details>
+          <summary>ใช้กับแท็บเล็ตรุ่นใดได้บ้าง</summary>
+          <p>ใช้ได้กับแท็บเล็ตทุกรุ่นที่ใช้ Android 8.0 ขึ้นไปและเปิดการแก้ไขข้อบกพร่อง USB ได้ การพัฒนาและการวัดทำบน Lenovo Pad Pro 12.7 (2944×1840, 120 Hz) ส่วนอุปกรณ์อื่นยังไม่ได้ทดสอบด้วยตัวเอง ความละเอียดและแนวของจอภาพเสมือนจะเป็นไปตามหน้าจอของแท็บเล็ตเมื่อเชื่อมต่อ</p>
+        </details>
+        <details>
+          <summary>ทำไมไม่มีใน App Store</summary>
+          <p>การสร้างจอภาพเสมือนต้องใช้ฟีเจอร์ที่ไม่เปิดเผยต่อสาธารณะของ macOS จึงเผยแพร่บน App Store ไม่ได้ แต่แอปได้รับการเซ็นด้วยใบรับรองนักพัฒนาของ Apple และผ่านการรับรองจาก Apple จึงเปิดได้ทันทีหลังดาวน์โหลด</p>
+        </details>
+        <details>
+          <summary>ทำไมต้องใช้การบันทึกหน้าจอและการช่วยการเข้าถึง</summary>
+          <p>การบันทึกหน้าจอใช้จับภาพจอภาพเสมือนเพื่อส่งไปยังแท็บเล็ต การช่วยการเข้าถึงใช้แปลงการสัมผัสและปากกาบนแท็บเล็ตเป็นการป้อนข้อมูลของ Mac และเครือข่ายเฉพาะที่ใช้ค้นหาแท็บเล็ตใน Wi‑Fi เดียวกัน หน้าจอจะส่งผ่านสาย USB หรือภายใน Wi‑Fi ของคุณเท่านั้น (เข้ารหัสเมื่อใช้แบบไร้สาย) และไม่ออกไปยังอินเทอร์เน็ต</p>
+        </details>
+        <details>
+          <summary>การเชื่อมต่อขาดหายบ่อย</summary>
+          <p>ลองใช้สายอื่นที่รองรับการรับส่งข้อมูล หรือเสียบเข้ากับพอร์ตบน Mac โดยตรงแทนการใช้ฮับ แอปจะแจ้งให้ทราบก่อนเมื่อ USB เชื่อมต่อได้ช้าหรือขาดหายบ่อย หลังจากการเชื่อมต่อขาดหายช่วงสั้นๆ จอภาพเสมือนจะถูกคงไว้ 15 วินาทีและทำงานต่อจากจุดเดิม</p>
+        </details>
+        <details>
+          <summary>ถ้าแท็บเล็ตล็อกอยู่จะเป็นอย่างไร</summary>
+          <p>Mac จะปลุกหน้าจอและเปิดแอป แต่จะไม่ข้ามการล็อกเลย ปลดล็อกด้วย PIN หรือรูปแบบของคุณ แล้วแท็บเล็ตจะเชื่อมต่อทันที</p>
+        </details>
+        <details>
+          <summary>ใช้กับ Mac ที่ใช้ Intel ได้หรือไม่</summary>
+          <p>รุ่นปัจจุบันรองรับเฉพาะ Mac ที่ใช้ Apple silicon</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">ดาวน์โหลด</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 ขึ้นไป · Apple silicon · ผ่านการรับรองจาก Apple</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">มีอะไรใหม่ในเวอร์ชันนี้</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>ดาวน์โหลดสำหรับ Mac</a>
+        </div>
+        <p class="not-mac-note">แอปนี้สำหรับ Mac เปิดหน้านี้บน Mac เพื่อดาวน์โหลด <button class="link-button" type="button" data-send-link data-copied="คัดลอกลิงก์แล้ว">ส่งลิงก์ไปยัง Mac ของคุณ</button></p>
+        <p class="note">เปิดไฟล์ zip ย้ายแอปไปไว้ในโฟลเดอร์แอปพลิเคชันแล้วเปิดแอป สำหรับการเชื่อมต่อครั้งแรก ดูที่ <a href="#setup">การติดตั้ง</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">ภาษา: </span>ไทย</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th" aria-current="page">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS และ Finder เป็นเครื่องหมายการค้าของ Apple Inc. Android เป็นเครื่องหมายการค้าของ Google LLC และ Lenovo เป็นเครื่องหมายการค้าของ Lenovo</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="วิดีโอ BecomeMyScreen">
+  <button class="film-close" type="button" aria-label="ปิด" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — جهازك اللوحي بنظام Android كشاشة ثانية لجهاز Mac</title>
+  <meta name="description" content="استخدم جهازًا لوحيًا بنظام Android كشاشة ثانية لجهاز Mac. اتصل عبر USB، أو لاسلكيًا على شبكة Wi‑Fi نفسها. يثبّت تطبيق Mac تطبيق الجهاز اللوحي ويفتحه، ويبلغ التأخير المَقيس عبر USB نحو 20 إلى 25 ms.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — جهازك اللوحي بنظام Android كشاشة ثانية لجهاز Mac">
+  <meta property="og:description" content="اتصل بكبل USB، أو لاسلكيًا على شبكة Wi‑Fi نفسها. يثبّت تطبيق Mac تطبيق الجهاز اللوحي ويفتحه نيابةً عنك.">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/ar.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">الانتقال إلى المحتوى</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="في هذه الصفحة">
+      <a href="#setup">الإعداد</a>
+      <a href="#speed">السرعة</a>
+      <a href="#wireless">لاسلكي</a>
+      <a href="#quality">الجودة</a>
+      <a href="#touch">اللمس</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+    </nav>
+    <a class="button button-small" href="#download">تنزيل</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>جهازك اللوحي بنظام Android<br>شاشة ثانية لجهاز Mac.</h1>
+      <p class="lede">وصّل كبل USB ليصبح الجهاز اللوحي شاشة لجهاز Mac. افصله، وتستمر الشاشة عبر شبكة Wi‑Fi نفسها. يثبّت تطبيق Mac تطبيق الجهاز اللوحي ويفتحه، ولا حاجة إلى إنشاء حساب.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>تنزيل لأجهزة Mac</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>شاهد الفيديو<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">الإصدار <bdi dir="ltr"><span data-release="version">1.1.0</span></bdi> · <bdi dir="ltr"><span data-release="size">11.4 MB</span></bdi> · macOS 14 أو أحدث · شريحة Apple</p>
+      <p class="after-download" data-after-download hidden>افتح ملف zip، وانقل التطبيق إلى مجلد التطبيقات وافتحه. للاتصال الأول، راجع <a href="#setup">الإعداد</a>.</p>
+      <p class="not-mac-note">هذا التطبيق مخصص لأجهزة Mac. افتح هذه الصفحة على Mac لتنزيله. <button class="link-button" type="button" data-send-link data-copied="تم نسخ الرابط">أرسل الرابط إلى جهاز Mac</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="جهاز لوحي يعرض سطح مكتب Mac، مع مجلد التطبيقات في Finder ونافذة الآلة الحاسبة مفتوحين.">
+      </div>
+      <figcaption>شاشة Mac على Lenovo Pad Pro 12.7، مُلتقطة على الجهاز اللوحي نفسه.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">الإعداد</h2>
+      <div class="row-body">
+        <p class="deck">لا تُجري الإعداد إلا مرة واحدة. بعد ذلك، يؤدي توصيل الكبل إلى إضافة الشاشة، وعلى شبكة Wi‑Fi نفسها يتم الاتصال دون كبل.</p>
+        <ol class="steps">
+          <li>
+            <h3>ثبّت تطبيق Mac</h3>
+            <p>افتح ملف zip الذي نزّلته، وانقل BecomeMyScreen إلى مجلد التطبيقات وافتحه. اسمح بتسجيل الشاشة، ثم افتح التطبيق مرة أخرى.</p>
+          </li>
+          <li>
+            <h3>شغّل تصحيح أخطاء USB على الجهاز اللوحي</h3>
+            <p>في الإعدادات › لمحة عن الجهاز اللوحي، اضغط على «رقم الإصدار» سبع مرات لإظهار «خيارات المطوّرين». في Galaxy Tab، يوجد ضمن «معلومات البرنامج». ثم شغّل «تصحيح أخطاء USB» في «خيارات المطوّرين».</p>
+          </li>
+          <li>
+            <h3>وصّل الكبل</h3>
+            <p>عندما يسألك الجهاز اللوحي عمّا إذا كنت تريد السماح بتصحيح أخطاء USB، حدّد «السماح دائمًا من هذا الكمبيوتر» واضغط على «سماح». يثبّت Mac تطبيق الجهاز اللوحي ويفتحه، ثم يضيف الشاشة. لا حاجة إلى تنزيل تطبيق منفصل للجهاز اللوحي.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ar/onboarding.png" width="520" height="491" alt="نافذة الترحيب في BecomeMyScreen مع أربع خطوات: «شغّل تصحيح أخطاء USB على الجهاز اللوحي» و«السماح بتسجيل الشاشة» و«السماح بتسهيلات الاستخدام (اختياري)» و«وصّل الكبل».">
+          <figcaption>الدليل الذي يظهر عند التشغيل الأول. تظهر علامة اختيار بجانب الخطوات المكتملة.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">السرعة</h2>
+      <div class="row-body">
+        <p class="deck">الوقت المنقضي من لحظة التقاط Mac للشاشة حتى يرسمها الجهاز اللوحي. تم القياس باستخدام Lenovo Pad Pro 12.7 وجهاز Mac بشريحة M4 Pro.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">التأخير حسب حجم الفيديو ومعدل الإطارات</caption>
+            <thead>
+              <tr><th scope="col">حجم الفيديو</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>يضغط المُرمّز المادي في شريحة Apple الشاشة بتنسيق H.264 ويرسلها عبر USB، ويرسم مفكك الترميز المادي في الجهاز اللوحي كل إطار فور وصوله. عند الاتصال الأول، يقيس الوضع «تلقائي» قدرة مفكك الترميز ويختار أعلى معدل إطارات لا يتأخر معه. على هذا الجهاز اللوحي اختار 90 fps.</p>
+        <p class="note">طريقة القياس: بعد تصحيح فرق التوقيت بين ساعتي الجهازين، قسنا الوقت بين التقاط Mac لإطار ورسم الجهاز اللوحي لهذا الإطار.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">لاسلكي</h2>
+      <div class="row-body">
+        <p class="deck">يعمل الجهاز اللوحي الذي وُصّل مرة واحدة عبر USB لاسلكيًا أيضًا على شبكة Wi‑Fi نفسها. افصل الكبل أثناء العمل وتستمر الشاشة عبر Wi‑Fi.</p>
+        <dl class="specs">
+          <div>
+            <dt>الاتصال</dt>
+            <dd>افتح التطبيق على الجهاز اللوحي فيظهر في قائمة «على شبكة Wi‑Fi نفسها» في شريط القائمة على Mac. انقر على «اتصال» فتظهر الشاشة.</dd>
+          </div>
+          <div>
+            <dt>فصل الكبل</dt>
+            <dd>يتحول إلى Wi‑Fi في أقل من ثانية. تبقى الشاشة الافتراضية وترتيب النوافذ كما هما، وعند إعادة توصيل الكبل يعود إلى USB.</dd>
+          </div>
+          <div>
+            <dt>الأمان</dt>
+            <dd>لا يُتبادل مفتاح الاتصالات اللاسلكية إلا عبر كبل USB. لا يتم الاتصال إلا بعد التحقق من المفتاح، وتُشفَّر الشاشة والإدخال بالكامل باستخدام AES-256-GCM.</dd>
+          </div>
+          <div>
+            <dt>ضبط الوتيرة التكيفي</dt>
+            <dd>يؤكد الجهاز اللوحي استلام كل إطار، ويتخطى Mac من الإطارات بقدر ما تأخر ويضبط معدل البت. وحتى عندما تتباطأ شبكة Wi‑Fi للحظة، لا يتراكم التأخير.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ar/panel-wifi.png" width="320" height="324" alt="لوحة شريط القائمة على Mac تعرض «وصّل جهازًا لوحيًا»، مع Lenovo Pad Pro 12.7 وزر «اتصال» في قائمة «على شبكة Wi‑Fi نفسها».">
+            <figcaption>افتح التطبيق على الجهاز اللوحي فيظهر في القائمة</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/ar/panel-wifi-live.png" width="320" height="271" alt="لوحة شريط القائمة على Mac: Lenovo Pad Pro 12.7، Wi‑Fi، 2560×1600 Retina، 90 Hz، 52 fps، 11.0 Mbps، 48 ms.">
+            <figcaption>قيد الاستخدام عبر Wi‑Fi · تم القياس على شبكة Wi‑Fi بتردد 5 GHz</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">التأخير حسب نوع الاتصال</caption>
+            <thead>
+              <tr><th scope="col">الاتصال</th><th scope="col" class="num">التأخير</th><th scope="col">ملاحظات</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">نحو 20 إلى 25 ms</td><td>أقصى معدل إطارات للجهاز اللوحي</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">من 40 إلى 55 ms</td><td>60 fps؛ يرتفع معدل البت تلقائيًا حتى إعداد الجودة</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">من 40 إلى 65 ms</td><td>يقفز التأخير أحيانًا إلى أكثر من 100 ms، مما قد يبدو تقطعًا</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">تم القياس باستخدام Lenovo Pad Pro 12.7 بدقة 2560×1600 مع محتوى متغير باستمرار. إذا كان الجهاز اللوحي على شبكة Wi‑Fi بتردد 2.4 GHz، يقترح التطبيق التبديل إلى 5 GHz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">الجودة والاستجابة</h2>
+      <div class="row-body">
+        <p class="deck">اختر إحدى الدرجات الخمس أو اتركه على «تلقائي». غيّره من شريط القائمة على Mac أو من قائمة الجهاز اللوحي، فيتغير الجانبان معًا.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">معدل الإطارات وحجم الفيديو ومعدل البت لكل إعداد مسبق</caption>
+            <thead>
+              <tr><th scope="col">الإعداد المسبق</th><th scope="col">معدل الإطارات</th><th scope="col">حجم الفيديو</th><th scope="col">معدل البت</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>تلقائي</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>أسرع استجابة</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>استجابة سريعة</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>متوازن</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>جودة عالية</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>أفضل جودة</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">تم القياس باستخدام Lenovo Pad Pro 12.7 (2560×1600، 120 Hz) عبر USB على جهاز Mac بشريحة M4 Pro. كل إعداد مسبق هو هدف: على أجهزة Mac أو أجهزة لوحية أخرى، وعبر Wi‑Fi، يحسب قيمه بنفسه من نتائج القياس. و«تلقائي» هو نفسه «متوازن».</p>
+        <p>يُضبط حجم الفيديو بشكل منفصل عن الدقة التي يراها Mac. ويملأ الفيديو الأصغر شاشة الجهاز اللوحي مع ذلك، ويخفف العبء عن مفكك الترميز ويقلل التأخير بالقدر نفسه.</p>
+        <p>عند الاتصال الأول، يقيس التطبيق خلال نحو 10 ثوانٍ الكبل ومُرمّز الفيديو في جهاز Mac هذا ومفكك ترميز الجهاز اللوحي في كل أوضاعه؛ وعند أول اتصال عبر Wi‑Fi، يقيس الشبكة. ويُضبط كل إعداد مسبق وفق هذه النتائج، بشكل منفصل للكبل ولشبكة Wi‑Fi، ويمكنك في إعدادات «متقدم» تثبيت أي قيمة لكل اتصال على حدة. وإذا كان الكبل بطيئًا، يُطلب منك استبداله.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/ar/panel.png" width="320" height="271" alt="لوحة شريط القائمة على Mac: Lenovo Pad Pro 12.7، 2560×1600 Retina، 90 Hz، 61 fps، 13.4 Mbps، 31 ms. «الجودة والسرعة» مضبوطة على «تلقائي».">
+            <figcaption>Mac · لوحة شريط القائمة</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/ar/tablet-menu.png" width="360" height="366" alt="قائمة الجهاز اللوحي مع أرقام مباشرة (معدل الإطارات، ومعدل البت، والتأخير، ومعدل التحديث)، و«الجودة والسرعة» مضبوطة على «تلقائي»، و«التحكم في Mac باللمس» قيد التشغيل.">
+            <figcaption>الجهاز اللوحي · القائمة التي تُفتح بالضغط بثلاثة أصابع</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/ar/settings.png" width="560" height="303" alt="علامة التبويب «الجودة» في نافذة الإعدادات: الإعداد المسبق والدقة، ثم ما يستخدمه كلٌّ من اتصالَي USB وWi‑Fi في البث: برنامج الترميز، وحجم الفيديو، ومعدل الإطارات، ومعدل البت، والتأخير المتوقع.">
+          <figcaption>بدلًا من الإعداد المسبق، يمكنك أيضًا ضبط الدقة ومعدل الإطارات وحجم الفيديو ومعدل البت كلٍّ على حدة.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">اللمس</h2>
+      <div class="row-body">
+        <p class="deck">المس الجهاز اللوحي فيستقبل Mac ذلك كإدخال من الماوس. يعمل ذلك بمجرد السماح بتسهيلات الاستخدام على Mac.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">إيماءات الجهاز اللوحي وما تفعله على Mac</caption>
+            <thead>
+              <tr><th scope="col">على الجهاز اللوحي</th><th scope="col">على Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">ضغطة</th><td>نقرة</td></tr>
+              <tr><th scope="row">سحب</th><td>سحب</td></tr>
+              <tr><th scope="row">السحب بإصبعين</th><td>تمرير</td></tr>
+              <tr><th scope="row">الضغط بإصبعين</th><td>نقر بزر الماوس الأيمن</td></tr>
+              <tr><th scope="row">الضغط بثلاثة أصابع</th><td>يفتح قائمة الجهاز اللوحي</td></tr>
+              <tr><th scope="row">الرسم بالقلم</th><td>يصل إلى Mac كإدخال من لوح رسم، مع الضغط والميل</td></tr>
+              <tr><th scope="row">التحويم بالقلم أو الماوس فوق الشاشة</th><td>يحرّك المؤشر. المس الشاشة مع الضغط على زر القلم للنقر بزر الماوس الأيمن</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>مؤشر يعود إلى مكانه</h3>
+        <p>عندما تلمس الجهاز اللوحي، ينتقل مؤشر Mac إلى تلك النقطة. حرّك الماوس قليلًا بعد ذلك فيعود المؤشر إلى مكانه قبل اللمس، فلا تحتاج إلى سحبه مرة أخرى إلى ما كنت تعمل عليه في الشاشة الرئيسية. يمكنك إيقاف ذلك في الإعدادات.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">التفاصيل</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>أيقونة شريط القائمة</dt>
+            <dd>
+              لا تظهر إلا أثناء اتصال جهاز لوحي. عندما تكون مخفية، افتح التطبيق مرة أخرى فتظهر للحظات مع فتح لوحتها.
+              <ul class="glyphs" aria-label="حالات أيقونة شريط القائمة الأربع">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>في الانتظار</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>جارٍ التجهيز</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>قيد الاستخدام</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>يحتاج إلى انتباه</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>فتح تطبيق الجهاز اللوحي</dt>
+            <dd>إذا لم يكن تطبيق الجهاز اللوحي قيد التشغيل عند توصيل الكبل، يفتحه Mac، ويوقظ الشاشة إذا كانت مُطفأة. ولا يتجاوز شاشة القفل أبدًا.</dd>
+          </div>
+          <div>
+            <dt>التحديثات</dt>
+            <dd>يبحث تطبيق Mac عن الإصدارات الجديدة ويحدّث نفسه متى اخترت ذلك. وإذا جاء بتطبيق أحدث للجهاز اللوحي، يُحدَّث الجهاز اللوحي عبر الكبل قبل بدء الشاشة.</dd>
+          </div>
+          <div>
+            <dt>الوضع الرأسي</dt>
+            <dd>أدِر الجهاز اللوحي إلى الوضع الرأسي فيُعاد إنشاء الشاشة الافتراضية في الوضع الرأسي أيضًا.</dd>
+          </div>
+          <div>
+            <dt>معدل التحديث ومهلة الشاشة</dt>
+            <dd>أثناء البث، يُثبَّت معدل تحديث الجهاز اللوحي حتى لا ينخفض إلى 60 Hz، ولا تنطفئ الشاشة.</dd>
+          </div>
+          <div>
+            <dt>فحص الكبل</dt>
+            <dd>إذا اتصل USB بسرعة أقل من 480 Mbps، أو بقي النقل دون 8 MB/s، أو انقطع الاتصال ثلاث مرات خلال ثلاث دقائق، يقترح التطبيق تجربة كبل أو منفذ آخر.</dd>
+          </div>
+          <div>
+            <dt>عند انقطاع الاتصال</dt>
+            <dd>إذا انفصل الكبل، تستمر الشاشة عبر Wi‑Fi. وإذا تعذّر الاستمرار لاسلكيًا، تُحفظ الشاشة الافتراضية لفترة قصيرة، وإذا أعاد الجهاز اللوحي الاتصال خلالها، يبقى ترتيب النوافذ كما كان.</dd>
+          </div>
+          <div>
+            <dt>قطع الاتصال وإعادة الاتصال</dt>
+            <dd>انقر على «قطع الاتصال» في شريط القائمة فتُوضع شاشة الجهاز اللوحي جانبًا، حتى مع بقاء الكبل موصولًا. انقر على «إعادة الاتصال» للمتابعة.</dd>
+          </div>
+          <div>
+            <dt>يُغلق تطبيق الجهاز اللوحي نفسه</dt>
+            <dd>عندما لا يكون أي شيء موصولًا بالجهاز اللوحي، ولا حتى شاحن، يُغلق تطبيق الجهاز اللوحي نفسه بعد 10 ثوانٍ. وإذا كان بإمكانه انتظار اتصال لاسلكي بدلًا من ذلك، فإنه ينتظر دقيقتين.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">المتطلبات</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>جهاز Mac بشريحة Apple، وmacOS 14 أو أحدث</dd></div>
+          <div><dt>الجهاز اللوحي</dt><dd>Android 8.0 أو أحدث، على جهاز يمكن تشغيل تصحيح أخطاء USB فيه</dd></div>
+          <div><dt>الكبل</dt><dd>كبل USB يدعم نقل البيانات. لن تتصل كبلات الشحن فقط. المنفذ الموجود في Mac نفسه أكثر موثوقية من الموزّع.</dd></div>
+          <div><dt>لاسلكي</dt><dd>يجب أن يكون Mac والجهاز اللوحي على شبكة Wi‑Fi نفسها؛ ويُوصى بتردد 5 GHz. ويجب أن يكون الاتصال الأول عبر USB.</dd></div>
+          <div><dt>أذونات Mac</dt><dd>تسجيل الشاشة. وأيضًا تسهيلات الاستخدام للتحكم في Mac باللمس، والشبكة المحلية للاستخدام اللاسلكي.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">الأسئلة الشائعة</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>هل أحتاج إلى تثبيت تطبيق على الجهاز اللوحي؟</summary>
+          <p>لا. يأتي تطبيق الجهاز اللوحي داخل تطبيق Mac، لذا عند توصيل الكبل يثبّته Mac ويفتحه. وعند تحديث تطبيق Mac، يُحدَّث تطبيق الجهاز اللوحي معه في الاتصال التالي.</p>
+        </details>
+        <details>
+          <summary>هل يعمل عبر Wi‑Fi؟</summary>
+          <p>نعم. بعد الاتصال مرة واحدة عبر USB، يتصل لاسلكيًا على شبكة Wi‑Fi نفسها من ذلك الحين. افتح التطبيق على الجهاز اللوحي وانقر على «اتصال» في شريط القائمة على Mac، أو افصل الكبل ببساطة أثناء الاستخدام. التأخير أعلى قليلًا منه عبر USB (من 40 إلى 55 ms على تردد 5 GHz)، وقد تتقطع الصورة أحيانًا على Wi‑Fi بتردد 2.4 GHz، لذا يُوصى بتردد 5 GHz.</p>
+        </details>
+        <details>
+          <summary>لماذا يجب أن يكون الاتصال الأول عبر USB؟</summary>
+          <p>لأن مفتاح الاتصالات اللاسلكية لا يُتبادل إلا عبر الكبل. وبهذه الطريقة، لا يمكن لأي جهاز آخر على شبكة Wi‑Fi نفسها انتحال صفة جهازك اللوحي والاتصال بجهاز Mac. ويُثبَّت تطبيق الجهاز اللوحي في تلك المرحلة أيضًا.</p>
+        </details>
+        <details>
+          <summary>هل يعمل ضغط القلم؟</summary>
+          <p>نعم. يصل ضغط القلم وميله إلى macOS كإدخال من لوح رسم (الضغط والميل والقرب). ويستخدم إدخال القلم القياسي في Android، لذا لا يحتاج S Pen وأقلام Lenovo إلى أي SDK أو برنامج تشغيل إضافي. تم الاختبار باستخدام قلم Lenovo Pad Pro 12.7.</p>
+        </details>
+        <details>
+          <summary>ما الأجهزة اللوحية التي يعمل معها؟</summary>
+          <p>أي جهاز لوحي بنظام Android 8.0 أو أحدث يمكن تشغيل تصحيح أخطاء USB فيه. تم التطوير والقياس على Lenovo Pad Pro 12.7 (2944×1840، 120 Hz)؛ ولم تُختبر الأجهزة الأخرى مباشرةً بعد. وتتبع دقة الشاشة الافتراضية واتجاهها شاشةَ الجهاز اللوحي عند اتصاله.</p>
+        </details>
+        <details>
+          <summary>لماذا لا يتوفر في App Store؟</summary>
+          <p>يعتمد إنشاء الشاشة الافتراضية على ميزة خاصة في macOS، لذا لا يمكن نشره في App Store. وبدلًا من ذلك، التطبيق موقّع بشهادة مطوّر من Apple وموثّق من Apple، لذا يُفتح مباشرة بعد تنزيله.</p>
+        </details>
+        <details>
+          <summary>لماذا يحتاج إلى تسجيل الشاشة وتسهيلات الاستخدام؟</summary>
+          <p>يلتقط تسجيل الشاشة الشاشة الافتراضية لإرسالها إلى الجهاز اللوحي، وتحوّل تسهيلات الاستخدام لمسات الجهاز اللوحي والقلم إلى إدخال على Mac، وتعثر الشبكة المحلية على الأجهزة اللوحية على شبكة Wi‑Fi نفسها. لا تنتقل الشاشة إلا عبر كبل USB أو داخل شبكة Wi‑Fi الخاصة بك (مشفّرة عند الاتصال اللاسلكي)، ولا تخرج إلى الإنترنت أبدًا.</p>
+        </details>
+        <details>
+          <summary>ينقطع الاتصال باستمرار.</summary>
+          <p>جرّب كبلًا آخر يدعم نقل البيانات، أو وصّله مباشرة بمنفذ في Mac بدلًا من الموزّع. ينبّهك التطبيق أولًا عندما يتصل USB ببطء أو ينقطع كثيرًا. وبعد انقطاع قصير، تُحفظ الشاشة الافتراضية لمدة 15 ثانية وتُستأنف من حيث توقفت.</p>
+        </details>
+        <details>
+          <summary>ماذا لو كان الجهاز اللوحي مقفلًا؟</summary>
+          <p>يوقظ Mac الشاشة ويفتح التطبيق، لكنه لا يتجاوز القفل أبدًا. افتح القفل باستخدام رمز PIN أو النقش وسيتم الاتصال فورًا.</p>
+        </details>
+        <details>
+          <summary>هل يعمل على أجهزة Mac بمعالج Intel؟</summary>
+          <p>الإصدار الحالي مخصص لأجهزة Mac بشريحة Apple فقط.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">تنزيل</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <bdi dir="ltr"><span data-release="version">1.1.0</span></bdi></p>
+            <p class="meta"><bdi dir="ltr"><span data-release="size">11.4 MB</span></bdi> · macOS 14 أو أحدث · شريحة Apple · موثّق من Apple</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">ما الجديد في هذا الإصدار</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>تنزيل لأجهزة Mac</a>
+        </div>
+        <p class="not-mac-note">هذا التطبيق مخصص لأجهزة Mac. افتح هذه الصفحة على Mac لتنزيله. <button class="link-button" type="button" data-send-link data-copied="تم نسخ الرابط">أرسل الرابط إلى جهاز Mac</button></p>
+        <p class="note">افتح ملف zip، وانقل التطبيق إلى مجلد التطبيقات وافتحه. للاتصال الأول، راجع <a href="#setup">الإعداد</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">اللغة: </span>العربية</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar" aria-current="page">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple وMac وmacOS وFinder علامات تجارية لشركة Apple Inc. وAndroid علامة تجارية لشركة Google LLC. وLenovo علامة تجارية لشركة Lenovo.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="فيديو BecomeMyScreen">
+  <button class="film-close" type="button" aria-label="إغلاق" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — Tablet Android Anda sebagai layar kedua untuk Mac</title>
+  <meta name="description" content="Gunakan tablet Android sebagai layar kedua untuk Mac Anda. Sambungkan melalui USB, atau secara nirkabel di Wi‑Fi yang sama. Aplikasi Mac menginstal dan membuka aplikasi tablet, dan latensi terukur melalui USB sekitar 20–25 ms.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — Tablet Android Anda sebagai layar kedua untuk Mac">
+  <meta property="og:description" content="Sambungkan dengan kabel USB, atau secara nirkabel di Wi‑Fi yang sama. Aplikasi Mac menginstal dan membuka aplikasi tablet untuk Anda.">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/id.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Lompat ke konten</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="Di halaman ini">
+      <a href="#setup">Penyiapan</a>
+      <a href="#speed">Kecepatan</a>
+      <a href="#wireless">Nirkabel</a>
+      <a href="#quality">Kualitas</a>
+      <a href="#touch">Sentuhan</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="button button-small" href="#download">Unduh</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Tablet Android Anda<br>sebagai layar kedua untuk Mac.</h1>
+      <p class="lede">Colokkan kabel USB, dan tablet menjadi layar untuk Mac Anda. Cabut kabelnya, dan layar tetap berlanjut melalui Wi‑Fi yang sama. Aplikasi Mac menginstal dan membuka aplikasi tablet, dan Anda tidak perlu membuat akun.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Unduh untuk Mac</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Tonton video<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">Versi <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 atau lebih baru · Apple silicon</p>
+      <p class="after-download" data-after-download hidden>Buka file zip, pindahkan aplikasi ke folder Aplikasi, lalu buka. Untuk sambungan pertama, lihat <a href="#setup">Penyiapan</a>.</p>
+      <p class="not-mac-note">Aplikasi ini untuk Mac. Buka halaman ini di Mac untuk mengunduhnya. <button class="link-button" type="button" data-send-link data-copied="Tautan disalin">Kirim tautan ke Mac Anda</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Tablet yang menampilkan desktop Mac, dengan folder Aplikasi di Finder dan jendela Kalkulator terbuka.">
+      </div>
+      <figcaption>Layar Mac di Lenovo Pad Pro 12.7, direkam langsung di tablet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">Penyiapan</h2>
+      <div class="row-body">
+        <p class="deck">Anda hanya perlu menyiapkannya sekali. Setelah itu, mencolokkan kabel akan menambahkan layar, dan di Wi‑Fi yang sama tablet tersambung tanpa kabel.</p>
+        <ol class="steps">
+          <li>
+            <h3>Instal aplikasi Mac</h3>
+            <p>Buka file zip yang diunduh, pindahkan BecomeMyScreen ke folder Aplikasi, lalu buka. Izinkan Perekaman Layar, lalu buka aplikasi sekali lagi.</p>
+          </li>
+          <li>
+            <h3>Aktifkan proses debug USB di tablet</h3>
+            <p>Di Setelan › Tentang tablet, ketuk Nomor build tujuh kali untuk membuka Opsi developer. Di Galaxy Tab, nomor ini ada di Informasi perangkat lunak. Lalu aktifkan Proses debug USB di Opsi developer.</p>
+          </li>
+          <li>
+            <h3>Sambungkan kabel</h3>
+            <p>Saat tablet menanyakan apakah proses debug USB diizinkan, centang “Selalu izinkan dari komputer ini” dan ketuk “Izinkan”. Mac menginstal dan membuka aplikasi tablet, lalu menambahkan layar. Tidak ada aplikasi tablet terpisah yang perlu diunduh.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/id/onboarding.png" width="520" height="495" alt="Jendela sambutan BecomeMyScreen dengan empat langkah: aktifkan proses debug USB di tablet, izinkan Perekaman Layar, izinkan Aksesibilitas (opsional), dan sambungkan kabel.">
+          <figcaption>Panduan yang muncul saat pertama kali dibuka. Langkah yang selesai diberi tanda centang.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">Kecepatan</h2>
+      <div class="row-body">
+        <p class="deck">Waktu sejak Mac merekam layar hingga tablet menampilkannya. Diukur dengan Lenovo Pad Pro 12.7 dan Mac dengan M4 Pro.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">Latensi menurut ukuran video dan frame rate</caption>
+            <thead>
+              <tr><th scope="col">Ukuran video</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Encoder perangkat keras di Apple silicon mengompresi layar ke H.264 dan mengirimkannya melalui USB, lalu dekoder perangkat keras tablet menampilkan setiap frame begitu tiba. Pada sambungan pertama, mode Otomatis mengukur seberapa banyak yang dapat ditangani dekoder dan memilih frame rate tertinggi yang tidak tertinggal. Di tablet ini, yang dipilih adalah 90 fps.</p>
+        <p class="note">Cara pengukuran: setelah mengoreksi selisih jam kedua perangkat, kami mengukur waktu antara Mac merekam sebuah frame dan tablet menampilkan frame tersebut.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">Nirkabel</h2>
+      <div class="row-body">
+        <p class="deck">Tablet yang pernah tersambung melalui USB juga dapat digunakan secara nirkabel di Wi‑Fi yang sama. Cabut kabel saat Anda bekerja, dan layar tetap berlanjut melalui Wi‑Fi.</p>
+        <dl class="specs">
+          <div>
+            <dt>Menyambungkan</dt>
+            <dd>Buka aplikasi di tablet, dan tablet muncul di daftar “Di Wi‑Fi yang sama” pada bar menu Mac. Klik “Sambungkan”, dan layar pun tampil.</dd>
+          </div>
+          <div>
+            <dt>Mencabut kabel</dt>
+            <dd>Sambungan beralih ke Wi‑Fi dalam satu detik. Layar virtual dan tata letak jendela Anda tetap seperti semula, dan mencolokkan kembali kabel akan kembali ke USB.</dd>
+          </div>
+          <div>
+            <dt>Keamanan</dt>
+            <dd>Kunci untuk sambungan nirkabel hanya dipertukarkan melalui kabel USB. Sambungan hanya dibuat setelah kunci terverifikasi, dan layar serta input seluruhnya dienkripsi dengan AES-256-GCM.</dd>
+          </div>
+          <div>
+            <dt>Pengaturan tempo adaptif</dt>
+            <dd>Tablet mengonfirmasi setiap frame yang diterima, dan Mac melewati frame sebanyak ketertinggalannya serta menyesuaikan bitrate. Bahkan saat Wi‑Fi melambat sesaat, penundaan tidak menumpuk.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/id/panel-wifi.png" width="320" height="326" alt="Panel bar menu Mac bertuliskan “Sambungkan tablet”, dengan Lenovo Pad Pro 12.7 dan tombol “Sambungkan” di daftar “Di Wi‑Fi yang sama”.">
+            <figcaption>Buka aplikasi di tablet, dan tablet muncul di daftar</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/id/panel-wifi-live.png" width="320" height="259" alt="Panel bar menu Mac: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11,0 Mbps, 48 ms.">
+            <figcaption>Digunakan melalui Wi‑Fi · diukur di Wi‑Fi 5 GHz</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">Latensi menurut jenis sambungan</caption>
+            <thead>
+              <tr><th scope="col">Sambungan</th><th scope="col" class="num">Latensi</th><th scope="col">Catatan</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">Sekitar 20–25 ms</td><td>Frame rate maksimum tablet</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; bitrate naik otomatis hingga batas pengaturan kualitas</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>Latensi terkadang melonjak di atas 100 ms, yang dapat terlihat seperti tersendat</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Diukur dengan Lenovo Pad Pro 12.7 pada 2560×1600 dengan konten yang terus berubah. Jika tablet menggunakan Wi‑Fi 2,4 GHz, aplikasi menyarankan untuk beralih ke 5 GHz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">Kualitas dan respons</h2>
+      <div class="row-body">
+        <p class="deck">Pilih salah satu dari lima tingkat atau biarkan di Otomatis. Ubah dari bar menu Mac atau dari menu tablet, dan kedua sisi berubah bersamaan.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">Frame rate, ukuran video, dan bitrate untuk setiap preset</caption>
+            <thead>
+              <tr><th scope="col">Preset</th><th scope="col">Frame rate</th><th scope="col">Ukuran video</th><th scope="col">Bitrate</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>Otomatis</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>Respons tercepat</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>Respons cepat</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>Seimbang</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>Kualitas tinggi</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>Kualitas terbaik</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Diukur dengan Lenovo Pad Pro 12.7 (2560×1600, 120 Hz) yang tersambung melalui USB ke Mac dengan M4 Pro. Setiap preset adalah target: di Mac atau tablet lain, dan melalui Wi‑Fi, preset menentukan nilainya sendiri dari hasil pengukuran. Preset Otomatis sama dengan Seimbang.</p>
+        <p>Ukuran video diatur terpisah dari resolusi yang dilihat Mac. Video yang lebih kecil tetap memenuhi layar tablet, serta meringankan beban dekoder dan mengurangi latensi sebanding dengan itu.</p>
+        <p>Pada sambungan pertama, aplikasi mengukur kabel, encoder video Mac ini, dan dekoder tablet dalam setiap modenya, dalam waktu sekitar 10 detik; saat pertama kali tersambung melalui Wi‑Fi, aplikasi mengukur jaringan. Setiap preset disesuaikan dengan angka-angka ini, secara terpisah untuk kabel dan Wi‑Fi, dan di pengaturan Lanjutan, Anda dapat menetapkan nilai apa pun untuk setiap sambungan. Jika kabel lambat, Anda akan diminta untuk menggantinya.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/id/panel.png" width="320" height="259" alt="Panel bar menu Mac: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13,4 Mbps, 31 ms. Kualitas dan kecepatan diatur ke Otomatis.">
+            <figcaption>Mac · panel bar menu</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/id/tablet-menu.png" width="360" height="354" alt="Menu tablet dengan angka langsung (frame rate, bitrate, latensi, kecepatan refresh), kualitas dan kecepatan diatur ke Otomatis, dan kontrol Mac dengan sentuhan dinyalakan.">
+            <figcaption>Tablet · menu yang terbuka dengan ketukan tiga jari</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/id/settings.png" width="560" height="292" alt="Tab Kualitas di jendela Pengaturan: preset dan resolusi, lalu apa yang digunakan setiap sambungan, USB dan Wi‑Fi, untuk streaming: codec, ukuran video, frame rate, bitrate, dan perkiraan latensi.">
+          <figcaption>Selain memakai preset, Anda juga dapat mengatur resolusi, frame rate, ukuran video, dan bitrate satu per satu.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">Sentuhan</h2>
+      <div class="row-body">
+        <p class="deck">Sentuh tablet, dan Mac menerimanya sebagai input mouse. Fitur ini aktif setelah Anda mengizinkan Aksesibilitas di Mac.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">Gerakan di tablet dan hasilnya di Mac</caption>
+            <thead>
+              <tr><th scope="col">Di tablet</th><th scope="col">Di Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Ketuk</th><td>Klik</td></tr>
+              <tr><th scope="row">Seret</th><td>Seret</td></tr>
+              <tr><th scope="row">Seret dengan dua jari</th><td>Gulir</td></tr>
+              <tr><th scope="row">Ketuk dengan dua jari</th><td>Klik kanan</td></tr>
+              <tr><th scope="row">Ketuk dengan tiga jari</th><td>Membuka menu tablet</td></tr>
+              <tr><th scope="row">Menggambar dengan pena</th><td>Diterima di Mac sebagai input tablet grafis, lengkap dengan tekanan dan kemiringan</td></tr>
+              <tr><th scope="row">Arahkan pena atau mouse di atas layar</th><td>Menggerakkan penunjuk. Sentuh sambil menahan tombol pena untuk klik kanan</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Penunjuk yang kembali ke tempat semula</h3>
+        <p>Saat Anda menyentuh tablet, penunjuk Mac berpindah ke titik tersebut. Gerakkan mouse sedikit setelahnya, dan penunjuk kembali ke posisinya sebelum sentuhan, sehingga Anda tidak perlu menyeretnya kembali ke pekerjaan di layar utama. Anda dapat mematikannya di Pengaturan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">Detail</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>Ikon bar menu</dt>
+            <dd>
+              Ikon hanya tampil saat tablet tersambung. Jika tersembunyi, buka aplikasi lagi dan ikon muncul sebentar dengan panelnya terbuka.
+              <ul class="glyphs" aria-label="Empat status ikon bar menu">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>Menunggu</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>Bersiap</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>Sedang digunakan</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>Perlu perhatian</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Membuka aplikasi tablet</dt>
+            <dd>Jika aplikasi tablet tidak berjalan saat Anda mencolokkan kabel, Mac membukanya, dan membangunkan layar jika mati. Layar kunci tidak pernah dilewati.</dd>
+          </div>
+          <div>
+            <dt>Pembaruan</dt>
+            <dd>Aplikasi Mac memeriksa versi baru dan memperbarui dirinya saat Anda memilih. Jika membawa aplikasi tablet yang lebih baru, tablet diperbarui melalui kabel sebelum layar dimulai.</dd>
+          </div>
+          <div>
+            <dt>Potret</dt>
+            <dd>Putar tablet ke posisi potret, dan layar virtual juga dibuat ulang dalam orientasi potret.</dd>
+          </div>
+          <div>
+            <dt>Kecepatan refresh dan waktu layar mati</dt>
+            <dd>Selama streaming, kecepatan refresh tablet ditahan agar tidak turun ke 60 Hz, dan layar tidak mati.</dd>
+          </div>
+          <div>
+            <dt>Pemeriksaan kabel</dt>
+            <dd>Jika USB tersambung di bawah 480 Mbps, transfer tetap di bawah 8 MB/s, atau sambungan terputus tiga kali dalam tiga menit, aplikasi menyarankan untuk mencoba kabel atau port lain.</dd>
+          </div>
+          <div>
+            <dt>Saat sambungan terputus</dt>
+            <dd>Jika kabel tercabut, layar berlanjut melalui Wi‑Fi. Jika tidak bisa berlanjut secara nirkabel, layar virtual dipertahankan sebentar, dan jika tablet tersambung lagi dalam waktu itu, tata letak jendela Anda tetap seperti semula.</dd>
+          </div>
+          <div>
+            <dt>“Putuskan” dan “Sambungkan lagi”</dt>
+            <dd>Klik “Putuskan” di bar menu, dan layar tablet dikesampingkan, meskipun kabel masih tercolok. Klik “Sambungkan lagi” untuk melanjutkan.</dd>
+          </div>
+          <div>
+            <dt>Aplikasi tablet menutup sendiri</dt>
+            <dd>Jika tidak ada apa pun yang tercolok ke tablet, bahkan pengisi daya, aplikasi tablet menutup sendiri setelah 10 detik. Jika aplikasi dapat menunggu sambungan nirkabel, aplikasi menunggu selama 2 menit.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">Persyaratan</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Mac dengan Apple silicon, macOS 14 atau lebih baru</dd></div>
+          <div><dt>Tablet</dt><dd>Android 8.0 atau lebih baru, pada perangkat yang proses debug USB-nya dapat diaktifkan</dd></div>
+          <div><dt>Kabel</dt><dd>Kabel USB yang mendukung transfer data. Kabel khusus pengisian daya tidak dapat tersambung. Port pada Mac sendiri lebih andal daripada hub.</dd></div>
+          <div><dt>Nirkabel</dt><dd>Mac dan tablet harus berada di Wi‑Fi yang sama; 5 GHz disarankan. Sambungan pertama harus melalui USB.</dd></div>
+          <div><dt>Izin di Mac</dt><dd>Perekaman Layar. Juga Aksesibilitas untuk mengontrol Mac dengan sentuhan, dan Jaringan Lokal untuk penggunaan nirkabel.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">Pertanyaan umum</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>Apakah saya perlu menginstal aplikasi di tablet?</summary>
+          <p>Tidak. Aplikasi tablet sudah ada di dalam aplikasi Mac, jadi saat Anda mencolokkan kabel, Mac menginstal dan membukanya. Saat Anda memperbarui aplikasi Mac, aplikasi tablet ikut diperbarui pada sambungan berikutnya.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa melalui Wi‑Fi?</summary>
+          <p>Ya. Setelah Anda menyambungkan sekali melalui USB, selanjutnya tablet tersambung secara nirkabel di Wi‑Fi yang sama. Buka aplikasi di tablet lalu klik “Sambungkan” di bar menu Mac, atau cukup cabut kabel saat sedang digunakan. Latensinya sedikit lebih tinggi daripada USB (40–55 ms di 5 GHz), dan Wi‑Fi 2,4 GHz sesekali dapat tersendat, jadi 5 GHz disarankan.</p>
+        </details>
+        <details>
+          <summary>Mengapa sambungan pertama harus melalui USB?</summary>
+          <p>Karena kunci untuk sambungan nirkabel hanya dipertukarkan melalui kabel. Dengan begitu, tidak ada perangkat lain di Wi‑Fi yang sama yang dapat menyamar sebagai tablet Anda dan tersambung ke Mac Anda. Aplikasi tablet juga diinstal pada saat itu.</p>
+        </details>
+        <details>
+          <summary>Apakah tekanan pena berfungsi?</summary>
+          <p>Ya. Tekanan dan kemiringan pena diterima macOS sebagai input tablet grafis (tekanan, kemiringan, dan kedekatan). Aplikasi ini menggunakan input stylus standar Android, jadi S Pen dan pena Lenovo tidak memerlukan SDK atau driver tambahan. Diuji dengan pena untuk Lenovo Pad Pro 12.7.</p>
+        </details>
+        <details>
+          <summary>Tablet apa saja yang didukung?</summary>
+          <p>Tablet apa pun dengan Android 8.0 atau lebih baru yang proses debug USB-nya dapat diaktifkan. Pengembangan dan pengukuran dilakukan di Lenovo Pad Pro 12.7 (2944×1840, 120 Hz); perangkat lain belum diuji secara langsung. Resolusi dan orientasi layar virtual mengikuti layar tablet saat tersambung.</p>
+        </details>
+        <details>
+          <summary>Mengapa tidak ada di App Store?</summary>
+          <p>Pembuatan layar virtual mengandalkan fitur privat macOS, jadi aplikasi ini tidak dapat diterbitkan di App Store. Sebagai gantinya, aplikasi ditandatangani dengan sertifikat pengembang Apple dan dinotarisasi oleh Apple, sehingga langsung dapat dibuka setelah diunduh.</p>
+        </details>
+        <details>
+          <summary>Mengapa diperlukan Perekaman Layar dan Aksesibilitas?</summary>
+          <p>Perekaman Layar merekam layar virtual untuk dikirim ke tablet, Aksesibilitas mengubah sentuhan dan pena di tablet menjadi input Mac, dan Jaringan Lokal menemukan tablet di Wi‑Fi yang sama. Layar hanya dikirim melalui kabel USB atau di dalam Wi‑Fi Anda (dienkripsi saat nirkabel), dan tidak pernah keluar ke internet.</p>
+        </details>
+        <details>
+          <summary>Sambungan terus terputus.</summary>
+          <p>Coba kabel lain yang mendukung transfer data, atau colokkan langsung ke port di Mac, bukan ke hub. Aplikasi memberi tahu Anda lebih dulu jika USB tersambung lambat atau sering terputus. Setelah terputus sebentar, layar virtual dipertahankan selama 15 detik dan berlanjut dari titik terakhir.</p>
+        </details>
+        <details>
+          <summary>Bagaimana jika tablet terkunci?</summary>
+          <p>Mac membangunkan layar dan membuka aplikasi, tetapi tidak pernah melewati kunci. Buka kunci dengan PIN atau pola Anda, dan tablet langsung tersambung.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa di Mac Intel?</summary>
+          <p>Versi saat ini hanya untuk Mac dengan Apple silicon.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">Unduh</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 atau lebih baru · Apple silicon · Dinotarisasi oleh Apple</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">Yang baru di versi ini</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Unduh untuk Mac</a>
+        </div>
+        <p class="not-mac-note">Aplikasi ini untuk Mac. Buka halaman ini di Mac untuk mengunduhnya. <button class="link-button" type="button" data-send-link data-copied="Tautan disalin">Kirim tautan ke Mac Anda</button></p>
+        <p class="note">Buka file zip, pindahkan aplikasi ke folder Aplikasi, lalu buka. Untuk sambungan pertama, lihat <a href="#setup">Penyiapan</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">Bahasa: </span>Bahasa Indonesia</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id" aria-current="page">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS, dan Finder adalah merek dagang Apple Inc. Android adalah merek dagang Google LLC. Lenovo adalah merek dagang Lenovo.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="Video BecomeMyScreen">
+  <button class="film-close" type="button" aria-label="Tutup" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

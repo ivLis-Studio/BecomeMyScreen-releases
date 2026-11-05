@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="vi" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — Máy tính bảng Android làm màn hình thứ hai cho máy Mac</title>
+  <meta name="description" content="Dùng máy tính bảng Android làm màn hình thứ hai cho máy Mac. Kết nối qua USB hoặc không dây trên cùng Wi‑Fi. Ứng dụng Mac tự cài đặt và mở ứng dụng máy tính bảng; độ trễ đo được qua USB khoảng 20–25 ms.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — Máy tính bảng Android làm màn hình thứ hai cho máy Mac">
+  <meta property="og:description" content="Kết nối bằng cáp USB hoặc không dây trên cùng Wi‑Fi. Ứng dụng Mac sẽ cài đặt và mở ứng dụng máy tính bảng cho bạn.">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/vi.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Chuyển đến nội dung</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="Trên trang này">
+      <a href="#setup">Thiết lập</a>
+      <a href="#speed">Tốc độ</a>
+      <a href="#wireless">Không dây</a>
+      <a href="#quality">Chất lượng</a>
+      <a href="#touch">Cảm ứng</a>
+      <a href="#faq">Hỏi đáp</a>
+    </nav>
+    <a class="button button-small" href="#download">Tải về</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Máy tính bảng Android<br>làm màn hình thứ hai cho Mac.</h1>
+      <p class="lede">Cắm cáp USB và máy tính bảng sẽ trở thành màn hình cho máy Mac. Rút cáp ra, màn hình vẫn tiếp tục qua cùng Wi‑Fi. Ứng dụng Mac tự cài đặt và mở ứng dụng máy tính bảng, và bạn không cần tạo tài khoản.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Tải về cho Mac</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Xem video<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">Phiên bản <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 trở lên · Apple silicon</p>
+      <p class="after-download" data-after-download hidden>Mở tệp zip, di chuyển ứng dụng vào thư mục Ứng dụng rồi mở. Đối với lần kết nối đầu tiên, hãy xem <a href="#setup">Thiết lập</a>.</p>
+      <p class="not-mac-note">Ứng dụng này dành cho Mac. Hãy mở trang này trên máy Mac để tải về. <button class="link-button" type="button" data-send-link data-copied="Đã sao chép liên kết">Gửi liên kết sang máy Mac</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Máy tính bảng hiển thị màn hình nền của máy Mac, với thư mục Ứng dụng trong Finder và cửa sổ Máy tính đang mở.">
+      </div>
+      <figcaption>Màn hình Mac trên Lenovo Pad Pro 12.7, được chụp ngay trên máy tính bảng.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">Thiết lập</h2>
+      <div class="row-body">
+        <p class="deck">Bạn chỉ cần thiết lập một lần. Sau đó, cắm cáp là màn hình được thêm vào, còn trên cùng Wi‑Fi thì kết nối không cần cáp.</p>
+        <ol class="steps">
+          <li>
+            <h3>Cài đặt ứng dụng Mac</h3>
+            <p>Mở tệp zip đã tải về, di chuyển BecomeMyScreen vào thư mục Ứng dụng rồi mở. Cho phép Ghi màn hình, sau đó mở ứng dụng thêm một lần nữa.</p>
+          </li>
+          <li>
+            <h3>Bật gỡ lỗi USB trên máy tính bảng</h3>
+            <p>Trong Cài đặt › Thông tin về máy tính bảng, chạm vào Số bản dựng bảy lần để mở Tùy chọn cho nhà phát triển. Trên Galaxy Tab, mục này nằm trong Thông tin phần mềm. Sau đó, bật Gỡ lỗi USB trong Tùy chọn cho nhà phát triển.</p>
+          </li>
+          <li>
+            <h3>Kết nối cáp</h3>
+            <p>Khi máy tính bảng hỏi có cho phép gỡ lỗi USB không, hãy chọn “Luôn cho phép từ máy tính này” rồi chạm vào Cho phép. Máy Mac sẽ cài đặt và mở ứng dụng máy tính bảng, sau đó thêm màn hình. Bạn không cần tải riêng ứng dụng máy tính bảng.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/vi/onboarding.png" width="520" height="558" alt="Cửa sổ chào mừng của BecomeMyScreen với bốn bước: bật gỡ lỗi USB trên máy tính bảng, cho phép Ghi màn hình, cho phép Trợ năng (tùy chọn) và kết nối cáp.">
+          <figcaption>Hướng dẫn xuất hiện ở lần mở đầu tiên. Các bước đã hoàn tất sẽ có dấu kiểm.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">Tốc độ</h2>
+      <div class="row-body">
+        <p class="deck">Thời gian từ lúc máy Mac chụp màn hình đến khi máy tính bảng vẽ hình đó. Đo bằng Lenovo Pad Pro 12.7 và máy Mac M4 Pro.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">Độ trễ theo kích thước video và tốc độ khung hình</caption>
+            <thead>
+              <tr><th scope="col">Kích thước video</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Bộ mã hóa phần cứng trong Apple silicon nén màn hình sang H.264 và gửi qua USB, còn bộ giải mã phần cứng của máy tính bảng vẽ từng khung hình ngay khi nhận được. Ở lần kết nối đầu tiên, chế độ Tự động đo xem bộ giải mã xử lý được bao nhiêu và chọn tốc độ khung hình cao nhất mà không bị tụt lại. Trên máy tính bảng này, chế độ đã chọn 90 fps.</p>
+        <p class="note">Cách đo: sau khi hiệu chỉnh chênh lệch đồng hồ giữa hai thiết bị, chúng tôi đo thời gian từ lúc máy Mac chụp một khung hình đến lúc máy tính bảng vẽ khung hình đó.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">Không dây</h2>
+      <div class="row-body">
+        <p class="deck">Máy tính bảng đã kết nối một lần qua USB cũng hoạt động không dây trên cùng Wi‑Fi. Rút cáp khi đang làm việc thì màn hình vẫn tiếp tục qua Wi‑Fi.</p>
+        <dl class="specs">
+          <div>
+            <dt>Kết nối</dt>
+            <dd>Mở ứng dụng trên máy tính bảng và máy sẽ xuất hiện trong danh sách “Trên cùng Wi‑Fi” trên thanh menu của máy Mac. Bấm Kết nối là màn hình hiện lên.</dd>
+          </div>
+          <div>
+            <dt>Rút cáp</dt>
+            <dd>Kết nối chuyển sang Wi‑Fi trong vòng một giây. Màn hình ảo và bố cục cửa sổ vẫn giữ nguyên, cắm lại thì sẽ quay về USB.</dd>
+          </div>
+          <div>
+            <dt>Bảo mật</dt>
+            <dd>Khóa cho kết nối không dây chỉ được trao đổi qua cáp USB. Kết nối chỉ được thiết lập sau khi khóa được xác minh, đồng thời màn hình và đầu vào đều được mã hóa bằng AES-256-GCM.</dd>
+          </div>
+          <div>
+            <dt>Điều tiết thích ứng</dt>
+            <dd>Máy tính bảng xác nhận từng khung hình nhận được, còn máy Mac bỏ qua số khung hình bị chậm và điều chỉnh tốc độ bit. Ngay cả khi Wi‑Fi chậm đi trong giây lát, độ trễ cũng không bị dồn lại.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/vi/panel-wifi.png" width="320" height="324" alt="Bảng trên thanh menu của máy Mac hiển thị “Hãy kết nối máy tính bảng”, với Lenovo Pad Pro 12.7 và nút Kết nối trong danh sách Trên cùng Wi‑Fi.">
+            <figcaption>Mở ứng dụng trên máy tính bảng và máy sẽ xuất hiện trong danh sách</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/vi/panel-wifi-live.png" width="320" height="271" alt="Bảng trên thanh menu của máy Mac: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11,0 Mbps, 48 ms.">
+            <figcaption>Đang dùng qua Wi‑Fi · đo trên Wi‑Fi 5 GHz</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">Độ trễ theo kiểu kết nối</caption>
+            <thead>
+              <tr><th scope="col">Kết nối</th><th scope="col" class="num">Độ trễ</th><th scope="col">Ghi chú</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">Khoảng 20–25 ms</td><td>Tốc độ khung hình tối đa của máy tính bảng</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; tốc độ bit tự động tăng đến mức cài đặt chất lượng</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>Độ trễ đôi khi vọt lên quá 100 ms, có thể trông như bị giật</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Đo bằng Lenovo Pad Pro 12.7 ở 2560×1600 với nội dung thay đổi liên tục. Nếu máy tính bảng dùng Wi‑Fi 2,4 GHz, ứng dụng sẽ đề xuất chuyển sang 5 GHz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">Chất lượng và phản hồi</h2>
+      <div class="row-body">
+        <p class="deck">Chọn một trong năm mức hoặc để ở Tự động. Thay đổi từ thanh menu của máy Mac hay từ menu trên máy tính bảng thì cả hai bên đều thay đổi theo.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">Tốc độ khung hình, kích thước video và tốc độ bit của từng cài đặt sẵn</caption>
+            <thead>
+              <tr><th scope="col">Cài đặt sẵn</th><th scope="col">Tốc độ khung hình</th><th scope="col">Kích thước video</th><th scope="col">Tốc độ bit</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>Tự động</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>Phản hồi nhanh nhất</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>Phản hồi nhanh</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>Cân bằng</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>Chất lượng cao</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>Chất lượng tốt nhất</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Đo bằng Lenovo Pad Pro 12.7 (2560×1600, 120 Hz) và máy Mac M4 Pro, kết nối qua USB. Mỗi cài đặt sẵn là một mục tiêu: trên máy Mac hoặc máy tính bảng khác, và khi dùng Wi‑Fi, cài đặt sẵn sẽ tự tính ra giá trị riêng từ kết quả đo. Cài đặt sẵn Tự động giống với Cân bằng.</p>
+        <p>Kích thước video được đặt riêng với độ phân giải mà máy Mac thấy. Video nhỏ hơn vẫn lấp đầy màn hình máy tính bảng, đồng thời giảm tải cho bộ giải mã và giảm độ trễ tương ứng.</p>
+        <p>Ở lần kết nối đầu tiên, ứng dụng đo cáp, bộ mã hóa video của máy Mac này và bộ giải mã của máy tính bảng ở từng chế độ, trong khoảng 10 giây; lần đầu kết nối qua Wi‑Fi, ứng dụng đo mạng. Mọi cài đặt sẵn đều được điều chỉnh theo các số liệu này, riêng cho cáp và cho Wi‑Fi, và trong cài đặt Nâng cao, bạn có thể cố định bất kỳ giá trị nào cho từng kết nối. Nếu cáp chậm, bạn sẽ được nhắc thay cáp.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/vi/panel.png" width="320" height="271" alt="Bảng trên thanh menu của máy Mac: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13,4 Mbps, 31 ms. Chất lượng và tốc độ đặt ở Tự động.">
+            <figcaption>Mac · bảng trên thanh menu</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/vi/tablet-menu.png" width="360" height="354" alt="Menu trên máy tính bảng với các số liệu trực tiếp (tốc độ khung hình, tốc độ bit, độ trễ, tần số quét), Chất lượng và tốc độ đặt ở Tự động, và đã bật Điều khiển máy Mac bằng cảm ứng.">
+            <figcaption>Máy tính bảng · menu mở bằng cách chạm ba ngón tay</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/vi/settings.png" width="560" height="316" alt="Tab Chất lượng trong cửa sổ Cài đặt: cài đặt sẵn và độ phân giải, tiếp theo là thông số truyền phát của từng kết nối USB và Wi‑Fi: codec, kích thước video, tốc độ khung hình, tốc độ bit và độ trễ dự kiến.">
+          <figcaption>Thay vì dùng cài đặt sẵn, bạn cũng có thể đặt riêng từng mục độ phân giải, tốc độ khung hình, kích thước video và tốc độ bit.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">Cảm ứng</h2>
+      <div class="row-body">
+        <p class="deck">Chạm vào máy tính bảng và máy Mac sẽ nhận thao tác đó như đầu vào chuột. Tính năng này bật khi bạn cho phép Trợ năng trên máy Mac.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">Cử chỉ trên máy tính bảng và tác dụng trên máy Mac</caption>
+            <thead>
+              <tr><th scope="col">Trên máy tính bảng</th><th scope="col">Trên máy Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Chạm</th><td>Bấm</td></tr>
+              <tr><th scope="row">Kéo</th><td>Kéo</td></tr>
+              <tr><th scope="row">Kéo bằng hai ngón tay</th><td>Cuộn</td></tr>
+              <tr><th scope="row">Chạm bằng hai ngón tay</th><td>Bấm chuột phải</td></tr>
+              <tr><th scope="row">Chạm bằng ba ngón tay</th><td>Mở menu trên máy tính bảng</td></tr>
+              <tr><th scope="row">Vẽ bằng bút</th><td>Đến máy Mac dưới dạng đầu vào bảng vẽ, kèm lực nhấn và độ nghiêng</td></tr>
+              <tr><th scope="row">Di bút hoặc chuột phía trên màn hình</th><td>Di chuyển con trỏ. Chạm trong khi giữ nút bút để bấm chuột phải</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Con trỏ quay về chỗ cũ</h3>
+        <p>Khi bạn chạm vào máy tính bảng, con trỏ của máy Mac sẽ di chuyển đến vị trí đó. Sau đó, chỉ cần di chuột một chút là con trỏ quay về vị trí trước khi chạm, nên bạn không phải kéo con trỏ về công việc đang làm trên màn hình chính. Bạn có thể tắt tính năng này trong Cài đặt.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">Chi tiết</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>Biểu tượng trên thanh menu</dt>
+            <dd>
+              Biểu tượng chỉ hiển thị khi có máy tính bảng kết nối. Khi biểu tượng bị ẩn, hãy mở lại ứng dụng và biểu tượng sẽ xuất hiện trong giây lát với bảng đang mở.
+              <ul class="glyphs" aria-label="Bốn trạng thái của biểu tượng trên thanh menu">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>Đang chờ</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>Đang chuẩn bị</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>Đang dùng</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>Cần chú ý</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Mở ứng dụng máy tính bảng</dt>
+            <dd>Nếu ứng dụng máy tính bảng không chạy khi bạn cắm cáp, máy Mac sẽ mở ứng dụng và đánh thức màn hình nếu màn hình đang tắt. Máy Mac không bao giờ bỏ qua màn hình khóa.</dd>
+          </div>
+          <div>
+            <dt>Cập nhật</dt>
+            <dd>Ứng dụng Mac kiểm tra phiên bản mới và tự cập nhật khi bạn chọn. Nếu có kèm ứng dụng máy tính bảng mới hơn, máy tính bảng sẽ được cập nhật qua cáp trước khi màn hình bắt đầu.</dd>
+          </div>
+          <div>
+            <dt>Hướng dọc</dt>
+            <dd>Xoay máy tính bảng sang hướng dọc và màn hình ảo cũng được tạo lại theo hướng dọc.</dd>
+          </div>
+          <div>
+            <dt>Tần số quét và thời gian chờ màn hình</dt>
+            <dd>Trong khi truyền phát, tần số quét của máy tính bảng được giữ nguyên để không giảm xuống 60 Hz, và màn hình không tắt.</dd>
+          </div>
+          <div>
+            <dt>Kiểm tra cáp</dt>
+            <dd>Nếu USB kết nối ở tốc độ dưới 480 Mbps, tốc độ truyền luôn dưới 8 MB/s, hoặc kết nối bị ngắt ba lần trong vòng ba phút, ứng dụng sẽ đề xuất thử cáp hoặc cổng khác.</dd>
+          </div>
+          <div>
+            <dt>Khi mất kết nối</dt>
+            <dd>Nếu cáp bị tuột, màn hình sẽ tiếp tục qua Wi‑Fi. Nếu không thể tiếp tục không dây, màn hình ảo được giữ lại trong chốc lát, và nếu máy tính bảng kết nối lại trong thời gian đó, bố cục cửa sổ vẫn được giữ nguyên như cũ.</dd>
+          </div>
+          <div>
+            <dt>Ngắt kết nối và Kết nối lại</dt>
+            <dd>Bấm Ngắt kết nối trong thanh menu thì màn hình của máy tính bảng sẽ tạm ngừng, ngay cả khi cáp vẫn cắm. Bấm Kết nối lại để tiếp tục.</dd>
+          </div>
+          <div>
+            <dt>Ứng dụng máy tính bảng tự đóng</dt>
+            <dd>Khi máy tính bảng hoàn toàn không cắm gì, kể cả bộ sạc, ứng dụng máy tính bảng sẽ tự đóng sau 10 giây. Nếu có thể chờ kết nối không dây thay vào đó, ứng dụng sẽ chờ 2 phút.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">Yêu cầu</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Máy Mac có Apple silicon, macOS 14 trở lên</dd></div>
+          <div><dt>Máy tính bảng</dt><dd>Android 8.0 trở lên, trên thiết bị có thể bật gỡ lỗi USB</dd></div>
+          <div><dt>Cáp</dt><dd>Cáp USB hỗ trợ truyền dữ liệu. Cáp chỉ sạc sẽ không kết nối được. Cổng trên chính máy Mac ổn định hơn bộ chia.</dd></div>
+          <div><dt>Không dây</dt><dd>Máy Mac và máy tính bảng cần dùng cùng Wi‑Fi; nên dùng 5 GHz. Lần kết nối đầu tiên phải qua USB.</dd></div>
+          <div><dt>Quyền trên máy Mac</dt><dd>Ghi màn hình. Thêm Trợ năng để điều khiển máy Mac bằng cảm ứng và Mạng cục bộ để dùng không dây.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">Câu hỏi thường gặp</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>Tôi có cần cài ứng dụng trên máy tính bảng không?</summary>
+          <p>Không. Ứng dụng máy tính bảng nằm sẵn trong ứng dụng Mac, nên khi bạn cắm cáp, máy Mac sẽ cài đặt và mở ứng dụng đó. Khi bạn cập nhật ứng dụng Mac, ứng dụng máy tính bảng cũng được cập nhật theo ở lần kết nối tiếp theo.</p>
+        </details>
+        <details>
+          <summary>Có dùng được qua Wi‑Fi không?</summary>
+          <p>Có. Sau khi kết nối một lần qua USB, từ đó trở đi máy sẽ kết nối không dây trên cùng Wi‑Fi. Mở ứng dụng trên máy tính bảng và bấm Kết nối trên thanh menu của máy Mac, hoặc chỉ cần rút cáp khi đang dùng. Độ trễ cao hơn một chút so với USB (40–55 ms trên 5 GHz), và Wi‑Fi 2,4 GHz đôi khi có thể bị giật, vì vậy nên dùng 5 GHz.</p>
+        </details>
+        <details>
+          <summary>Tại sao lần kết nối đầu tiên phải qua USB?</summary>
+          <p>Vì khóa cho kết nối không dây chỉ được trao đổi qua cáp. Nhờ vậy, không thiết bị nào khác trên cùng Wi‑Fi có thể giả làm máy tính bảng của bạn để kết nối với máy Mac. Ứng dụng máy tính bảng cũng được cài đặt vào lúc đó.</p>
+        </details>
+        <details>
+          <summary>Lực nhấn của bút có hoạt động không?</summary>
+          <p>Có. Lực nhấn và độ nghiêng của bút đến macOS dưới dạng đầu vào bảng vẽ (lực nhấn, độ nghiêng và độ gần). Ứng dụng dùng đầu vào bút cảm ứng tiêu chuẩn của Android, nên S Pen và bút Lenovo không cần thêm SDK hay trình điều khiển. Đã thử với bút dành cho Lenovo Pad Pro 12.7.</p>
+        </details>
+        <details>
+          <summary>Ứng dụng hoạt động với những máy tính bảng nào?</summary>
+          <p>Mọi máy tính bảng chạy Android 8.0 trở lên và có thể bật gỡ lỗi USB. Việc phát triển và đo lường được thực hiện trên Lenovo Pad Pro 12.7 (2944×1840, 120 Hz); các thiết bị khác chưa được thử trực tiếp. Độ phân giải và hướng của màn hình ảo theo màn hình của máy tính bảng khi kết nối.</p>
+        </details>
+        <details>
+          <summary>Tại sao ứng dụng không có trên App Store?</summary>
+          <p>Việc tạo màn hình ảo dựa vào một tính năng không công khai của macOS, nên ứng dụng không thể phát hành trên App Store. Thay vào đó, ứng dụng được ký bằng chứng chỉ nhà phát triển Apple và được Apple công chứng, nên bạn có thể mở ngay sau khi tải về.</p>
+        </details>
+        <details>
+          <summary>Tại sao ứng dụng cần Ghi màn hình và Trợ năng?</summary>
+          <p>Ghi màn hình dùng để ghi lại màn hình ảo và gửi đến máy tính bảng, Trợ năng chuyển thao tác chạm và bút trên máy tính bảng thành đầu vào cho máy Mac, còn Mạng cục bộ dùng để tìm máy tính bảng trên cùng Wi‑Fi. Hình ảnh màn hình chỉ truyền qua cáp USB hoặc trong mạng Wi‑Fi của bạn (được mã hóa khi không dây) và không bao giờ đi ra internet.</p>
+        </details>
+        <details>
+          <summary>Kết nối liên tục bị ngắt.</summary>
+          <p>Hãy thử cáp khác có hỗ trợ truyền dữ liệu, hoặc cắm trực tiếp vào cổng trên máy Mac thay vì qua bộ chia. Ứng dụng sẽ báo trước cho bạn khi USB kết nối chậm hoặc thường xuyên bị ngắt. Sau một lần ngắt ngắn, màn hình ảo được giữ trong 15 giây và tiếp tục từ chỗ đã dừng.</p>
+        </details>
+        <details>
+          <summary>Nếu máy tính bảng đang khóa thì sao?</summary>
+          <p>Máy Mac sẽ đánh thức màn hình và mở ứng dụng, nhưng không bao giờ bỏ qua màn hình khóa. Mở khóa bằng mã PIN hoặc hình mở khóa là kết nối ngay.</p>
+        </details>
+        <details>
+          <summary>Ứng dụng có hoạt động trên máy Mac Intel không?</summary>
+          <p>Phiên bản hiện tại chỉ dành cho máy Mac có Apple silicon.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">Tải về</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 trở lên · Apple silicon · Được Apple công chứng</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">Có gì mới trong phiên bản này</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Tải về cho Mac</a>
+        </div>
+        <p class="not-mac-note">Ứng dụng này dành cho Mac. Hãy mở trang này trên máy Mac để tải về. <button class="link-button" type="button" data-send-link data-copied="Đã sao chép liên kết">Gửi liên kết sang máy Mac</button></p>
+        <p class="note">Mở tệp zip, di chuyển ứng dụng vào thư mục Ứng dụng rồi mở. Đối với lần kết nối đầu tiên, hãy xem <a href="#setup">Thiết lập</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">Ngôn ngữ: </span>Tiếng Việt</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi" aria-current="page">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS và Finder là nhãn hiệu của Apple Inc. Android là nhãn hiệu của Google LLC. Lenovo là nhãn hiệu của Lenovo.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="Video BecomeMyScreen">
+  <button class="film-close" type="button" aria-label="Đóng" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

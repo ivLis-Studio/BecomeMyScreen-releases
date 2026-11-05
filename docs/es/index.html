@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — Tu tablet Android como segunda pantalla del Mac</title>
+  <meta name="description" content="Usa un tablet Android como segunda pantalla del Mac. Conéctalo por USB o sin cable en la misma red Wi‑Fi. La app del Mac instala y abre la app del tablet, y la latencia medida por USB es de unos 20–25 ms.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — Tu tablet Android como segunda pantalla del Mac">
+  <meta property="og:description" content="Conéctalo con un cable USB o sin cable en la misma red Wi‑Fi. La app del Mac instala y abre la app del tablet por ti.">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/es.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="En esta página">
+      <a href="#setup">Configuración</a>
+      <a href="#speed">Velocidad</a>
+      <a href="#wireless">Inalámbrico</a>
+      <a href="#quality">Calidad</a>
+      <a href="#touch">Táctil</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="button button-small" href="#download">Descargar</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Tu tablet Android<br>como segunda pantalla del Mac.</h1>
+      <p class="lede">Conecta un cable USB y el tablet se convierte en una pantalla para tu Mac. Desconéctalo y la pantalla continúa en la misma red Wi‑Fi. La app del Mac instala y abre la app del tablet, y no hace falta crear ninguna cuenta.</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Descargar para Mac</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Ver el vídeo<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">Versión <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 o posterior · chip de Apple</p>
+      <p class="after-download" data-after-download hidden>Abre el zip, mueve la app a la carpeta Aplicaciones y ábrela. Para la primera conexión, consulta <a href="#setup">Configuración</a>.</p>
+      <p class="not-mac-note">Esta app es para Mac. Abre esta página en un Mac para descargarla. <button class="link-button" type="button" data-send-link data-copied="Enlace copiado">Enviar el enlace a tu Mac</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Un tablet que muestra el escritorio del Mac, con la carpeta Aplicaciones del Finder y una ventana de Calculadora abiertas.">
+      </div>
+      <figcaption>La pantalla del Mac en un Lenovo Pad Pro 12.7, capturada en el propio tablet.</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">Configuración</h2>
+      <div class="row-body">
+        <p class="deck">Solo tienes que configurarlo una vez. Después, al conectar el cable se añade la pantalla y, en la misma red Wi‑Fi, se conecta sin cable.</p>
+        <ol class="steps">
+          <li>
+            <h3>Instala la app del Mac</h3>
+            <p>Abre el zip descargado, mueve BecomeMyScreen a la carpeta Aplicaciones y ábrela. Permite Grabación de pantalla y vuelve a abrir la app.</p>
+          </li>
+          <li>
+            <h3>Activa la depuración por USB en el tablet</h3>
+            <p>En Ajustes › Información del tablet, toca Número de compilación siete veces para desbloquear Opciones para desarrolladores. En un Galaxy Tab, está en Información de software. Después, activa Depuración por USB en Opciones para desarrolladores.</p>
+          </li>
+          <li>
+            <h3>Conecta el cable</h3>
+            <p>Cuando el tablet pregunte si quieres permitir la depuración por USB, marca “Permitir siempre desde este ordenador” y toca Permitir. El Mac instala y abre la app del tablet y, después, añade la pantalla. No hay que descargar ninguna app aparte para el tablet.</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/es/onboarding.png" width="520" height="543" alt="La ventana de bienvenida de BecomeMyScreen con cuatro pasos: activar la depuración por USB en el tablet, permitir Grabación de pantalla, permitir Accesibilidad (opcional) y conectar el cable.">
+          <figcaption>La guía que aparece al abrir la app por primera vez. Los pasos completados se marcan con una marca de verificación.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">Velocidad</h2>
+      <div class="row-body">
+        <p class="deck">El tiempo que pasa desde que el Mac captura la pantalla hasta que el tablet la dibuja. Medido con un Lenovo Pad Pro 12.7 y un Mac con M4 Pro.</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">Latencia según el tamaño del vídeo y la frecuencia de fotogramas</caption>
+            <thead>
+              <tr><th scope="col">Tamaño del vídeo</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>El codificador por hardware del chip de Apple comprime la pantalla en H.264 y la envía por USB, y el decodificador por hardware del tablet dibuja cada fotograma en cuanto llega. En la primera conexión, Automático mide cuánto puede procesar el decodificador y elige la frecuencia de fotogramas más alta que no se quede atrás. En este tablet ha elegido 90 fps.</p>
+        <p class="note">Cómo se ha medido: tras corregir la diferencia entre los relojes de los dos dispositivos, medimos el tiempo entre que el Mac captura un fotograma y que el tablet dibuja ese mismo fotograma.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">Conexión inalámbrica</h2>
+      <div class="row-body">
+        <p class="deck">Un tablet que se haya conectado una vez por USB también funciona sin cable en la misma red Wi‑Fi. Desconecta el cable mientras trabajas y la pantalla continúa por Wi‑Fi.</p>
+        <dl class="specs">
+          <div>
+            <dt>Conexión</dt>
+            <dd>Abre la app en el tablet y aparecerá en la lista “En la misma red Wi‑Fi” de la barra de menús del Mac. Haz clic en Conectar y aparecerá la pantalla.</dd>
+          </div>
+          <div>
+            <dt>Desconexión del cable</dt>
+            <dd>Cambia a Wi‑Fi en menos de un segundo. La pantalla virtual y la disposición de tus ventanas se mantienen, y al volver a conectar el cable vuelve a USB.</dd>
+          </div>
+          <div>
+            <dt>Seguridad</dt>
+            <dd>La clave de las conexiones inalámbricas solo se intercambia a través del cable USB. La conexión solo se establece después de verificar la clave, y la pantalla y la entrada se cifran por completo con AES-256-GCM.</dd>
+          </div>
+          <div>
+            <dt>Ritmo adaptativo</dt>
+            <dd>El tablet confirma cada fotograma que recibe, y el Mac se salta tantos fotogramas como lleve de retraso y ajusta la velocidad de bits. Aunque la red Wi‑Fi vaya lenta un momento, el retardo no se acumula.</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/es/panel-wifi.png" width="320" height="326" alt="El panel de la barra de menús del Mac con el texto “Conecta un tablet”, y el Lenovo Pad Pro 12.7 con un botón Conectar en la lista En la misma red Wi‑Fi.">
+            <figcaption>Abre la app en el tablet y aparecerá en la lista</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/es/panel-wifi-live.png" width="320" height="259" alt="El panel de la barra de menús del Mac: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11,0 Mbps, 48 ms.">
+            <figcaption>En uso por Wi‑Fi · medido en una red Wi‑Fi de 5 GHz</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">Latencia según el tipo de conexión</caption>
+            <thead>
+              <tr><th scope="col">Conexión</th><th scope="col" class="num">Latencia</th><th scope="col">Notas</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">Unos 20–25 ms</td><td>La frecuencia de fotogramas máxima del tablet</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; la velocidad de bits sube automáticamente hasta el ajuste de calidad</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>La latencia a veces supera los 100 ms, lo que puede notarse como tirones</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Medido con un Lenovo Pad Pro 12.7 a 2560×1600 con contenido que cambia constantemente. Si el tablet está en una red Wi‑Fi de 2,4 GHz, la app sugiere cambiar a 5 GHz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">Calidad y respuesta</h2>
+      <div class="row-body">
+        <p class="deck">Elige uno de los cinco niveles o déjalo en Automático. Cámbialo desde la barra de menús del Mac o desde el menú del tablet, y los dos cambian a la vez.</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">Frecuencia de fotogramas, tamaño del vídeo y velocidad de bits de cada preajuste</caption>
+            <thead>
+              <tr><th scope="col">Preajuste</th><th scope="col">Frecuencia de fotogramas</th><th scope="col">Tamaño del vídeo</th><th scope="col">Velocidad de bits</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>Automático</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>Respuesta más rápida</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>Respuesta rápida</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>Equilibrado</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>Alta calidad</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>Máxima calidad</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Medido con un Lenovo Pad Pro 12.7 (2560×1600, 120 Hz) conectado por USB a un Mac con M4 Pro. Cada preajuste es un objetivo: en otro Mac u otro tablet, y por Wi‑Fi, calcula sus propios valores a partir de lo que se ha medido. Automático equivale a Equilibrado.</p>
+        <p>El tamaño del vídeo se ajusta por separado de la resolución que ve el Mac. Un vídeo más pequeño sigue ocupando toda la pantalla del tablet, y aligera la carga del decodificador y reduce la latencia en la misma medida.</p>
+        <p>En la primera conexión, la app mide el cable, el codificador de vídeo de este Mac y el decodificador del tablet en cada uno de sus modos, en unos 10 segundos; la primera vez que se conecta por Wi‑Fi, mide la red. Cada preajuste se adapta a estas cifras, por separado para el cable y la red Wi‑Fi, y en la pestaña Avanzado de Ajustes puedes fijar cualquier valor para cada conexión. Si el cable es lento, la app te avisa para que lo cambies.</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/es/panel.png" width="320" height="259" alt="El panel de la barra de menús del Mac: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13,4 Mbps, 31 ms. Calidad y velocidad en Automático.">
+            <figcaption>Mac · panel de la barra de menús</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/es/tablet-menu.png" width="360" height="354" alt="El menú del tablet con cifras en tiempo real (frecuencia de fotogramas, velocidad de bits, latencia y frecuencia de actualización), Calidad y velocidad en Automático y el control táctil del Mac activado.">
+            <figcaption>Tablet · el menú que se abre al tocar con tres dedos</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/es/settings.png" width="560" height="308" alt="La pestaña Calidad de la ventana Ajustes: el preajuste y la resolución, y luego lo que usa cada conexión, USB y Wi‑Fi, para transmitir: códec, tamaño del vídeo, frecuencia de fotogramas, velocidad de bits y latencia estimada.">
+          <figcaption>En lugar de un preajuste, también puedes ajustar la resolución, la frecuencia de fotogramas, el tamaño del vídeo y la velocidad de bits uno por uno.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">Control táctil</h2>
+      <div class="row-body">
+        <p class="deck">Toca el tablet y el Mac lo recibe como entrada de ratón. Se activa en cuanto permites Accesibilidad en el Mac.</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">Gestos del tablet y lo que hacen en el Mac</caption>
+            <thead>
+              <tr><th scope="col">En el tablet</th><th scope="col">En el Mac</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Tocar</th><td>Clic</td></tr>
+              <tr><th scope="row">Arrastrar</th><td>Arrastrar</td></tr>
+              <tr><th scope="row">Arrastrar con dos dedos</th><td>Desplazarse</td></tr>
+              <tr><th scope="row">Tocar con dos dedos</th><td>Clic secundario</td></tr>
+              <tr><th scope="row">Tocar con tres dedos</th><td>Abre el menú del tablet</td></tr>
+              <tr><th scope="row">Dibujar con un lápiz</th><td>Llega al Mac como entrada de tableta gráfica, con presión e inclinación</td></tr>
+              <tr><th scope="row">Pasar un lápiz o el ratón sobre la pantalla</th><td>Mueve el puntero. Toca mientras mantienes pulsado el botón del lápiz para hacer clic secundario</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Un puntero que vuelve a donde estaba</h3>
+        <p>Cuando tocas el tablet, el puntero del Mac se mueve a ese punto. Si después mueves un poco el ratón, el puntero vuelve a donde estaba antes del toque, así que no tienes que arrastrarlo de vuelta a lo que estabas haciendo en la pantalla principal. Puedes desactivarlo en Ajustes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">Detalles</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>Icono de la barra de menús</dt>
+            <dd>
+              Solo se muestra mientras hay un tablet conectado. Si está oculto, vuelve a abrir la app y aparecerá un momento con su panel abierto.
+              <ul class="glyphs" aria-label="Los cuatro estados del icono de la barra de menús">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>En espera</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>Preparando</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>En uso</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>Requiere atención</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>Apertura de la app del tablet</dt>
+            <dd>Si la app del tablet no está abierta al conectar el cable, el Mac la abre y activa la pantalla si está apagada. Nunca omite la pantalla de bloqueo.</dd>
+          </div>
+          <div>
+            <dt>Actualizaciones</dt>
+            <dd>La app para Mac busca nuevas versiones y se actualiza cuando tú lo decides. Si incluye una app del tablet más reciente, el tablet se actualiza por cable antes de que empiece la pantalla.</dd>
+          </div>
+          <div>
+            <dt>Vertical</dt>
+            <dd>Gira el tablet a vertical y la pantalla virtual también se vuelve a crear en vertical.</dd>
+          </div>
+          <div>
+            <dt>Frecuencia de actualización y apagado de pantalla</dt>
+            <dd>Durante la transmisión, la frecuencia de actualización del tablet se mantiene para que no baje a 60 Hz, y la pantalla no se apaga.</dd>
+          </div>
+          <div>
+            <dt>Comprobación del cable</dt>
+            <dd>Si el USB se conecta a menos de 480 Mbps, las transferencias no pasan de 8 MB/s o la conexión se corta tres veces en tres minutos, la app sugiere probar otro cable u otro puerto.</dd>
+          </div>
+          <div>
+            <dt>Cuando se corta la conexión</dt>
+            <dd>Si se desconecta el cable, la pantalla continúa por Wi‑Fi. Si no puede continuar sin cable, la pantalla virtual se mantiene un rato y, si el tablet se vuelve a conectar en ese tiempo, la disposición de tus ventanas sigue como estaba.</dd>
+          </div>
+          <div>
+            <dt>Desconectar y Reconectar</dt>
+            <dd>Haz clic en Desconectar en la barra de menús y la pantalla del tablet queda en pausa, aunque el cable siga conectado. Haz clic en Reconectar para continuar.</dd>
+          </div>
+          <div>
+            <dt>La app del tablet se cierra sola</dt>
+            <dd>Cuando no hay nada conectado al tablet, ni siquiera un cargador, la app del tablet se cierra sola a los 10 segundos. Si puede esperar una conexión inalámbrica, espera 2 minutos.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">Requisitos</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Mac con chip de Apple y macOS 14 o posterior</dd></div>
+          <div><dt>Tablet</dt><dd>Android 8.0 o posterior, en un dispositivo en el que se pueda activar la depuración por USB</dd></div>
+          <div><dt>Cable</dt><dd>Un cable USB que admita transferencia de datos. Los cables solo de carga no se conectan. Un puerto del propio Mac es más fiable que un hub.</dd></div>
+          <div><dt>Conexión inalámbrica</dt><dd>El Mac y el tablet tienen que estar en la misma red Wi‑Fi; se recomienda 5 GHz. La primera conexión tiene que ser por USB.</dd></div>
+          <div><dt>Permisos del Mac</dt><dd>Grabación de pantalla. Además, Accesibilidad para controlar el Mac de forma táctil y Red local para usarlo sin cable.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>¿Tengo que instalar una app en el tablet?</summary>
+          <p>No. La app del tablet viene dentro de la app del Mac, así que cuando conectas el cable, el Mac la instala y la abre. Cuando actualizas la app del Mac, la app del tablet se actualiza con ella en la siguiente conexión.</p>
+        </details>
+        <details>
+          <summary>¿Funciona por Wi‑Fi?</summary>
+          <p>Sí. Después de conectarlo una vez por USB, a partir de entonces se conecta sin cable en la misma red Wi‑Fi. Abre la app en el tablet y haz clic en Conectar en la barra de menús del Mac, o simplemente desconecta el cable mientras lo usas. La latencia es un poco mayor que por USB (40–55 ms en 5 GHz), y la Wi‑Fi de 2,4 GHz puede dar tirones de vez en cuando, así que se recomienda 5 GHz.</p>
+        </details>
+        <details>
+          <summary>¿Por qué la primera conexión tiene que ser por USB?</summary>
+          <p>Porque la clave de las conexiones inalámbricas solo se intercambia a través del cable. Así, ningún otro dispositivo de la misma red Wi‑Fi puede hacerse pasar por tu tablet y conectarse a tu Mac. En ese momento también se instala la app del tablet.</p>
+        </details>
+        <details>
+          <summary>¿Funciona la presión del lápiz?</summary>
+          <p>Sí. La presión y la inclinación del lápiz llegan a macOS como entrada de tableta gráfica (presión, inclinación y proximidad). Usa la entrada de lápiz estándar de Android, así que el S Pen y los lápices de Lenovo no necesitan ningún SDK ni controlador adicional. Probado con el lápiz del Lenovo Pad Pro 12.7.</p>
+        </details>
+        <details>
+          <summary>¿Con qué tablets funciona?</summary>
+          <p>Con cualquier tablet con Android 8.0 o posterior en el que se pueda activar la depuración por USB. El desarrollo y las mediciones se han hecho con un Lenovo Pad Pro 12.7 (2944×1840, 120 Hz); otros dispositivos aún no se han probado directamente. La resolución y la orientación de la pantalla virtual se adaptan a la pantalla del tablet al conectarse.</p>
+        </details>
+        <details>
+          <summary>¿Por qué no está en el App Store?</summary>
+          <p>Para crear la pantalla virtual se usa una función privada de macOS, por lo que no se puede publicar en el App Store. En su lugar, la app está firmada con un certificado de desarrollador de Apple y notarizada por Apple, así que se abre nada más descargarla.</p>
+        </details>
+        <details>
+          <summary>¿Por qué necesita Grabación de pantalla y Accesibilidad?</summary>
+          <p>Grabación de pantalla captura la pantalla virtual para enviarla al tablet, Accesibilidad convierte los toques y el lápiz del tablet en entrada del Mac, y Red local encuentra tablets en la misma red Wi‑Fi. La pantalla solo viaja por el cable USB o dentro de tu red Wi‑Fi (cifrada en la conexión inalámbrica) y nunca sale a internet.</p>
+        </details>
+        <details>
+          <summary>La conexión se corta continuamente.</summary>
+          <p>Prueba otro cable que admita transferencia de datos o conéctalo directamente a un puerto del Mac en lugar de a un hub. La app te avisa antes cuando el USB se conecta despacio o se corta a menudo. Tras un corte breve, la pantalla virtual se mantiene 15 segundos y continúa donde se quedó.</p>
+        </details>
+        <details>
+          <summary>¿Y si el tablet está bloqueado?</summary>
+          <p>El Mac activa la pantalla y abre la app, pero nunca omite el bloqueo. Desbloquéalo con tu PIN o patrón y se conectará al momento.</p>
+        </details>
+        <details>
+          <summary>¿Funciona en los Mac con Intel?</summary>
+          <p>La versión actual es solo para Mac con chip de Apple.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">Descargar</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 o posterior · chip de Apple · Notarizada por Apple</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">Novedades de esta versión</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Descargar para Mac</a>
+        </div>
+        <p class="not-mac-note">Esta app es para Mac. Abre esta página en un Mac para descargarla. <button class="link-button" type="button" data-send-link data-copied="Enlace copiado">Enviar el enlace a tu Mac</button></p>
+        <p class="note">Abre el zip, mueve la app a la carpeta Aplicaciones y ábrela. Para la primera conexión, consulta <a href="#setup">Configuración</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">Idioma: </span>Español</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es" aria-current="page">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS y Finder son marcas comerciales de Apple Inc. Android es una marca comercial de Google LLC. Lenovo es una marca comercial de Lenovo.</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="Vídeo de BecomeMyScreen">
+  <button class="film-close" type="button" aria-label="Cerrar" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

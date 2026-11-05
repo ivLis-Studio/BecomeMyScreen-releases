@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="hi" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — आपका Android टैबलेट, Mac के लिए दूसरा डिस्प्ले</title>
+  <meta name="description" content="Android टैबलेट को अपने Mac के दूसरे डिस्प्ले के रूप में इस्तेमाल करें। USB से कनेक्ट करें, या एक ही Wi‑Fi पर वायरलेस तरीके से। Mac ऐप टैबलेट ऐप को इंस्टॉल करके खोलता है, और USB पर मापी गई लेटेंसी लगभग 20–25 ms है।">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — आपका Android टैबलेट, Mac के लिए दूसरा डिस्प्ले">
+  <meta property="og:description" content="USB केबल से कनेक्ट करें, या एक ही Wi‑Fi पर वायरलेस तरीके से। Mac ऐप आपके लिए टैबलेट ऐप इंस्टॉल करके खोलता है।">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/hi.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">कॉन्टेंट पर जाएं</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="इस पेज पर">
+      <a href="#setup">सेटअप</a>
+      <a href="#speed">स्पीड</a>
+      <a href="#wireless">वायरलेस</a>
+      <a href="#quality">क्वालिटी</a>
+      <a href="#touch">टच</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="button button-small" href="#download">डाउनलोड करें</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>आपका Android टैबलेट,<br>Mac के लिए दूसरा डिस्प्ले।</h1>
+      <p class="lede">USB केबल लगाएं और टैबलेट आपके Mac का डिस्प्ले बन जाता है। केबल निकालें, तो स्क्रीन उसी Wi‑Fi पर चलती रहती है। Mac ऐप टैबलेट ऐप को इंस्टॉल करके खोलता है, और कोई अकाउंट बनाने की ज़रूरत नहीं है।</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac के लिए डाउनलोड करें</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>वीडियो देखें<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">वर्शन <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 या बाद का वर्शन · Apple silicon</p>
+      <p class="after-download" data-after-download hidden>zip खोलें, ऐप को ऐप्लिकेशन फ़ोल्डर में ले जाएं और खोलें। पहले कनेक्शन के लिए <a href="#setup">सेटअप</a> देखें।</p>
+      <p class="not-mac-note">यह ऐप Mac के लिए है। इसे डाउनलोड करने के लिए यह पेज Mac पर खोलें। <button class="link-button" type="button" data-send-link data-copied="लिंक कॉपी हो गया">लिंक अपने Mac पर भेजें</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="Mac डेस्कटॉप दिखाता एक टैबलेट, जिसमें Finder का ऐप्लिकेशन फ़ोल्डर और कैल्क्यूलेटर की विंडो खुली है।">
+      </div>
+      <figcaption>Lenovo Pad Pro 12.7 पर Mac की स्क्रीन, जिसे टैबलेट पर ही कैप्चर किया गया।</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">सेटअप</h2>
+      <div class="row-body">
+        <p class="deck">सेटअप सिर्फ़ एक बार करना होता है। उसके बाद, केबल लगाते ही डिस्प्ले जुड़ जाता है, और एक ही Wi‑Fi पर यह बिना केबल के कनेक्ट हो जाता है।</p>
+        <ol class="steps">
+          <li>
+            <h3>Mac ऐप इंस्टॉल करें</h3>
+            <p>डाउनलोड की गई zip खोलें, BecomeMyScreen को ऐप्लिकेशन फ़ोल्डर में ले जाएं और खोलें। स्क्रीन रिकॉर्डिंग की अनुमति दें, फिर ऐप एक बार और खोलें।</p>
+          </li>
+          <li>
+            <h3>टैबलेट पर USB डीबग करना चालू करें</h3>
+            <p>“सेटिंग › टैबलेट के बारे में” में “बिल्ड नंबर” पर सात बार टैप करें, ताकि “डेवलपर के लिए सेटिंग और टूल” अनलॉक हो जाए। Galaxy Tab पर यह “सॉफ़्टवेयर जानकारी” में होता है। फिर “डेवलपर के लिए सेटिंग और टूल” में “USB डीबग करना” चालू करें।</p>
+          </li>
+          <li>
+            <h3>केबल कनेक्ट करें</h3>
+            <p>जब टैबलेट पूछे कि USB डीबग करने की अनुमति देनी है या नहीं, तो “इस कंप्यूटर से हमेशा अनुमति दें” चुनें और “अनुमति दें” पर टैप करें। Mac टैबलेट ऐप को इंस्टॉल करके खोलता है, फिर डिस्प्ले जोड़ता है। टैबलेट के लिए अलग से कोई ऐप डाउनलोड नहीं करना होता।</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/hi/onboarding.png" width="520" height="538" alt="BecomeMyScreen की वेलकम विंडो, जिसमें चार चरण हैं: टैबलेट पर USB डीबग करना चालू करें, स्क्रीन रिकॉर्डिंग की अनुमति दें, ऐक्सेसिबिलिटी की अनुमति दें (वैकल्पिक), और केबल कनेक्ट करें।">
+          <figcaption>पहली बार खोलने पर दिखने वाली गाइड। पूरे हो चुके चरणों पर सही का निशान लग जाता है।</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">स्पीड</h2>
+      <div class="row-body">
+        <p class="deck">Mac के स्क्रीन कैप्चर करने से लेकर टैबलेट के उसे दिखाने तक का समय। Lenovo Pad Pro 12.7 और M4 Pro वाले Mac से मापा गया।</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">वीडियो साइज़ और फ़्रेम रेट के हिसाब से लेटेंसी</caption>
+            <thead>
+              <tr><th scope="col">वीडियो साइज़</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Apple silicon का हार्डवेयर एनकोडर स्क्रीन को H.264 में कंप्रेस करके USB से भेजता है, और टैबलेट का हार्डवेयर डिकोडर हर फ़्रेम आते ही दिखा देता है। पहली बार कनेक्ट करने पर, “ऑटो” मापता है कि डिकोडर कितना संभाल सकता है और सबसे ऊंचा ऐसा फ़्रेम रेट चुनता है जिसमें वह पीछे न छूटे। इस टैबलेट पर उसने 90 fps चुना।</p>
+        <p class="note">मापने का तरीका: दोनों डिवाइस की घड़ियों के अंतर को ठीक करने के बाद, हमने Mac के किसी फ़्रेम को कैप्चर करने और टैबलेट के उसी फ़्रेम को दिखाने के बीच का समय मापा।</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">वायरलेस</h2>
+      <div class="row-body">
+        <p class="deck">जो टैबलेट एक बार USB से कनेक्ट हो चुका है, वह एक ही Wi‑Fi पर वायरलेस तरीके से भी काम करता है। काम करते समय केबल निकालें, तो स्क्रीन Wi‑Fi पर चलती रहती है।</p>
+        <dl class="specs">
+          <div>
+            <dt>कनेक्ट करना</dt>
+            <dd>टैबलेट पर ऐप खोलें, तो वह Mac के मेनू बार में “एक ही Wi‑Fi पर” सूची में दिखता है। “कनेक्ट करें” पर क्लिक करें और स्क्रीन दिखने लगती है।</dd>
+          </div>
+          <div>
+            <dt>केबल निकालना</dt>
+            <dd>यह एक सेकंड के अंदर Wi‑Fi पर स्विच हो जाता है। वर्चुअल डिस्प्ले और आपकी विंडो की व्यवस्था वैसी ही रहती है, और केबल फिर से लगाने पर यह USB पर लौट आता है।</dd>
+          </div>
+          <div>
+            <dt>सुरक्षा</dt>
+            <dd>वायरलेस कनेक्शन की कुंजी सिर्फ़ USB केबल के ज़रिए ही शेयर होती है। कुंजी की पुष्टि होने के बाद ही कनेक्शन बनता है, और स्क्रीन व इनपुट पूरी तरह AES-256-GCM से एन्क्रिप्ट होते हैं।</dd>
+          </div>
+          <div>
+            <dt>अडैप्टिव पेसिंग</dt>
+            <dd>टैबलेट हर मिले फ़्रेम की पुष्टि करता है, और Mac जितना पीछे है उतने फ़्रेम छोड़ देता है और बिटरेट को एडजस्ट करता है। Wi‑Fi के कुछ पल धीमा होने पर भी देरी जमा नहीं होती।</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/hi/panel-wifi.png" width="320" height="327" alt="Mac का मेनू बार पैनल, जिसमें “टैबलेट कनेक्ट करें” लिखा है, और “एक ही Wi‑Fi पर” सूची में Lenovo Pad Pro 12.7 और “कनेक्ट करें” बटन है।">
+            <figcaption>टैबलेट पर ऐप खोलें, तो वह सूची में दिखता है</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/hi/panel-wifi-live.png" width="320" height="273" alt="Mac का मेनू बार पैनल: Lenovo Pad Pro 12.7, Wi‑Fi, 2560×1600 Retina, 90 Hz, 52 fps, 11.0 Mbps, 48 ms।">
+            <figcaption>Wi‑Fi पर इस्तेमाल में · 5 GHz Wi‑Fi पर मापा गया</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">कनेक्शन के प्रकार के हिसाब से लेटेंसी</caption>
+            <thead>
+              <tr><th scope="col">कनेक्शन</th><th scope="col" class="num">लेटेंसी</th><th scope="col">नोट</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">लगभग 20–25 ms</td><td>टैबलेट का अधिकतम फ़्रेम रेट</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40–55 ms</td><td>60 fps; बिटरेट क्वालिटी सेटिंग तक अपने-आप बढ़ जाता है</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40–65 ms</td><td>लेटेंसी कभी-कभी 100 ms से ऊपर चली जाती है, जिससे तस्वीर अटकती हुई लग सकती है</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Lenovo Pad Pro 12.7 पर 2560×1600 में लगातार बदलते कॉन्टेंट के साथ मापा गया। अगर टैबलेट 2.4 GHz Wi‑Fi पर है, तो ऐप 5 GHz पर स्विच करने का सुझाव देता है।</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">क्वालिटी और रिस्पॉन्स</h2>
+      <div class="row-body">
+        <p class="deck">पांच में से कोई एक लेवल चुनें या इसे “ऑटो” पर छोड़ दें। इसे Mac के मेनू बार से या टैबलेट के मेनू से बदलें, दोनों तरफ़ एक साथ बदल जाता है।</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">हर प्रीसेट के लिए फ़्रेम रेट, वीडियो साइज़ और बिटरेट</caption>
+            <thead>
+              <tr><th scope="col">प्रीसेट</th><th scope="col">फ़्रेम रेट</th><th scope="col">वीडियो साइज़</th><th scope="col">बिटरेट</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>ऑटो</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>सबसे तेज़ रिस्पॉन्स</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>तेज़ रिस्पॉन्स</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>संतुलित</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>उच्च क्वालिटी</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>सर्वश्रेष्ठ क्वालिटी</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">M4 Pro वाले Mac पर, USB से जुड़े Lenovo Pad Pro 12.7 (2560×1600, 120 Hz) के साथ मापा गया। हर प्रीसेट एक लक्ष्य है: किसी दूसरे Mac या टैबलेट पर, और Wi‑Fi पर, वह माप के आधार पर अपनी वैल्यू खुद तय करता है। “ऑटो”, “संतुलित” जैसा ही है।</p>
+        <p>वीडियो साइज़, Mac को दिखने वाले रिज़ॉल्यूशन से अलग सेट होता है। छोटा वीडियो भी टैबलेट की स्क्रीन भर देता है, और उसी हिसाब से डिकोडर पर लोड और लेटेंसी कम करता है।</p>
+        <p>पहली बार कनेक्ट करने पर, ऐप लगभग 10 सेकंड में केबल, इस Mac का वीडियो एनकोडर और हर मोड में टैबलेट का डिकोडर मापता है; Wi‑Fi पर पहली बार कनेक्ट करने पर, यह नेटवर्क मापता है। हर प्रीसेट इन्हीं नतीजों के हिसाब से, केबल और Wi‑Fi के लिए अलग-अलग तय होता है, और “एडवांस” सेटिंग्ज़ में आप हर कनेक्शन के लिए कोई भी वैल्यू सेट कर सकते हैं। अगर केबल धीमा है, तो आपको उसे बदलने के लिए कहा जाता है।</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/hi/panel.png" width="320" height="273" alt="Mac का मेनू बार पैनल: Lenovo Pad Pro 12.7, 2560×1600 Retina, 90 Hz, 61 fps, 13.4 Mbps, 31 ms। “क्वालिटी और स्पीड” “ऑटो” पर सेट है।">
+            <figcaption>Mac · मेनू बार पैनल</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/hi/tablet-menu.png" width="360" height="359" alt="लाइव आंकड़ों (फ़्रेम रेट, बिटरेट, लेटेंसी, रीफ़्रेश रेट) वाला टैबलेट मेनू, जिसमें “क्वालिटी और स्पीड” “ऑटो” पर है और “टच से Mac कंट्रोल करें” चालू है।">
+            <figcaption>टैबलेट · तीन उंगलियों से टैप करने पर खुलने वाला मेनू</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/hi/settings.png" width="560" height="307" alt="सेटिंग्ज़ विंडो का “क्वालिटी” टैब: प्रीसेट और रिज़ॉल्यूशन, फिर हर कनेक्शन, यानी USB और Wi‑Fi, किन वैल्यू के साथ स्ट्रीम करता है: कोडेक, वीडियो साइज़, फ़्रेम रेट, बिटरेट और अनुमानित लेटेंसी।">
+          <figcaption>प्रीसेट के बजाय, आप रिज़ॉल्यूशन, फ़्रेम रेट, वीडियो साइज़ और बिटरेट एक-एक करके भी सेट कर सकते हैं।</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">टच</h2>
+      <div class="row-body">
+        <p class="deck">टैबलेट को छुएं, तो Mac उसे माउस इनपुट के रूप में लेता है। Mac पर ऐक्सेसिबिलिटी की अनुमति देते ही यह चालू हो जाता है।</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">टैबलेट के जेस्चर और Mac पर उनका असर</caption>
+            <thead>
+              <tr><th scope="col">टैबलेट पर</th><th scope="col">Mac पर</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">टैप</th><td>क्लिक</td></tr>
+              <tr><th scope="row">ड्रैग</th><td>ड्रैग</td></tr>
+              <tr><th scope="row">दो उंगलियों से ड्रैग</th><td>स्क्रॉल</td></tr>
+              <tr><th scope="row">दो उंगलियों से टैप</th><td>राइट-क्लिक</td></tr>
+              <tr><th scope="row">तीन उंगलियों से टैप</th><td>टैबलेट मेनू खोलता है</td></tr>
+              <tr><th scope="row">पेन से ड्रॉ करना</th><td>Mac पर ग्राफ़िक्स टैबलेट इनपुट के रूप में पहुंचता है, दबाव और झुकाव के साथ</td></tr>
+              <tr><th scope="row">पेन या माउस को स्क्रीन के ऊपर होवर करना</th><td>पॉइंटर हिलाता है। राइट-क्लिक के लिए पेन का बटन दबाकर टच करें</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>पॉइंटर जो अपनी जगह लौट आता है</h3>
+        <p>जब आप टैबलेट को छूते हैं, तो Mac का पॉइंटर उसी जगह पर चला जाता है। उसके बाद माउस को थोड़ा हिलाएं, तो पॉइंटर टच से पहले वाली जगह पर लौट आता है, इसलिए आपको उसे मुख्य डिस्प्ले पर अपने काम तक वापस खींचकर नहीं लाना पड़ता। आप इसे सेटिंग्ज़ में बंद कर सकते हैं।</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">विवरण</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>मेनू बार आइकन</dt>
+            <dd>
+              यह सिर्फ़ तब दिखता है, जब कोई टैबलेट कनेक्ट हो। छिपा होने पर ऐप फिर से खोलें, तो यह कुछ देर के लिए अपने खुले पैनल के साथ दिखता है।
+              <ul class="glyphs" aria-label="मेनू बार आइकन की चार स्थितियां">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>इंतज़ार</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>तैयारी</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>इस्तेमाल में</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>ध्यान दें</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>टैबलेट ऐप खोलना</dt>
+            <dd>केबल लगाते समय अगर टैबलेट ऐप नहीं चल रहा है, तो Mac उसे खोल देता है, और स्क्रीन बंद हो तो उसे चालू कर देता है। यह लॉक स्क्रीन को कभी बायपास नहीं करता।</dd>
+          </div>
+          <div>
+            <dt>अपडेट</dt>
+            <dd>Mac ऐप नए वर्शन की जाँच करता है और आपके चुनने पर खुद को अपडेट करता है। अगर इसमें नया टैबलेट ऐप है, तो डिस्प्ले शुरू होने से पहले टैबलेट को केबल से अपडेट किया जाता है।</dd>
+          </div>
+          <div>
+            <dt>पोर्ट्रेट</dt>
+            <dd>टैबलेट को पोर्ट्रेट में घुमाएं, तो वर्चुअल डिस्प्ले भी पोर्ट्रेट में दोबारा बन जाता है।</dd>
+          </div>
+          <div>
+            <dt>रीफ़्रेश रेट और स्क्रीन टाइमआउट</dt>
+            <dd>स्ट्रीमिंग के दौरान, टैबलेट का रीफ़्रेश रेट स्थिर रखा जाता है ताकि वह 60 Hz पर न गिरे, और स्क्रीन बंद नहीं होती।</dd>
+          </div>
+          <div>
+            <dt>केबल की जांच</dt>
+            <dd>अगर USB 480 Mbps से कम पर कनेक्ट होता है, ट्रांसफ़र 8 MB/s से नीचे रहता है, या 3 मिनट में कनेक्शन तीन बार टूटता है, तो ऐप दूसरा केबल या पोर्ट आज़माने का सुझाव देता है।</dd>
+          </div>
+          <div>
+            <dt>कनेक्शन टूटने पर</dt>
+            <dd>अगर केबल निकल जाता है, तो स्क्रीन Wi‑Fi पर चलती रहती है। अगर वायरलेस तरीके से जारी नहीं रह पाता, तो वर्चुअल डिस्प्ले थोड़ी देर के लिए बना रहता है, और अगर टैबलेट इस बीच फिर से कनेक्ट हो जाता है, तो आपकी विंडो की व्यवस्था पहले जैसी बनी रहती है।</dd>
+          </div>
+          <div>
+            <dt>डिस्कनेक्ट करें और फिर से कनेक्ट करें</dt>
+            <dd>मेनू बार में “डिस्कनेक्ट करें” पर क्लिक करें, तो केबल लगा होने पर भी टैबलेट की स्क्रीन रोक दी जाती है। जारी रखने के लिए “फिर से कनेक्ट करें” पर क्लिक करें।</dd>
+          </div>
+          <div>
+            <dt>टैबलेट ऐप अपने-आप बंद हो जाता है</dt>
+            <dd>जब टैबलेट में कुछ भी लगा न हो, चार्जर भी नहीं, तो टैबलेट ऐप 10 सेकंड बाद अपने-आप बंद हो जाता है। अगर वह इसके बजाय वायरलेस कनेक्शन का इंतज़ार कर सकता है, तो 2 मिनट तक इंतज़ार करता है।</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">ज़रूरी शर्तें</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>Apple silicon वाला Mac, macOS 14 या बाद का वर्शन</dd></div>
+          <div><dt>टैबलेट</dt><dd>Android 8.0 या बाद का वर्शन, ऐसे डिवाइस पर जिसमें USB डीबग करना चालू किया जा सके</dd></div>
+          <div><dt>केबल</dt><dd>डेटा ट्रांसफ़र सपोर्ट करने वाला USB केबल। सिर्फ़ चार्जिंग वाले केबल कनेक्ट नहीं होंगे। हब की तुलना में Mac का अपना पोर्ट ज़्यादा भरोसेमंद है।</dd></div>
+          <div><dt>वायरलेस</dt><dd>Mac और टैबलेट एक ही Wi‑Fi पर होने चाहिए; 5 GHz का सुझाव दिया जाता है। पहला कनेक्शन USB से होना चाहिए।</dd></div>
+          <div><dt>Mac अनुमतियां</dt><dd>स्क्रीन रिकॉर्डिंग। टच से Mac कंट्रोल करने के लिए ऐक्सेसिबिलिटी भी, और वायरलेस इस्तेमाल के लिए लोकल नेटवर्क भी।</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">अक्सर पूछे जाने वाले सवाल</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>क्या मुझे टैबलेट पर कोई ऐप इंस्टॉल करना होगा?</summary>
+          <p>नहीं। टैबलेट ऐप, Mac ऐप के अंदर ही आता है, इसलिए केबल लगाने पर Mac उसे इंस्टॉल करके खोल देता है। Mac ऐप अपडेट करने पर, अगले कनेक्शन पर टैबलेट ऐप भी साथ में अपडेट हो जाता है।</p>
+        </details>
+        <details>
+          <summary>क्या यह Wi‑Fi पर काम करता है?</summary>
+          <p>हां। एक बार USB से कनेक्ट करने के बाद, यह आगे से एक ही Wi‑Fi पर वायरलेस तरीके से कनेक्ट होता है। टैबलेट पर ऐप खोलें और Mac के मेनू बार में “कनेक्ट करें” पर क्लिक करें, या इस्तेमाल के दौरान बस केबल निकाल दें। लेटेंसी USB से थोड़ी ज़्यादा होती है (5 GHz पर 40–55 ms), और 2.4 GHz Wi‑Fi पर कभी-कभी तस्वीर अटक सकती है, इसलिए 5 GHz का सुझाव दिया जाता है।</p>
+        </details>
+        <details>
+          <summary>पहला कनेक्शन USB से ही क्यों होना चाहिए?</summary>
+          <p>क्योंकि वायरलेस कनेक्शन की कुंजी सिर्फ़ केबल के ज़रिए ही शेयर होती है। इस तरह, एक ही Wi‑Fi पर कोई दूसरा डिवाइस आपका टैबलेट बनकर आपके Mac से कनेक्ट नहीं हो सकता। टैबलेट ऐप भी उसी समय इंस्टॉल होता है।</p>
+        </details>
+        <details>
+          <summary>क्या पेन का दबाव काम करता है?</summary>
+          <p>हां। पेन का दबाव और झुकाव macOS तक ग्राफ़िक्स टैबलेट इनपुट (दबाव, झुकाव और नज़दीकी) के रूप में पहुंचते हैं। यह Android के स्टैंडर्ड स्टाइलस इनपुट का इस्तेमाल करता है, इसलिए S Pen और Lenovo पेन के लिए किसी अतिरिक्त SDK या ड्राइवर की ज़रूरत नहीं होती। Lenovo Pad Pro 12.7 के पेन से टेस्ट किया गया।</p>
+        </details>
+        <details>
+          <summary>यह किन टैबलेट के साथ काम करता है?</summary>
+          <p>Android 8.0 या बाद के वर्शन वाला कोई भी टैबलेट, जिसमें USB डीबग करना चालू किया जा सके। डेवलपमेंट और माप Lenovo Pad Pro 12.7 (2944×1840, 120 Hz) पर किए गए; दूसरे डिवाइस अभी खुद टेस्ट नहीं किए गए हैं। वर्चुअल डिस्प्ले का रिज़ॉल्यूशन और ओरिएंटेशन, कनेक्ट होते समय टैबलेट की स्क्रीन के हिसाब से तय होता है।</p>
+        </details>
+        <details>
+          <summary>यह App Store पर क्यों नहीं है?</summary>
+          <p>वर्चुअल डिस्प्ले बनाने के लिए macOS की एक प्राइवेट सुविधा इस्तेमाल होती है, इसलिए इसे App Store पर पब्लिश नहीं किया जा सकता। इसके बजाय, ऐप Apple डेवलपर सर्टिफ़िकेट से साइन किया गया है और Apple से नोटराइज़ किया गया है, इसलिए डाउनलोड करते ही यह खुल जाता है।</p>
+        </details>
+        <details>
+          <summary>इसे स्क्रीन रिकॉर्डिंग और ऐक्सेसिबिलिटी की ज़रूरत क्यों है?</summary>
+          <p>स्क्रीन रिकॉर्डिंग, टैबलेट पर भेजने के लिए वर्चुअल डिस्प्ले को कैप्चर करती है, ऐक्सेसिबिलिटी टैबलेट के टच और पेन को Mac इनपुट में बदलती है, और लोकल नेटवर्क एक ही Wi‑Fi पर टैबलेट ढूंढता है। स्क्रीन सिर्फ़ USB केबल पर या आपके Wi‑Fi के अंदर ही जाती है (वायरलेस होने पर एन्क्रिप्ट होकर), और कभी इंटरनेट पर नहीं जाती।</p>
+        </details>
+        <details>
+          <summary>कनेक्शन बार-बार टूट रहा है।</summary>
+          <p>डेटा ट्रांसफ़र सपोर्ट करने वाला कोई दूसरा केबल आज़माएं, या हब के बजाय सीधे Mac के पोर्ट में लगाएं। जब USB धीमे कनेक्ट होता है या बार-बार टूटता है, तो ऐप पहले ही बता देता है। थोड़ी देर के लिए कनेक्शन टूटने पर, वर्चुअल डिस्प्ले 15 सेकंड तक बना रहता है और वहीं से फिर शुरू हो जाता है जहां रुका था।</p>
+        </details>
+        <details>
+          <summary>अगर टैबलेट लॉक हो तो?</summary>
+          <p>Mac स्क्रीन को चालू करके ऐप खोलता है, लेकिन लॉक को कभी बायपास नहीं करता। अपने PIN या पैटर्न से इसे अनलॉक करें, तो यह तुरंत कनेक्ट हो जाता है।</p>
+        </details>
+        <details>
+          <summary>क्या यह Intel Mac पर काम करता है?</summary>
+          <p>मौजूदा रिलीज़ सिर्फ़ Apple silicon वाले Mac के लिए है।</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">डाउनलोड</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 या बाद का वर्शन · Apple silicon · Apple से नोटराइज़्ड</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">इस वर्शन में नया क्या है</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac के लिए डाउनलोड करें</a>
+        </div>
+        <p class="not-mac-note">यह ऐप Mac के लिए है। इसे डाउनलोड करने के लिए यह पेज Mac पर खोलें। <button class="link-button" type="button" data-send-link data-copied="लिंक कॉपी हो गया">लिंक अपने Mac पर भेजें</button></p>
+        <p class="note">zip खोलें, ऐप को ऐप्लिकेशन फ़ोल्डर में ले जाएं और खोलें। पहले कनेक्शन के लिए <a href="#setup">सेटअप</a> देखें।</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">भाषा: </span>हिन्दी</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi" aria-current="page">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple, Mac, macOS और Finder, Apple Inc. के ट्रेडमार्क हैं। Android, Google LLC का ट्रेडमार्क है। Lenovo, Lenovo का ट्रेडमार्क है।</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="BecomeMyScreen वीडियो">
+  <button class="film-close" type="button" aria-label="बंद करें" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+

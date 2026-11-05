@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BecomeMyScreen — 将 Android 平板电脑用作 Mac 的第二台显示器</title>
+  <meta name="description" content="将 Android 平板电脑用作 Mac 的第二台显示器。可通过 USB 连接，也可在同一 Wi‑Fi 下无线连接。Mac App 会安装并打开平板电脑 App，USB 连接的实测延迟约为 20–25ms。">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BecomeMyScreen">
+  <meta property="og:title" content="BecomeMyScreen — 将 Android 平板电脑用作 Mac 的第二台显示器">
+  <meta property="og:description" content="使用 USB 线缆连接，或在同一 Wi‑Fi 下无线连接。Mac App 会为你安装并打开平板电脑 App。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/zh-Hans.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="en" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="alternate" hreflang="ko" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ko/">
+  <link rel="alternate" hreflang="ja" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ja/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hant/">
+  <link rel="alternate" hreflang="es" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pt-br/">
+  <link rel="alternate" hreflang="de" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/de/">
+  <link rel="alternate" hreflang="fr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/fr/">
+  <link rel="alternate" hreflang="ar" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ar/">
+  <link rel="alternate" hreflang="it" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/it/">
+  <link rel="alternate" hreflang="nl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/nl/">
+  <link rel="alternate" hreflang="pl" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/pl/">
+  <link rel="alternate" hreflang="ru" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/ru/">
+  <link rel="alternate" hreflang="uk" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/uk/">
+  <link rel="alternate" hreflang="tr" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/tr/">
+  <link rel="alternate" hreflang="vi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/vi/">
+  <link rel="alternate" hreflang="th" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/th/">
+  <link rel="alternate" hreflang="id" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/id/">
+  <link rel="alternate" hreflang="hi" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/">
+  <link rel="canonical" href="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <meta property="og:url" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/zh-hans/">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../app.js" defer></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <mask id="tray-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="18" height="18">
+      <rect width="18" height="18" fill="#fff"/>
+      <path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="#000" stroke="#000" stroke-width="3.2" stroke-linejoin="round"/>
+    </mask>
+  </defs>
+  <symbol id="tray-arrow" viewBox="0 0 18 18"><path d="M10.2 8.4 L10.2 15.53 L12.06 13.86 L13.42 16.83 L14.6 16.27 L13.24 13.36 L15.66 13.36 Z" fill="currentColor" stroke="currentColor" stroke-width=".6" stroke-linejoin="round"/></symbol>
+  <symbol id="tray-idle" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-busy" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><circle cx="5.8" cy="7.8" r="1.8" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-live" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="currentColor" mask="url(#tray-cut)"/><use href="#tray-arrow"/></symbol>
+  <symbol id="tray-alert" viewBox="0 0 18 18"><rect x="1.5" y="2.5" width="15" height="10.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.5" mask="url(#tray-cut)"/><path d="M5.8 5.2 V8.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="5.8" cy="10.05" r=".85" fill="currentColor"/><use href="#tray-arrow"/></symbol>
+  <symbol id="play" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.75" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8.3 6.7v6.6l5.3-3.3z" fill="currentColor"/></symbol>
+  <symbol id="close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="globe" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="8" cy="8" r="6.6"/><ellipse cx="8" cy="8" rx="2.9" ry="6.6"/><path d="M1.6 5.9h12.8M1.6 10.1h12.8"/></g></symbol>
+</svg>
+
+<a class="skip" href="#main">跳至内容</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
+    <nav class="top-nav" aria-label="本页内容">
+      <a href="#setup">开始使用</a>
+      <a href="#speed">速度</a>
+      <a href="#wireless">无线</a>
+      <a href="#quality">画质</a>
+      <a href="#touch">触控</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="button button-small" href="#download">下载</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>将 Android 平板电脑<br>用作 Mac 的第二台显示器。</h1>
+      <p class="lede">插上 USB 线缆，平板电脑就会成为 Mac 的显示器。拔下线缆后，画面会通过同一 Wi‑Fi 继续显示。Mac App 会安装并打开平板电脑 App，无需创建帐户。</p>
+      <div class="cta">
+        <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>下载 Mac 版</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>观看视频<svg aria-hidden="true"><use href="#play"/></svg></a>
+      </div>
+      <p class="meta hero-meta">版本 <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 或更高版本 · Apple 芯片</p>
+      <p class="after-download" data-after-download hidden>打开 zip，将 App 移到“应用程序”文件夹并打开。首次连接方法请参阅<a href="#setup">开始使用</a>。</p>
+      <p class="not-mac-note">此 App 适用于 Mac。请在 Mac 上打开此页面进行下载。 <button class="link-button" type="button" data-send-link data-copied="链接已复制">将链接发送到 Mac</button></p>
+    </div>
+    <figure class="hero-shot">
+      <div class="device">
+        <img src="../assets/tablet-1600.webp"
+             srcset="../assets/tablet-1000.webp 1000w, ../assets/tablet-1600.webp 1600w, ../assets/tablet-2400.webp 2400w"
+             sizes="(min-width: 1180px) 1040px, 90vw"
+             width="2400" height="1499"
+             alt="平板电脑上显示着 Mac 桌面，Finder 中的“应用程序”文件夹和“计算器”窗口处于打开状态。">
+      </div>
+      <figcaption>Lenovo Pad Pro 12.7 上显示的 Mac 画面，直接在平板电脑上截取。</figcaption>
+    </figure>
+  </section>
+
+  <section class="row" id="setup" aria-labelledby="setup-title">
+    <div class="wrap row-inner">
+      <h2 id="setup-title">开始使用</h2>
+      <div class="row-body">
+        <p class="deck">只需设置一次。之后插上线缆就会添加显示器，在同一 Wi‑Fi 下无需线缆也能连接。</p>
+        <ol class="steps">
+          <li>
+            <h3>安装 Mac App</h3>
+            <p>打开下载的 zip，将 BecomeMyScreen 移到“应用程序”文件夹并打开。允许屏幕录制后，再打开一次 App。</p>
+          </li>
+          <li>
+            <h3>在平板电脑上打开 USB 调试</h3>
+            <p>在“设置 › 关于平板电脑”中连续轻点“版本号”七次，即可解锁“开发者选项”。在 Galaxy Tab 上，它位于“软件信息”中。然后在“开发者选项”中打开“USB 调试”。</p>
+          </li>
+          <li>
+            <h3>连接线缆</h3>
+            <p>当平板电脑询问是否允许 USB 调试时，勾选“一律允许使用这台计算机进行调试”，然后轻点“允许”。Mac 会安装并打开平板电脑 App，然后添加显示器。无需另外下载平板电脑 App。</p>
+          </li>
+        </ol>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/zh-Hans/onboarding.png" width="520" height="453" alt="BecomeMyScreen 欢迎窗口，包含四个步骤：在平板电脑上打开 USB 调试、允许屏幕录制、允许辅助功能（可选）、连接线缆。">
+          <figcaption>首次启动时显示的指南。已完成的步骤会显示勾号。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="speed" aria-labelledby="speed-title">
+    <div class="wrap row-inner">
+      <h2 id="speed-title">速度</h2>
+      <div class="row-body">
+        <p class="deck">从 Mac 捕获屏幕到平板电脑绘制画面所需的时间。使用 Lenovo Pad Pro 12.7 和搭载 M4 Pro 的 Mac 测得。</p>
+        <div class="table-wrap">
+          <table class="data latency">
+            <caption class="visually-hidden">不同视频尺寸和帧率下的延迟</caption>
+            <thead>
+              <tr><th scope="col">视频尺寸</th><th scope="col" class="num"><bdi dir="ltr">60 fps</bdi></th><th scope="col" class="num"><bdi dir="ltr">120 fps</bdi></th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">100%<span class="sub"><bdi dir="ltr">2560×1600</bdi></span></th><td class="num"><bdi dir="ltr">20 ms</bdi></td><td class="num"><bdi dir="ltr">24 ms</bdi></td></tr>
+              <tr><th scope="row">75%<span class="sub"><bdi dir="ltr">1920×1200</bdi></span></th><td class="num"><bdi dir="ltr">14 ms</bdi></td><td class="num"><bdi dir="ltr">19 ms</bdi></td></tr>
+              <tr><th scope="row">50%<span class="sub"><bdi dir="ltr">1280×800</bdi></span></th><td class="num"><bdi dir="ltr">11 ms</bdi></td><td class="num"><bdi dir="ltr">16 ms</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Apple 芯片中的硬件编码器将屏幕压缩为 H.264 并通过 USB 发送，平板电脑的硬件解码器在每一帧到达时将其绘制出来。首次连接时，“自动”会测量解码器的处理能力，并选择不会落后的最高帧率。在这台平板电脑上，它选择了 90fps。</p>
+        <p class="note">测量方法：在校正两台设备的时钟差异后，测量 Mac 捕获一帧到平板电脑绘制该帧之间的时间。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="wireless" aria-labelledby="wireless-title">
+    <div class="wrap row-inner">
+      <h2 id="wireless-title">无线</h2>
+      <div class="row-body">
+        <p class="deck">通过 USB 连接过一次的平板电脑，在同一 Wi‑Fi 下也能无线使用。工作时拔下线缆，画面会通过 Wi‑Fi 继续显示。</p>
+        <dl class="specs">
+          <div>
+            <dt>连接</dt>
+            <dd>在平板电脑上打开 App 后，它会出现在 Mac 菜单栏的“同一 Wi‑Fi 网络”列表中。点按“连接”即可显示画面。</dd>
+          </div>
+          <div>
+            <dt>拔下线缆时</dt>
+            <dd>1 秒内切换到 Wi‑Fi。虚拟显示器和窗口布局保持不变，重新插上线缆即恢复 USB 连接。</dd>
+          </div>
+          <div>
+            <dt>安全性</dt>
+            <dd>无线连接所用的密钥只通过 USB 线缆交换。只有密钥验证通过后才会建立连接，画面和输入全部使用 AES-256-GCM 加密。</dd>
+          </div>
+          <div>
+            <dt>自适应调节</dt>
+            <dd>平板电脑会确认收到的每一帧，Mac 会根据落后的程度跳过相应数量的帧并调整码率。即使 Wi‑Fi 暂时变慢，延迟也不会累积。</dd>
+          </div>
+        </dl>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/zh-Hans/panel-wifi.png" width="320" height="312" alt="Mac 菜单栏面板显示“请连接平板电脑”，“同一 Wi‑Fi 网络”列表中有 Lenovo Pad Pro 12.7 和“连接”按钮。">
+            <figcaption>在平板电脑上打开 App 后，它就会出现在列表中</figcaption>
+          </figure>
+          <figure>
+            <img class="window" src="../assets/shots/zh-Hans/panel-wifi-live.png" width="320" height="259" alt="Mac 菜单栏面板：Lenovo Pad Pro 12.7、Wi‑Fi、2560×1600 Retina、90Hz、52fps、11.0Mbps、48ms。">
+            <figcaption>通过 Wi‑Fi 使用中 · 在 5GHz Wi‑Fi 下测得</figcaption>
+          </figure>
+        </div>
+        <div class="table-wrap">
+          <table class="data">
+            <caption class="visually-hidden">不同连接方式的延迟</caption>
+            <thead>
+              <tr><th scope="col">连接</th><th scope="col" class="num">延迟</th><th scope="col">备注</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">USB</th><td class="num">约 20–25ms</td><td>平板电脑的最高帧率</td></tr>
+              <tr><th scope="row">Wi‑Fi 5 GHz</th><td class="num">40～55ms</td><td>60fps；码率会自动提高，最高至画质设置</td></tr>
+              <tr><th scope="row">Wi‑Fi 2.4 GHz</th><td class="num">40～65ms</td><td>延迟偶尔会飙升到 100ms 以上，看起来可能会卡顿</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">使用 Lenovo Pad Pro 12.7，在 2560×1600、画面内容持续变化的情况下测得。如果平板电脑连接的是 2.4GHz Wi‑Fi，App 会建议切换到 5GHz。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="quality" aria-labelledby="quality-title">
+    <div class="wrap row-inner">
+      <h2 id="quality-title">画质与响应</h2>
+      <div class="row-body">
+        <p class="deck">从五个档位中选择一个，或保持“自动”。可以在 Mac 菜单栏或平板电脑菜单中更改，两边会同步变化。</p>
+        <div class="table-wrap">
+          <table class="data presets">
+            <caption class="visually-hidden">各预设的帧率、视频尺寸和码率</caption>
+            <thead>
+              <tr><th scope="col">预设</th><th scope="col">帧率</th><th scope="col">视频尺寸</th><th scope="col">码率</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row"><span class="step-no"></span>自动</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">1</span>最快响应</th><td><bdi dir="ltr">120 fps</bdi></td><td>50%</td><td><bdi dir="ltr">8 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">2</span>快速响应</th><td><bdi dir="ltr">120 fps</bdi></td><td>75%</td><td><bdi dir="ltr">14 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">3</span>均衡</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">24 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">4</span>高画质</th><td><bdi dir="ltr">90 fps</bdi></td><td>100%</td><td><bdi dir="ltr">33 Mbps</bdi></td></tr>
+              <tr><th scope="row"><span class="step-no">5</span>最佳画质</th><td><bdi dir="ltr">60 fps</bdi></td><td>100%</td><td><bdi dir="ltr">39 Mbps</bdi></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">使用 Lenovo Pad Pro 12.7（2560×1600，120Hz）和搭载 M4 Pro 的 Mac，通过 USB 测得。每个预设都代表一个目标：在其他 Mac 或平板电脑上，以及通过 Wi‑Fi 连接时，预设会根据测量结果算出各自的数值。“自动”与“均衡”相同。</p>
+        <p>视频尺寸与 Mac 所识别的分辨率分开设置。缩小视频后，画面仍会铺满平板电脑屏幕，同时相应减轻解码器负担并降低延迟。</p>
+        <p>首次连接时，App 会用约 10 秒测量线缆、这台 Mac 的视频编码器，以及平板电脑解码器的各个模式；首次通过 Wi‑Fi 连接时，则会测量网络。每个预设都会根据这些数值，分别针对线缆和 Wi‑Fi 进行调整；在“高级”设置中，你还可以为每种连接固定任意数值。如果线缆速度慢，会提示你更换。</p>
+        <div class="pair">
+          <figure>
+            <img class="window" src="../assets/shots/zh-Hans/panel.png" width="320" height="259" alt="Mac 菜单栏面板：Lenovo Pad Pro 12.7、2560×1600 Retina、90Hz、61fps、13.4Mbps、31ms。“画质与速度”设为“自动”。">
+            <figcaption>Mac · 菜单栏面板</figcaption>
+          </figure>
+          <figure>
+            <img class="sheet" src="../assets/shots/zh-Hans/tablet-menu.png" width="360" height="357" alt="平板电脑菜单，显示实时数值（帧率、码率、延迟、刷新率），“画质与速度”设为“自动”，“通过触控操作 Mac”已打开。">
+            <figcaption>平板电脑 · 三指轻点打开的菜单</figcaption>
+          </figure>
+        </div>
+        <figure class="figure">
+          <img class="window" src="../assets/shots/zh-Hans/settings.png" width="560" height="276" alt="设置窗口的“画质”标签页：预设和分辨率，下方是 USB 和 Wi‑Fi 各连接传输时使用的编解码器、视频尺寸、帧率、码率和预计延迟。">
+          <figcaption>也可以不使用预设，逐项设置分辨率、帧率、视频尺寸和码率。</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="touch" aria-labelledby="touch-title">
+    <div class="wrap row-inner">
+      <h2 id="touch-title">触控</h2>
+      <div class="row-body">
+        <p class="deck">触摸平板电脑，Mac 会将其作为鼠标输入接收。在 Mac 上允许辅助功能后即可启用。</p>
+        <div class="table-wrap">
+          <table class="data gestures">
+            <caption class="visually-hidden">平板电脑上的手势及其在 Mac 上的作用</caption>
+            <thead>
+              <tr><th scope="col">平板电脑上</th><th scope="col">Mac 上</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">轻点</th><td>点按</td></tr>
+              <tr><th scope="row">拖动</th><td>拖移</td></tr>
+              <tr><th scope="row">双指拖动</th><td>滚动</td></tr>
+              <tr><th scope="row">双指轻点</th><td>右键点按</td></tr>
+              <tr><th scope="row">三指轻点</th><td>打开平板电脑菜单</td></tr>
+              <tr><th scope="row">用触控笔绘画</th><td>以数位板输入的形式传送到 Mac，包括压感和倾斜度</td></tr>
+              <tr><th scope="row">将触控笔或鼠标悬停在屏幕上方</th><td>移动指针。按住触控笔按钮的同时触碰屏幕即可右键点按</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>会回到原位的指针</h3>
+        <p>触摸平板电脑时，Mac 的指针会移到该位置。之后稍微移动鼠标，指针就会回到触摸前的位置，无需再把它拖回主显示器上正在进行的工作。你可以在设置中关闭此功能。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="details" aria-labelledby="details-title">
+    <div class="wrap row-inner">
+      <h2 id="details-title">细节</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div>
+            <dt>菜单栏图标</dt>
+            <dd>
+              仅在连接平板电脑时显示。图标隐藏时，再次打开 App，它会短暂出现并打开面板。
+              <ul class="glyphs" aria-label="菜单栏图标的四种状态">
+                <li><svg aria-hidden="true"><use href="#tray-idle"/></svg>等待中</li>
+                <li><svg aria-hidden="true"><use href="#tray-busy"/></svg>准备中</li>
+                <li><svg aria-hidden="true"><use href="#tray-live"/></svg>使用中</li>
+                <li><svg aria-hidden="true"><use href="#tray-alert"/></svg>需要注意</li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>打开平板电脑 App</dt>
+            <dd>插上线缆时，如果平板电脑 App 没有运行，Mac 会将其打开；如果屏幕已关闭，还会将其唤醒。它绝不会绕过锁定屏幕。</dd>
+          </div>
+          <div>
+            <dt>更新</dt>
+            <dd>Mac App 会检查新版本，并在你选择时自行更新。如果其中带有较新的平板电脑 App，会在显示开始前先通过线缆更新平板电脑。</dd>
+          </div>
+          <div>
+            <dt>竖屏</dt>
+            <dd>将平板电脑转为竖屏后，虚拟显示器也会以竖屏方向重新创建。</dd>
+          </div>
+          <div>
+            <dt>刷新率与屏幕超时</dt>
+            <dd>传输期间，平板电脑的刷新率会保持锁定，不会降到 60Hz，屏幕也不会关闭。</dd>
+          </div>
+          <div>
+            <dt>线缆检查</dt>
+            <dd>如果 USB 连接速度低于 480Mbps、传输速度始终低于 8MB/s，或 3 分钟内断开 3 次，App 会建议你换用其他线缆或端口。</dd>
+          </div>
+          <div>
+            <dt>连接断开时</dt>
+            <dd>线缆脱落后，画面会通过 Wi‑Fi 继续。如果无法无线继续，虚拟显示器会保留一小段时间；若平板电脑在此期间重新连接，窗口布局将保持原样。</dd>
+          </div>
+          <div>
+            <dt>断开连接与重新连接</dt>
+            <dd>在菜单栏中点按“断开连接”后，即使线缆仍插着，平板电脑也会暂停显示画面。点按“重新连接”即可继续。</dd>
+          </div>
+          <div>
+            <dt>平板电脑 App 自动关闭</dt>
+            <dd>当平板电脑上没有连接任何设备（包括充电器）时，平板电脑 App 会在 10 秒后自动关闭。如果可以改为等待无线连接，它会等待 2 分钟。</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="requirements" aria-labelledby="req-title">
+    <div class="wrap row-inner">
+      <h2 id="req-title">系统要求</h2>
+      <div class="row-body">
+        <dl class="specs">
+          <div><dt>Mac</dt><dd>搭载 Apple 芯片的 Mac，macOS 14 或更高版本</dd></div>
+          <div><dt>平板电脑</dt><dd>Android 8.0 或更高版本，且可以打开 USB 调试的设备</dd></div>
+          <div><dt>线缆</dt><dd>支持数据传输的 USB 线缆。仅充电线缆无法连接。直接使用 Mac 本身的端口比通过集线器更可靠。</dd></div>
+          <div><dt>无线</dt><dd>Mac 和平板电脑需要连接同一 Wi‑Fi，建议使用 5GHz。首次连接必须通过 USB。</dd></div>
+          <div><dt>Mac 权限</dt><dd>屏幕录制。如需通过触控操作 Mac，还需要辅助功能；如需无线使用，还需要本地网络。</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="faq" aria-labelledby="faq-title">
+    <div class="wrap row-inner">
+      <h2 id="faq-title">常见问题</h2>
+      <div class="row-body faq">
+        <details>
+          <summary>需要在平板电脑上安装 App 吗？</summary>
+          <p>不需要。平板电脑 App 内置于 Mac App 中，插上线缆后 Mac 会安装并打开它。更新 Mac App 后，平板电脑 App 也会在下次连接时一并更新。</p>
+        </details>
+        <details>
+          <summary>可以通过 Wi‑Fi 使用吗？</summary>
+          <p>可以。通过 USB 连接一次后，之后在同一 Wi‑Fi 下即可无线连接。在平板电脑上打开 App，然后在 Mac 菜单栏中点按“连接”；或者在使用时直接拔下线缆。延迟比 USB 略高（5GHz 下为 40～55ms），2.4GHz Wi‑Fi 偶尔可能卡顿，因此建议使用 5GHz。</p>
+        </details>
+        <details>
+          <summary>为什么首次连接必须通过 USB？</summary>
+          <p>因为无线连接所用的密钥只通过线缆交换。这样，同一 Wi‑Fi 上的其他设备就无法冒充你的平板电脑连接到 Mac。平板电脑 App 也会在此时安装。</p>
+        </details>
+        <details>
+          <summary>支持触控笔压感吗？</summary>
+          <p>支持。触控笔的压感和倾斜度会以数位板输入（压感、倾斜度和接近）的形式传送到 macOS。它使用 Android 的标准触控笔输入，因此 S Pen 和 Lenovo 触控笔无需额外的 SDK 或驱动程序。已使用 Lenovo Pad Pro 12.7 的触控笔进行测试。</p>
+        </details>
+        <details>
+          <summary>支持哪些平板电脑？</summary>
+          <p>任何运行 Android 8.0 或更高版本、且可以打开 USB 调试的平板电脑都可以。开发和测量均在 Lenovo Pad Pro 12.7（2944×1840，120Hz）上完成，其他设备尚未亲自测试。虚拟显示器的分辨率和方向会在连接时跟随平板电脑的屏幕。</p>
+        </details>
+        <details>
+          <summary>为什么没有在 App Store 上架？</summary>
+          <p>创建虚拟显示器依赖 macOS 的一项私有功能，因此无法在 App Store 上发布。作为替代，此 App 使用 Apple 开发者证书签名并经过 Apple 公证，下载后即可直接打开。</p>
+        </details>
+        <details>
+          <summary>为什么需要屏幕录制和辅助功能权限？</summary>
+          <p>屏幕录制用于捕获要发送到平板电脑的虚拟显示器，辅助功能用于将平板电脑的触控和触控笔操作转换为 Mac 输入，本地网络用于查找同一 Wi‑Fi 上的平板电脑。画面只会通过 USB 线缆或在你的 Wi‑Fi 网络内传输（无线时会加密），绝不会发送到互联网。</p>
+        </details>
+        <details>
+          <summary>连接总是断开。</summary>
+          <p>请换用其他支持数据传输的线缆，或不使用集线器，直接插入 Mac 上的端口。如果 USB 连接速度慢或经常断开，App 会先提示你。短暂断开后，虚拟显示器会保留 15 秒，并从中断处继续。</p>
+        </details>
+        <details>
+          <summary>平板电脑锁定时怎么办？</summary>
+          <p>Mac 会唤醒屏幕并打开 App，但绝不会绕过锁定。使用 PIN 或图案解锁后即可立即连接。</p>
+        </details>
+        <details>
+          <summary>支持搭载 Intel 处理器的 Mac 吗？</summary>
+          <p>当前版本仅支持搭载 Apple 芯片的 Mac。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="download" aria-labelledby="download-title">
+    <div class="wrap row-inner">
+      <h2 id="download-title">下载</h2>
+      <div class="row-body">
+        <div class="get">
+          <img src="../assets/icon-128.png" alt="" width="72" height="72">
+          <div class="get-text">
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
+            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 或更高版本 · Apple 芯片 · 已经过 Apple 公证</p>
+            <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">此版本的新内容</a></p>
+          </div>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>下载 Mac 版</a>
+        </div>
+        <p class="not-mac-note">此 App 适用于 Mac。请在 Mac 上打开此页面进行下载。 <button class="link-button" type="button" data-send-link data-copied="链接已复制">将链接发送到 Mac</button></p>
+        <p class="note">打开 zip，将 App 移到“应用程序”文件夹并打开。首次连接方法请参阅<a href="#setup">开始使用</a>。</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <details class="lang">
+      <summary><svg aria-hidden="true"><use href="#globe"/></svg><span class="visually-hidden">语言: </span>简体中文</summary>
+      <ul class="lang-list">
+        <li><a href="../" hreflang="en" lang="en" data-lang="en">English</a></li>
+        <li><a href="../ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li>
+        <li><a href="../ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+        <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh-Hans" aria-current="page">简体中文</a></li>
+        <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-lang="zh-Hant">繁體中文</a></li>
+        <li><a href="../es/" hreflang="es" lang="es" data-lang="es">Español</a></li>
+        <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR" data-lang="pt-BR">Português (Brasil)</a></li>
+        <li><a href="../de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li>
+        <li><a href="../fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li>
+        <li><a href="../ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a></li>
+        <li><a href="../it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li>
+        <li><a href="../nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a></li>
+        <li><a href="../pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a></li>
+        <li><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a></li>
+        <li><a href="../uk/" hreflang="uk" lang="uk" data-lang="uk">Українська</a></li>
+        <li><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></li>
+        <li><a href="../vi/" hreflang="vi" lang="vi" data-lang="vi">Tiếng Việt</a></li>
+        <li><a href="../th/" hreflang="th" lang="th" data-lang="th">ไทย</a></li>
+        <li><a href="../id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a></li>
+        <li><a href="../hi/" hreflang="hi" lang="hi" data-lang="hi">हिन्दी</a></li>
+      </ul>
+    </details>
+    <p>© 2026 ivLis Studio</p>
+    <p>Apple、Mac、macOS 和 Finder 是 Apple Inc. 的商标。Android 是 Google LLC 的商标。Lenovo 是 Lenovo 的商标。</p>
+  </div>
+</footer>
+
+<dialog class="film" id="film" aria-label="BecomeMyScreen 视频">
+  <button class="film-close" type="button" aria-label="关闭" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
+  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+</dialog>
+</body>
+</html>
+
