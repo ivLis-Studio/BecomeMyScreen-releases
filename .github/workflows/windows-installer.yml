@@ -5,7 +5,7 @@ on:
       tag:
         description: Draft Windows release tag
         required: true
-        default: windows-v1.0.1-preview.1
+        default: windows-v1.0.2-preview.1
       payload_sha256:
         description: SHA-256 of the universal portable ZIP
         required: true
@@ -61,6 +61,15 @@ jobs:
           $text = Get-Content $result -Raw
           Write-Host $text
           if (!$text.StartsWith('PASS ') -or !$text.Contains('Architecture: X64')) { throw 'Software-device callback did not pass' }
+      - name: Validate display topology API without applying changes
+        shell: pwsh
+        run: |
+          $result = Join-Path $env:RUNNER_TEMP 'display-topology-self-test.txt'
+          $p = Start-Process (Resolve-Path payload/win-x64/BecomeMyScreen.exe) -ArgumentList @('--display-topology-self-test', "`"$result`"") -PassThru -Wait
+          if (!(Test-Path $result)) { throw 'Display topology test did not finish' }
+          $text = Get-Content $result -Raw
+          Write-Host $text
+          if ($p.ExitCode -ne 0 -or !$text.StartsWith('PASS ')) { throw 'Display topology API check failed' }
       - name: Install pinned compiler
         shell: pwsh
         run: |
