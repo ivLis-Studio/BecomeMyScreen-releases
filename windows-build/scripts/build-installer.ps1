@@ -13,7 +13,7 @@ $PayloadRoot = (Resolve-Path $PayloadRoot).ProviderPath
 . (Join-Path $PSScriptRoot 'package-validation.ps1')
 foreach ($runtime in @('win-x64','win-arm64')) {
     $payload = Join-Path $PayloadRoot $runtime
-    foreach ($file in @('BecomeMyScreen.exe','driver/MttVDD.dll')) { Assert-PeArchitecture (Join-Path $payload $file) $runtime }
+    foreach ($file in @('BecomeMyScreen.exe','BecomeMyScreen.Native.dll','driver/MttVDD.dll')) { Assert-PeArchitecture (Join-Path $payload $file) $runtime }
     if (!$DownloadEncoderOnFirstRun) { Assert-PeArchitecture (Join-Path $payload 'tools/ffmpeg.exe') $runtime }
     elseif (!(Test-Path (Join-Path $payload 'ENCODER-DOWNLOAD.txt'))) { throw 'Missing first-run encoder notice.' }
     foreach ($file in @('tools/adb.exe','tools/NOTICE.Android.txt','tools/LICENSE.FFmpeg.txt','tablet/BecomeMyScreen.apk','tablet/tablet-version.txt','driver/MttVDD.inf','driver/mttvdd.cat','driver/LICENSE.VirtualDrivers')) {
