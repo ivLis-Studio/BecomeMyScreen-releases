@@ -13,3 +13,11 @@ Use an Android tablet as a second display for your Mac, over USB or wirelessly o
 
 This repository holds the releases and the website (`docs/`, served by GitHub Pages). 이 저장소에는 배포본과 웹사이트(`docs/`, GitHub Pages)가 있습니다.
 
+
+## Windows preview
+
+**[Windows 1.0.0 preview 1 — x64 + ARM64](https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1)**
+
+Windows 11 preview with portable mirroring and an unsigned universal installer. ARM64 driver installation is currently blocked by Windows signature trust; use portable mirroring on affected systems. See the release notes for limits and setup.
+
+Windows 11 프리뷰입니다. ARM64 드라이버 설치 제한이 있어 해당 환경에서는 ZIP의 미러링 실행을 사용해 주세요. 설치 방법과 알려진 제한은 릴리즈 안내를 확인해 주세요.
