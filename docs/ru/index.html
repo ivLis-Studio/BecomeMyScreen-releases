@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Android-планшет как второй дисплей для Mac</title>
-  <meta name="description" content="Используйте Android-планшет как второй дисплей для Mac. Подключение по USB или без проводов в той же сети Wi‑Fi. Приложение для Mac само устанавливает и открывает приложение на планшете, а измеренная задержка по USB — около 20–25 ms.">
+  <title>BecomeMyScreen — Mac + Предварительная версия Windows</title>
+  <meta name="description" content="Дополнительный экран для Mac. Предварительная версия дублирования для Windows. Подключите Android-планшет по USB: компьютер установит и откроет приложение на планшете.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Android-планшет как второй дисплей для Mac">
-  <meta property="og:description" content="Подключение USB-кабелем или без проводов в той же сети Wi‑Fi. Приложение для Mac само установит и откроет приложение на планшете.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Предварительная версия Windows">
+  <meta property="og:description" content="Дополнительный экран для Mac. Предварительная версия дублирования для Windows. Подключите Android-планшет по USB: компьютер установит и откроет приложение на планшете.">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/ru.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="На этой странице">
+      <a href="#windows">Windows</a>
       <a href="#setup">Настройка</a>
       <a href="#speed">Скорость</a>
       <a href="#wireless">Без проводов</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>Android-планшет<br>как второй дисплей для Mac.</h1>
-      <p class="lede">Подключите USB-кабель — и планшет станет дисплеем для Mac. Отсоедините его, и экран продолжит работать в той же сети Wi‑Fi. Приложение для Mac само устанавливает и открывает приложение на планшете, а учетная запись не нужна.</p>
+      <p class="platform-label">macOS <span>+</span> Предварительная версия Windows</p>
+      <h1>Ваш планшет.<br>Экран вашего компьютера.</h1>
+      <p class="lede">Дополнительный экран для Mac. Предварительная версия дублирования для Windows. Подключите Android-планшет по USB: компьютер установит и откроет приложение на планшете.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Загрузить для Mac</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Смотреть видео<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Предварительная версия Windows</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Смотреть видео<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">Версия <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 или новее · чип Apple</p>
       <p class="after-download" data-after-download hidden>Откройте ZIP-архив, переместите приложение в папку «Программы» и откройте его. О первом подключении — в разделе «<a href="#setup">Настройка</a>».</p>
-      <p class="not-mac-note">Это приложение для Mac. Откройте эту страницу на Mac, чтобы загрузить его. <button class="link-button" type="button" data-send-link data-copied="Ссылка скопирована">Отправить ссылку на Mac</button></p>
+      <p class="not-mac-note">Откройте эту страницу на компьютере, чтобы скачать приложение для Mac или Windows. <button class="link-button" type="button" data-send-link data-copied="Ссылка скопирована">Поделиться страницей</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>Экран Mac на Lenovo Pad Pro 12.7, снято на самом планшете.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Предварительная версия Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">Теперь для Windows 11. Нативные приложения для Intel/AMD x64 и ARM64 в одной загрузке.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">Дублирование ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">Установщик EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Приложение Windows · Диагностический режим дублирования USB" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>Приложение Windows · Диагностический режим дублирования USB</figcaption>
+        </figure>
+        <p class="windows-instructions">Распакуйте весь ZIP и запустите Start-Mirroring.cmd. В виртуальной машине используйте Start-Mirroring-VM.cmd. Включите отладку по USB на планшете и разрешите подключение. При первом запуске видеодвижок скачивается автоматически; нужен Интернет.</p>
+        <aside class="preview-note"><p>Эта версия дублирует существующий экран. В нашей среде ARM64 Windows заблокировала установку драйвера; на таких ПК используйте ZIP. Расширенный рабочий стол на физических ПК x64 ещё не проверен.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Описание выпуска и ограничения</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>Настройки, функции и измерения ниже относятся к версии для Mac. Для Windows следуйте руководству выше.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Mac с чипом Apple, macOS 14 или новее</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Предварительная версия Windows</a></dd></div>
           <div><dt>Планшет</dt><dd>Android 8.0 или новее, на устройстве, где можно включить отладку по USB</dd></div>
           <div><dt>Кабель</dt><dd>USB-кабель с поддержкой передачи данных. Кабели только для зарядки не подключатся. Порт на самом Mac надежнее, чем концентратор.</dd></div>
           <div><dt>Без проводов</dt><dd>Mac и планшет должны быть в одной сети Wi‑Fi; рекомендуется 5 GHz. Первое подключение должно быть по USB.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Часто задаваемые вопросы</h2>
       <div class="row-body faq">
+        <details><summary>Предварительная версия Windows</summary><p>Эта версия дублирует существующий экран. В нашей среде ARM64 Windows заблокировала установку драйвера; на таких ПК используйте ZIP. Расширенный рабочий стол на физических ПК x64 ещё не проверен. <a href="#windows">Описание выпуска и ограничения</a></p></details>
         <details>
           <summary>Нужно ли устанавливать приложение на планшет?</summary>
           <p>Нет. Приложение для планшета входит в приложение для Mac, поэтому при подключении кабеля Mac сам установит и откроет его. После обновления приложения для Mac приложение на планшете обновится вместе с ним при следующем подключении.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Загрузить для Mac</a>
         </div>
-        <p class="not-mac-note">Это приложение для Mac. Откройте эту страницу на Mac, чтобы загрузить его. <button class="link-button" type="button" data-send-link data-copied="Ссылка скопирована">Отправить ссылку на Mac</button></p>
+        <p class="not-mac-note">Откройте эту страницу на компьютере, чтобы скачать приложение для Mac или Windows. <button class="link-button" type="button" data-send-link data-copied="Ссылка скопирована">Поделиться страницей</button></p>
         <p class="note">Откройте ZIP-архив, переместите приложение в папку «Программы» и откройте его. О первом подключении — в разделе «<a href="#setup">Настройка</a>».</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Предварительная версия Windows</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Описание выпуска и ограничения</a></p></div><a class="button button-secondary" href="#windows">Дублирование ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="Видео BecomeMyScreen">
   <button class="film-close" type="button" aria-label="Закрыть" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

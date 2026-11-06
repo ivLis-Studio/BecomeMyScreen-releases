@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — جهازك اللوحي بنظام Android كشاشة ثانية لجهاز Mac</title>
-  <meta name="description" content="استخدم جهازًا لوحيًا بنظام Android كشاشة ثانية لجهاز Mac. اتصل عبر USB، أو لاسلكيًا على شبكة Wi‑Fi نفسها. يثبّت تطبيق Mac تطبيق الجهاز اللوحي ويفتحه، ويبلغ التأخير المَقيس عبر USB نحو 20 إلى 25 ms.">
+  <title>BecomeMyScreen — Mac + معاينة Windows</title>
+  <meta name="description" content="شاشة إضافية لجهاز Mac، ونسخة معاينة لعرض شاشة Windows. صِل جهاز Android اللوحي عبر USB؛ يتولى الحاسوب تثبيت تطبيق الجهاز اللوحي وفتحه.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — جهازك اللوحي بنظام Android كشاشة ثانية لجهاز Mac">
-  <meta property="og:description" content="اتصل بكبل USB، أو لاسلكيًا على شبكة Wi‑Fi نفسها. يثبّت تطبيق Mac تطبيق الجهاز اللوحي ويفتحه نيابةً عنك.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + معاينة Windows">
+  <meta property="og:description" content="شاشة إضافية لجهاز Mac، ونسخة معاينة لعرض شاشة Windows. صِل جهاز Android اللوحي عبر USB؛ يتولى الحاسوب تثبيت تطبيق الجهاز اللوحي وفتحه.">
   <meta property="og:locale" content="ar_AR">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/ar.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="في هذه الصفحة">
+      <a href="#windows">Windows</a>
       <a href="#setup">الإعداد</a>
       <a href="#speed">السرعة</a>
       <a href="#wireless">لاسلكي</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>جهازك اللوحي بنظام Android<br>شاشة ثانية لجهاز Mac.</h1>
-      <p class="lede">وصّل كبل USB ليصبح الجهاز اللوحي شاشة لجهاز Mac. افصله، وتستمر الشاشة عبر شبكة Wi‑Fi نفسها. يثبّت تطبيق Mac تطبيق الجهاز اللوحي ويفتحه، ولا حاجة إلى إنشاء حساب.</p>
+      <p class="platform-label">macOS <span>+</span> معاينة Windows</p>
+      <h1>جهازك اللوحي.<br>شاشة حاسوبك.</h1>
+      <p class="lede">شاشة إضافية لجهاز Mac، ونسخة معاينة لعرض شاشة Windows. صِل جهاز Android اللوحي عبر USB؛ يتولى الحاسوب تثبيت تطبيق الجهاز اللوحي وفتحه.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>تنزيل لأجهزة Mac</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>شاهد الفيديو<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>معاينة Windows</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>شاهد الفيديو<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">الإصدار <bdi dir="ltr"><span data-release="version">1.1.0</span></bdi> · <bdi dir="ltr"><span data-release="size">11.4 MB</span></bdi> · macOS 14 أو أحدث · شريحة Apple</p>
       <p class="after-download" data-after-download hidden>افتح ملف zip، وانقل التطبيق إلى مجلد التطبيقات وافتحه. للاتصال الأول، راجع <a href="#setup">الإعداد</a>.</p>
-      <p class="not-mac-note">هذا التطبيق مخصص لأجهزة Mac. افتح هذه الصفحة على Mac لتنزيله. <button class="link-button" type="button" data-send-link data-copied="تم نسخ الرابط">أرسل الرابط إلى جهاز Mac</button></p>
+      <p class="not-mac-note">افتح هذه الصفحة على حاسوبك لتنزيل تطبيق Mac أو Windows. <button class="link-button" type="button" data-send-link data-copied="تم نسخ الرابط">مشاركة الصفحة</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>شاشة Mac على Lenovo Pad Pro 12.7، مُلتقطة على الجهاز اللوحي نفسه.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">معاينة Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">متوفر الآن على Windows 11. تطبيقات أصلية لمعالجات Intel/AMD x64 وARM64 في تنزيل واحد.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">عرض الشاشة ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">المثبّت EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="تطبيق Windows · وضع تشخيص عرض الشاشة عبر USB" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>تطبيق Windows · وضع تشخيص عرض الشاشة عبر USB</figcaption>
+        </figure>
+        <p class="windows-instructions">فك ضغط ملف ZIP بالكامل وشغّل Start-Mirroring.cmd. في الجهاز الافتراضي، استخدم Start-Mirroring-VM.cmd. فعّل تصحيح USB على الجهاز اللوحي ووافق على الاتصال. يُنزّل محرك الفيديو تلقائيًا عند التشغيل الأول، لذا يلزم اتصال بالإنترنت.</p>
+        <aside class="preview-note"><p>تعرض هذه المعاينة نسخة من الشاشة الحالية. منع Windows تثبيت برنامج التشغيل في بيئة اختبار ARM64 لدينا؛ استخدم ZIP على الأجهزة المتأثرة. لم نتحقق بعد من الشاشة الموسعة على حواسيب x64 الفعلية.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">ملاحظات الإصدار والقيود المعروفة</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>الإعداد والميزات وقياسات الأداء أدناه تخص إصدار Mac. بالنسبة إلى Windows، اتبع دليل المعاينة أعلاه.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>جهاز Mac بشريحة Apple، وmacOS 14 أو أحدث</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">معاينة Windows</a></dd></div>
           <div><dt>الجهاز اللوحي</dt><dd>Android 8.0 أو أحدث، على جهاز يمكن تشغيل تصحيح أخطاء USB فيه</dd></div>
           <div><dt>الكبل</dt><dd>كبل USB يدعم نقل البيانات. لن تتصل كبلات الشحن فقط. المنفذ الموجود في Mac نفسه أكثر موثوقية من الموزّع.</dd></div>
           <div><dt>لاسلكي</dt><dd>يجب أن يكون Mac والجهاز اللوحي على شبكة Wi‑Fi نفسها؛ ويُوصى بتردد 5 GHz. ويجب أن يكون الاتصال الأول عبر USB.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">الأسئلة الشائعة</h2>
       <div class="row-body faq">
+        <details><summary>معاينة Windows</summary><p>تعرض هذه المعاينة نسخة من الشاشة الحالية. منع Windows تثبيت برنامج التشغيل في بيئة اختبار ARM64 لدينا؛ استخدم ZIP على الأجهزة المتأثرة. لم نتحقق بعد من الشاشة الموسعة على حواسيب x64 الفعلية. <a href="#windows">ملاحظات الإصدار والقيود المعروفة</a></p></details>
         <details>
           <summary>هل أحتاج إلى تثبيت تطبيق على الجهاز اللوحي؟</summary>
           <p>لا. يأتي تطبيق الجهاز اللوحي داخل تطبيق Mac، لذا عند توصيل الكبل يثبّته Mac ويفتحه. وعند تحديث تطبيق Mac، يُحدَّث تطبيق الجهاز اللوحي معه في الاتصال التالي.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>تنزيل لأجهزة Mac</a>
         </div>
-        <p class="not-mac-note">هذا التطبيق مخصص لأجهزة Mac. افتح هذه الصفحة على Mac لتنزيله. <button class="link-button" type="button" data-send-link data-copied="تم نسخ الرابط">أرسل الرابط إلى جهاز Mac</button></p>
+        <p class="not-mac-note">افتح هذه الصفحة على حاسوبك لتنزيل تطبيق Mac أو Windows. <button class="link-button" type="button" data-send-link data-copied="تم نسخ الرابط">مشاركة الصفحة</button></p>
         <p class="note">افتح ملف zip، وانقل التطبيق إلى مجلد التطبيقات وافتحه. للاتصال الأول، راجع <a href="#setup">الإعداد</a>.</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">معاينة Windows</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">ملاحظات الإصدار والقيود المعروفة</a></p></div><a class="button button-secondary" href="#windows">عرض الشاشة ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="فيديو BecomeMyScreen">
   <button class="film-close" type="button" aria-label="إغلاق" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

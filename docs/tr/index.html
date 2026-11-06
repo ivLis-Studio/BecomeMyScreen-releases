@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Android tabletiniz Mac için ikinci ekran</title>
-  <meta name="description" content="Android tableti Mac'iniz için ikinci ekran olarak kullanın. USB ile veya aynı Wi‑Fi ağında kablosuz bağlanın. Mac uygulaması tablet uygulamasını yükleyip açar; USB üzerinden ölçülen gecikme yaklaşık 20–25 ms'dir.">
+  <title>BecomeMyScreen — Mac + Windows önizlemesi</title>
+  <meta name="description" content="Mac için ek ekran. Windows için ekran yansıtma önizlemesi. Android tabletinizi USB ile bağlayın; bilgisayar tablet uygulamasını yükleyip açar.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Android tabletiniz Mac için ikinci ekran">
-  <meta property="og:description" content="USB kablosuyla veya aynı Wi‑Fi ağında kablosuz bağlanın. Mac uygulaması tablet uygulamasını sizin için yükleyip açar.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Windows önizlemesi">
+  <meta property="og:description" content="Mac için ek ekran. Windows için ekran yansıtma önizlemesi. Android tabletinizi USB ile bağlayın; bilgisayar tablet uygulamasını yükleyip açar.">
   <meta property="og:locale" content="tr_TR">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/tr.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="Bu sayfada">
+      <a href="#windows">Windows</a>
       <a href="#setup">Kurulum</a>
       <a href="#speed">Hız</a>
       <a href="#wireless">Kablosuz</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>Android tabletiniz<br>Mac için ikinci ekran.</h1>
-      <p class="lede">USB kablosunu takın, tablet Mac'inizin ekranı olsun. Kabloyu çıkarın, görüntü aynı Wi‑Fi ağı üzerinden devam etsin. Mac uygulaması tablet uygulamasını yükleyip açar ve hesap oluşturmanız gerekmez.</p>
+      <p class="platform-label">macOS <span>+</span> Windows önizlemesi</p>
+      <h1>Tabletiniz.<br>Bilgisayarınızın ekranı.</h1>
+      <p class="lede">Mac için ek ekran. Windows için ekran yansıtma önizlemesi. Android tabletinizi USB ile bağlayın; bilgisayar tablet uygulamasını yükleyip açar.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac için indir</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Videoyu izle<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Windows önizlemesi</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Videoyu izle<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">Sürüm <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 veya sonrası · Apple Silicon çipli Mac</p>
       <p class="after-download" data-after-download hidden>Zip dosyasını açın, uygulamayı Uygulamalar klasörüne taşıyın ve açın. İlk bağlantı için <a href="#setup">Kurulum</a> bölümüne bakın.</p>
-      <p class="not-mac-note">Bu uygulama Mac içindir. İndirmek için bu sayfayı bir Mac'te açın. <button class="link-button" type="button" data-send-link data-copied="Bağlantı kopyalandı">Bağlantıyı Mac'e gönder</button></p>
+      <p class="not-mac-note">Mac veya Windows uygulamasını indirmek için bu sayfayı bilgisayarınızda açın. <button class="link-button" type="button" data-send-link data-copied="Bağlantı kopyalandı">Sayfayı paylaş</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>Lenovo Pad Pro 12.7'de Mac ekranı; doğrudan tablette yakalandı.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Windows önizlemesi</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">Artık Windows 11’de. Tek indirmede Intel/AMD x64 ve ARM64 için yerel uygulamalar.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">Yansıtma ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">Kurulum EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Windows uygulaması · USB yansıtma tanılama modu" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>Windows uygulaması · USB yansıtma tanılama modu</figcaption>
+        </figure>
+        <p class="windows-instructions">ZIP dosyasının tamamını çıkarıp Start-Mirroring.cmd dosyasını çalıştırın. Sanal makinede Start-Mirroring-VM.cmd kullanın. Tablette USB hata ayıklamayı açıp bağlantıya izin verin. Video motoru ilk açılışta otomatik indirilir; İnternet gerekir.</p>
+        <aside class="preview-note"><p>Bu önizleme mevcut ekranı yansıtır. ARM64 test ortamımızda Windows sürücü kurulumunu engelledi; etkilenen bilgisayarlarda ZIP kullanın. Fiziksel x64 bilgisayarlarda genişletilmiş ekran henüz doğrulanmadı.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Sürüm notları ve bilinen sınırlar</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>Aşağıdaki kurulum, özellikler ve ölçümler Mac sürümü içindir. Windows için yukarıdaki önizleme kılavuzunu izleyin.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Apple Silicon çipli Mac, macOS 14 veya sonrası</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Windows önizlemesi</a></dd></div>
           <div><dt>Tablet</dt><dd>Android 8.0 veya sonrası; USB hata ayıklamanın açılabildiği bir aygıtta</dd></div>
           <div><dt>Kablo</dt><dd>Veri aktarımını destekleyen bir USB kablosu. Yalnızca şarj kabloları bağlanmaz. Mac'in kendi bağlantı noktası, hub'a göre daha güvenilirdir.</dd></div>
           <div><dt>Kablosuz</dt><dd>Mac ve tablet aynı Wi‑Fi ağında olmalıdır; 5 GHz önerilir. İlk bağlantı USB ile yapılmalıdır.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Sık sorulan sorular</h2>
       <div class="row-body faq">
+        <details><summary>Windows önizlemesi</summary><p>Bu önizleme mevcut ekranı yansıtır. ARM64 test ortamımızda Windows sürücü kurulumunu engelledi; etkilenen bilgisayarlarda ZIP kullanın. Fiziksel x64 bilgisayarlarda genişletilmiş ekran henüz doğrulanmadı. <a href="#windows">Sürüm notları ve bilinen sınırlar</a></p></details>
         <details>
           <summary>Tablete uygulama yüklemem gerekiyor mu?</summary>
           <p>Hayır. Tablet uygulaması Mac uygulamasının içinde gelir; kabloyu taktığınızda Mac onu yükleyip açar. Mac uygulamasını güncellediğinizde tablet uygulaması da bir sonraki bağlantıda onunla birlikte güncellenir.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac için indir</a>
         </div>
-        <p class="not-mac-note">Bu uygulama Mac içindir. İndirmek için bu sayfayı bir Mac'te açın. <button class="link-button" type="button" data-send-link data-copied="Bağlantı kopyalandı">Bağlantıyı Mac'e gönder</button></p>
+        <p class="not-mac-note">Mac veya Windows uygulamasını indirmek için bu sayfayı bilgisayarınızda açın. <button class="link-button" type="button" data-send-link data-copied="Bağlantı kopyalandı">Sayfayı paylaş</button></p>
         <p class="note">Zip dosyasını açın, uygulamayı Uygulamalar klasörüne taşıyın ve açın. İlk bağlantı için <a href="#setup">Kurulum</a> bölümüne bakın.</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Windows önizlemesi</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Sürüm notları ve bilinen sınırlar</a></p></div><a class="button button-secondary" href="#windows">Yansıtma ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="BecomeMyScreen videosu">
   <button class="film-close" type="button" aria-label="Kapat" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

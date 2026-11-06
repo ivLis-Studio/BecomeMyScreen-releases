@@ -450,3 +450,27 @@ figcaption { color: var(--muted); font-size: 14px; line-height: 1.5; }
   .faq summary::after { transition: none; }
 }
 
+
+/* Windows preview: explicit platform choice and the existing native app capture. */
+.platform-label { margin: 0 0 18px; color: var(--muted); font-size: 15px; font-weight: 600; letter-spacing: .02em; }
+.platform-label span { padding: 0 8px; color: var(--line); }
+.button-secondary { background: transparent; color: var(--link); box-shadow: inset 0 0 0 1px var(--line); }
+.button-secondary:hover { background: var(--bg-2); color: var(--accent-hover); }
+.on-windows .hero .cta > [data-download] { order: 1; }
+.on-windows .hero .cta > [data-windows-cta] { order: 0; background: var(--accent); color: white; box-shadow: none; }
+.on-windows .hero .cta > .film-link { order: 2; }
+.windows-section { background: var(--bg-2); }
+.windows-section .platform-label { margin-bottom: 10px; }
+.windows-section .meta { margin-top: 16px; }
+.windows-figure { margin: 28px 0 0; }
+.windows-capture { position: relative; width: 100%; aspect-ratio: 1856 / 1468; overflow: hidden; border-radius: 10px; box-shadow: 0 16px 38px -18px #0008; background: #202020; }
+.windows-capture img { position: absolute; max-width: none; width: 166.9181%; height: auto; left: -33.5129%; top: -15.1226%; }
+.windows-figure figcaption { margin-top: 16px; color: var(--muted); font-size: 13px; }
+.windows-downloads { gap: 12px; margin-top: 28px; }
+.windows-instructions { overflow-wrap: anywhere; }
+.preview-note { margin-top: 24px; padding-inline-start: 18px; border-inline-start: 3px solid #aeb6c3; font-size: 15px; color: var(--text-2); }
+.preview-note p { margin: 0 0 10px; }
+.mac-scope { padding-top: 34px; padding-bottom: 0; color: var(--muted); font-size: 14px; }
+.mac-scope p { margin: 0; max-width: 68ch; }
+.windows-get { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--line-soft); }
+@media (max-width: 600px) { .platform-label { font-size: 13px; } .windows-figure { margin-top: 22px; } }

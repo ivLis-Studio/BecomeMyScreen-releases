@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — 將 Android 平板電腦當作 Mac 的第二台顯示器</title>
-  <meta name="description" content="將 Android 平板電腦當作 Mac 的第二台顯示器。可透過 USB 連接，或在同一 Wi‑Fi 網路上無線連線。Mac App 會安裝並打開平板電腦 App，透過 USB 的實測延遲約為 20–25 ms。">
+  <title>BecomeMyScreen — Mac + Windows 預覽版</title>
+  <meta name="description" content="Mac 的第二個螢幕，Windows 的鏡像預覽版。透過 USB 連接 Android 平板，電腦會自動安裝並開啟平板應用程式。">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — 將 Android 平板電腦當作 Mac 的第二台顯示器">
-  <meta property="og:description" content="使用 USB 連接線連接，或在同一 Wi‑Fi 網路上無線連線。Mac App 會替你安裝並打開平板電腦 App。">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Windows 預覽版">
+  <meta property="og:description" content="Mac 的第二個螢幕，Windows 的鏡像預覽版。透過 USB 連接 Android 平板，電腦會自動安裝並開啟平板應用程式。">
   <meta property="og:locale" content="zh_TW">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/zh-Hant.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="本頁內容">
+      <a href="#windows">Windows</a>
       <a href="#setup">設定方式</a>
       <a href="#speed">速度</a>
       <a href="#wireless">無線</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>將 Android 平板電腦<br>當作 Mac 的第二台顯示器。</h1>
-      <p class="lede">接上 USB 連接線，平板電腦就會成為 Mac 的顯示器。拔下連接線後，畫面會透過同一 Wi‑Fi 網路繼續顯示。Mac App 會安裝並打開平板電腦 App，而且不需要建立帳號。</p>
+      <p class="platform-label">macOS <span>+</span> Windows 預覽版</p>
+      <h1>讓平板顯示<br>你的電腦畫面。</h1>
+      <p class="lede">Mac 的第二個螢幕，Windows 的鏡像預覽版。透過 USB 連接 Android 平板，電腦會自動安裝並開啟平板應用程式。</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>下載 Mac 版</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>觀看影片<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Windows 預覽版</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>觀看影片<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">版本 <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 或以上版本 · Apple 晶片</p>
       <p class="after-download" data-after-download hidden>打開 zip 檔，將 App 移到「應用程式」檔案夾並打開。首次連線方式請參閱<a href="#setup">設定方式</a>。</p>
-      <p class="not-mac-note">此 App 適用於 Mac。請在 Mac 上打開此頁面以下載。 <button class="link-button" type="button" data-send-link data-copied="已複製連結">將連結傳送到 Mac</button></p>
+      <p class="not-mac-note">請在電腦上開啟此頁面，下載 Mac 或 Windows 應用程式。 <button class="link-button" type="button" data-send-link data-copied="已複製連結">分享頁面</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>Lenovo Pad Pro 12.7 上的 Mac 畫面，直接在平板電腦上擷取。</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Windows 預覽版</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">現已推出 Windows 11 預覽版。一個套件，包含 Intel/AMD x64 和 ARM64 原生應用程式。</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">鏡像 ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">安裝程式 EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Windows 應用程式實際畫面 · USB 鏡像診斷模式" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>Windows 應用程式實際畫面 · USB 鏡像診斷模式</figcaption>
+        </figure>
+        <p class="windows-instructions">完整解壓縮 ZIP 後執行 Start-Mirroring.cmd；虛擬機器請使用 Start-Mirroring-VM.cmd。開啟平板的 USB 偵錯並授權連線。首次啟動會自動下載視訊引擎，需要網路連線。</p>
+        <aside class="preview-note"><p>此預覽版會複製現有螢幕。在我們的 ARM64 Windows 測試環境中，驅動程式安裝遭到阻擋；遇到此問題請使用 ZIP。x64 實體電腦的延伸顯示功能仍未經驗證。</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">版本說明與已知限制</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>以下設定、功能及效能測試皆以 Mac 版為準。Windows 請參閱上方預覽版指南。</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>搭載 Apple 晶片的 Mac，macOS 14 或以上版本</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Windows 預覽版</a></dd></div>
           <div><dt>平板電腦</dt><dd>Android 8.0 或以上版本，且可開啟 USB 偵錯的裝置</dd></div>
           <div><dt>連接線</dt><dd>支援資料傳輸的 USB 連接線。僅供充電的連接線無法連線。直接使用 Mac 本身的連接埠會比集線器更穩定。</dd></div>
           <div><dt>無線</dt><dd>Mac 和平板電腦必須位於同一 Wi‑Fi 網路上，建議使用 5 GHz。首次連線必須透過 USB。</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">常見問題</h2>
       <div class="row-body faq">
+        <details><summary>Windows 預覽版</summary><p>此預覽版會複製現有螢幕。在我們的 ARM64 Windows 測試環境中，驅動程式安裝遭到阻擋；遇到此問題請使用 ZIP。x64 實體電腦的延伸顯示功能仍未經驗證。 <a href="#windows">版本說明與已知限制</a></p></details>
         <details>
           <summary>需要在平板電腦上安裝 App 嗎？</summary>
           <p>不需要。平板電腦 App 內建於 Mac App 中，因此接上連接線時，Mac 就會安裝並打開它。更新 Mac App 後，下次連線時平板電腦 App 也會一併更新。</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>下載 Mac 版</a>
         </div>
-        <p class="not-mac-note">此 App 適用於 Mac。請在 Mac 上打開此頁面以下載。 <button class="link-button" type="button" data-send-link data-copied="已複製連結">將連結傳送到 Mac</button></p>
+        <p class="not-mac-note">請在電腦上開啟此頁面，下載 Mac 或 Windows 應用程式。 <button class="link-button" type="button" data-send-link data-copied="已複製連結">分享頁面</button></p>
         <p class="note">打開 zip 檔，將 App 移到「應用程式」檔案夾並打開。首次連線方式請參閱<a href="#setup">設定方式</a>。</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Windows 預覽版</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">版本說明與已知限制</a></p></div><a class="button button-secondary" href="#windows">鏡像 ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="BecomeMyScreen 影片">
   <button class="film-close" type="button" aria-label="關閉" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

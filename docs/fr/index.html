@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Votre tablette Android comme second écran pour Mac</title>
-  <meta name="description" content="Utilisez une tablette Android comme second écran pour votre Mac. Connexion via USB, ou sans fil sur le même Wi‑Fi. L’app Mac installe et ouvre l’app pour tablette, et la latence mesurée via USB est d’environ 20–25 ms.">
+  <title>BecomeMyScreen — Mac + Préversion Windows</title>
+  <meta name="description" content="Un écran supplémentaire pour votre Mac. Une préversion de recopie pour Windows. Branchez votre tablette Android en USB ; l’ordinateur installe et ouvre l’app de la tablette.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Votre tablette Android comme second écran pour Mac">
-  <meta property="og:description" content="Connectez-vous avec un câble USB, ou sans fil sur le même Wi‑Fi. L’app Mac installe et ouvre l’app pour tablette à votre place.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Préversion Windows">
+  <meta property="og:description" content="Un écran supplémentaire pour votre Mac. Une préversion de recopie pour Windows. Branchez votre tablette Android en USB ; l’ordinateur installe et ouvre l’app de la tablette.">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/fr.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="Sur cette page">
+      <a href="#windows">Windows</a>
       <a href="#setup">Configuration</a>
       <a href="#speed">Vitesse</a>
       <a href="#wireless">Sans fil</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>Votre tablette Android<br>comme second écran pour Mac.</h1>
-      <p class="lede">Branchez un câble USB et la tablette devient un écran pour votre Mac. Débranchez-le, et l’affichage continue sur le même Wi‑Fi. L’app Mac installe et ouvre l’app pour tablette, et aucun compte n’est nécessaire.</p>
+      <p class="platform-label">macOS <span>+</span> Préversion Windows</p>
+      <h1>Votre tablette.<br>L’écran de votre ordinateur.</h1>
+      <p class="lede">Un écran supplémentaire pour votre Mac. Une préversion de recopie pour Windows. Branchez votre tablette Android en USB ; l’ordinateur installe et ouvre l’app de la tablette.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Télécharger pour Mac</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Voir la vidéo<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Préversion Windows</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Voir la vidéo<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">Version <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 ou version ultérieure · puce Apple</p>
       <p class="after-download" data-after-download hidden>Ouvrez le fichier zip, déplacez l’app dans le dossier Applications et ouvrez-la. Pour la première connexion, consultez <a href="#setup">Configuration</a>.</p>
-      <p class="not-mac-note">Cette app est destinée au Mac. Ouvrez cette page sur un Mac pour la télécharger. <button class="link-button" type="button" data-send-link data-copied="Lien copié">Envoyer le lien vers votre Mac</button></p>
+      <p class="not-mac-note">Ouvrez cette page sur votre ordinateur pour télécharger l’app Mac ou Windows. <button class="link-button" type="button" data-send-link data-copied="Lien copié">Partager cette page</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>L’écran du Mac sur une Lenovo Pad Pro 12.7, capturé sur la tablette elle-même.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Préversion Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">Disponible sur Windows 11. Apps natives Intel/AMD x64 et ARM64 dans un seul téléchargement.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">Recopie ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">Installation EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="App Windows · Mode diagnostic de recopie USB" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>App Windows · Mode diagnostic de recopie USB</figcaption>
+        </figure>
+        <p class="windows-instructions">Extrayez tout le ZIP et lancez Start-Mirroring.cmd. Dans une machine virtuelle, utilisez Start-Mirroring-VM.cmd. Activez le débogage USB sur la tablette et autorisez la connexion. Le moteur vidéo se télécharge au premier lancement ; une connexion Internet est nécessaire.</p>
+        <aside class="preview-note"><p>Cette préversion recopie l’écran existant. Windows a bloqué l’installation du pilote dans notre environnement ARM64 ; utilisez le ZIP sur les PC concernés. L’affichage étendu sur un PC x64 physique reste à vérifier.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Notes de version et limites connues</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>La configuration, les fonctions et les mesures ci-dessous concernent la version Mac. Pour Windows, suivez le guide de préversion ci-dessus.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Mac avec puce Apple, macOS 14 ou version ultérieure</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Préversion Windows</a></dd></div>
           <div><dt>Tablette</dt><dd>Android 8.0 ou version ultérieure, sur un appareil où le débogage USB peut être activé</dd></div>
           <div><dt>Câble</dt><dd>Un câble USB qui prend en charge le transfert de données. Les câbles de recharge uniquement ne se connectent pas. Un port du Mac lui-même est plus fiable qu’un concentrateur.</dd></div>
           <div><dt>Sans fil</dt><dd>Le Mac et la tablette doivent être sur le même Wi‑Fi ; le 5 GHz est recommandé. La première connexion doit se faire via USB.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Questions fréquentes</h2>
       <div class="row-body faq">
+        <details><summary>Préversion Windows</summary><p>Cette préversion recopie l’écran existant. Windows a bloqué l’installation du pilote dans notre environnement ARM64 ; utilisez le ZIP sur les PC concernés. L’affichage étendu sur un PC x64 physique reste à vérifier. <a href="#windows">Notes de version et limites connues</a></p></details>
         <details>
           <summary>Faut-il installer une app sur la tablette ?</summary>
           <p>Non. L’app pour tablette est incluse dans l’app Mac : lorsque vous branchez le câble, le Mac l’installe et l’ouvre. Lorsque vous mettez à jour l’app Mac, l’app pour tablette est mise à jour en même temps à la connexion suivante.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Télécharger pour Mac</a>
         </div>
-        <p class="not-mac-note">Cette app est destinée au Mac. Ouvrez cette page sur un Mac pour la télécharger. <button class="link-button" type="button" data-send-link data-copied="Lien copié">Envoyer le lien vers votre Mac</button></p>
+        <p class="not-mac-note">Ouvrez cette page sur votre ordinateur pour télécharger l’app Mac ou Windows. <button class="link-button" type="button" data-send-link data-copied="Lien copié">Partager cette page</button></p>
         <p class="note">Ouvrez le fichier zip, déplacez l’app dans le dossier Applications et ouvrez-la. Pour la première connexion, consultez <a href="#setup">Configuration</a>.</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Préversion Windows</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Notes de version et limites connues</a></p></div><a class="button button-secondary" href="#windows">Recopie ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="Vidéo BecomeMyScreen">
   <button class="film-close" type="button" aria-label="Fermer" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

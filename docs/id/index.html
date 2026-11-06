@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Tablet Android Anda sebagai layar kedua untuk Mac</title>
-  <meta name="description" content="Gunakan tablet Android sebagai layar kedua untuk Mac Anda. Sambungkan melalui USB, atau secara nirkabel di Wi‑Fi yang sama. Aplikasi Mac menginstal dan membuka aplikasi tablet, dan latensi terukur melalui USB sekitar 20–25 ms.">
+  <title>BecomeMyScreen — Mac + Pratinjau Windows</title>
+  <meta name="description" content="Layar tambahan untuk Mac. Pratinjau pencerminan layar untuk Windows. Hubungkan tablet Android lewat USB; komputer akan memasang dan membuka aplikasi tablet.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Tablet Android Anda sebagai layar kedua untuk Mac">
-  <meta property="og:description" content="Sambungkan dengan kabel USB, atau secara nirkabel di Wi‑Fi yang sama. Aplikasi Mac menginstal dan membuka aplikasi tablet untuk Anda.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Pratinjau Windows">
+  <meta property="og:description" content="Layar tambahan untuk Mac. Pratinjau pencerminan layar untuk Windows. Hubungkan tablet Android lewat USB; komputer akan memasang dan membuka aplikasi tablet.">
   <meta property="og:locale" content="id_ID">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/id.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="Di halaman ini">
+      <a href="#windows">Windows</a>
       <a href="#setup">Penyiapan</a>
       <a href="#speed">Kecepatan</a>
       <a href="#wireless">Nirkabel</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>Tablet Android Anda<br>sebagai layar kedua untuk Mac.</h1>
-      <p class="lede">Colokkan kabel USB, dan tablet menjadi layar untuk Mac Anda. Cabut kabelnya, dan layar tetap berlanjut melalui Wi‑Fi yang sama. Aplikasi Mac menginstal dan membuka aplikasi tablet, dan Anda tidak perlu membuat akun.</p>
+      <p class="platform-label">macOS <span>+</span> Pratinjau Windows</p>
+      <h1>Tablet Anda.<br>Layar komputer Anda.</h1>
+      <p class="lede">Layar tambahan untuk Mac. Pratinjau pencerminan layar untuk Windows. Hubungkan tablet Android lewat USB; komputer akan memasang dan membuka aplikasi tablet.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Unduh untuk Mac</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Tonton video<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Pratinjau Windows</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Tonton video<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">Versi <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 atau lebih baru · Apple silicon</p>
       <p class="after-download" data-after-download hidden>Buka file zip, pindahkan aplikasi ke folder Aplikasi, lalu buka. Untuk sambungan pertama, lihat <a href="#setup">Penyiapan</a>.</p>
-      <p class="not-mac-note">Aplikasi ini untuk Mac. Buka halaman ini di Mac untuk mengunduhnya. <button class="link-button" type="button" data-send-link data-copied="Tautan disalin">Kirim tautan ke Mac Anda</button></p>
+      <p class="not-mac-note">Buka halaman ini di komputer untuk mengunduh aplikasi Mac atau Windows. <button class="link-button" type="button" data-send-link data-copied="Tautan disalin">Bagikan halaman</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>Layar Mac di Lenovo Pad Pro 12.7, direkam langsung di tablet.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Pratinjau Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">Kini di Windows 11. Aplikasi native Intel/AMD x64 dan ARM64 dalam satu unduhan.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">Pencerminan ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">Pemasang EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Aplikasi Windows · Mode diagnostik pencerminan USB" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>Aplikasi Windows · Mode diagnostik pencerminan USB</figcaption>
+        </figure>
+        <p class="windows-instructions">Ekstrak seluruh ZIP lalu jalankan Start-Mirroring.cmd. Pada mesin virtual, gunakan Start-Mirroring-VM.cmd. Aktifkan debugging USB di tablet dan izinkan koneksi. Mesin video diunduh otomatis saat pertama dibuka; Internet diperlukan.</p>
+        <aside class="preview-note"><p>Pratinjau ini mencerminkan layar yang ada. Windows memblokir pemasangan driver pada lingkungan uji ARM64 kami; gunakan ZIP pada PC yang terdampak. Layar tambahan pada PC x64 fisik belum diverifikasi.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Catatan rilis dan batasan</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>Pengaturan, fitur, dan pengukuran di bawah berlaku untuk versi Mac. Untuk Windows, ikuti panduan pratinjau di atas.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Mac dengan Apple silicon, macOS 14 atau lebih baru</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Pratinjau Windows</a></dd></div>
           <div><dt>Tablet</dt><dd>Android 8.0 atau lebih baru, pada perangkat yang proses debug USB-nya dapat diaktifkan</dd></div>
           <div><dt>Kabel</dt><dd>Kabel USB yang mendukung transfer data. Kabel khusus pengisian daya tidak dapat tersambung. Port pada Mac sendiri lebih andal daripada hub.</dd></div>
           <div><dt>Nirkabel</dt><dd>Mac dan tablet harus berada di Wi‑Fi yang sama; 5 GHz disarankan. Sambungan pertama harus melalui USB.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Pertanyaan umum</h2>
       <div class="row-body faq">
+        <details><summary>Pratinjau Windows</summary><p>Pratinjau ini mencerminkan layar yang ada. Windows memblokir pemasangan driver pada lingkungan uji ARM64 kami; gunakan ZIP pada PC yang terdampak. Layar tambahan pada PC x64 fisik belum diverifikasi. <a href="#windows">Catatan rilis dan batasan</a></p></details>
         <details>
           <summary>Apakah saya perlu menginstal aplikasi di tablet?</summary>
           <p>Tidak. Aplikasi tablet sudah ada di dalam aplikasi Mac, jadi saat Anda mencolokkan kabel, Mac menginstal dan membukanya. Saat Anda memperbarui aplikasi Mac, aplikasi tablet ikut diperbarui pada sambungan berikutnya.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Unduh untuk Mac</a>
         </div>
-        <p class="not-mac-note">Aplikasi ini untuk Mac. Buka halaman ini di Mac untuk mengunduhnya. <button class="link-button" type="button" data-send-link data-copied="Tautan disalin">Kirim tautan ke Mac Anda</button></p>
+        <p class="not-mac-note">Buka halaman ini di komputer untuk mengunduh aplikasi Mac atau Windows. <button class="link-button" type="button" data-send-link data-copied="Tautan disalin">Bagikan halaman</button></p>
         <p class="note">Buka file zip, pindahkan aplikasi ke folder Aplikasi, lalu buka. Untuk sambungan pertama, lihat <a href="#setup">Penyiapan</a>.</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Pratinjau Windows</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Catatan rilis dan batasan</a></p></div><a class="button button-secondary" href="#windows">Pencerminan ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="Video BecomeMyScreen">
   <button class="film-close" type="button" aria-label="Tutup" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

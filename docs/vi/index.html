@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Máy tính bảng Android làm màn hình thứ hai cho máy Mac</title>
-  <meta name="description" content="Dùng máy tính bảng Android làm màn hình thứ hai cho máy Mac. Kết nối qua USB hoặc không dây trên cùng Wi‑Fi. Ứng dụng Mac tự cài đặt và mở ứng dụng máy tính bảng; độ trễ đo được qua USB khoảng 20–25 ms.">
+  <title>BecomeMyScreen — Mac + Bản xem trước Windows</title>
+  <meta name="description" content="Màn hình phụ cho Mac. Bản xem trước phản chiếu màn hình cho Windows. Kết nối máy tính bảng Android qua USB; máy tính sẽ cài và mở ứng dụng trên máy tính bảng.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Máy tính bảng Android làm màn hình thứ hai cho máy Mac">
-  <meta property="og:description" content="Kết nối bằng cáp USB hoặc không dây trên cùng Wi‑Fi. Ứng dụng Mac sẽ cài đặt và mở ứng dụng máy tính bảng cho bạn.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Bản xem trước Windows">
+  <meta property="og:description" content="Màn hình phụ cho Mac. Bản xem trước phản chiếu màn hình cho Windows. Kết nối máy tính bảng Android qua USB; máy tính sẽ cài và mở ứng dụng trên máy tính bảng.">
   <meta property="og:locale" content="vi_VN">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/vi.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="Trên trang này">
+      <a href="#windows">Windows</a>
       <a href="#setup">Thiết lập</a>
       <a href="#speed">Tốc độ</a>
       <a href="#wireless">Không dây</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>Máy tính bảng Android<br>làm màn hình thứ hai cho Mac.</h1>
-      <p class="lede">Cắm cáp USB và máy tính bảng sẽ trở thành màn hình cho máy Mac. Rút cáp ra, màn hình vẫn tiếp tục qua cùng Wi‑Fi. Ứng dụng Mac tự cài đặt và mở ứng dụng máy tính bảng, và bạn không cần tạo tài khoản.</p>
+      <p class="platform-label">macOS <span>+</span> Bản xem trước Windows</p>
+      <h1>Máy tính bảng của bạn.<br>Màn hình máy tính của bạn.</h1>
+      <p class="lede">Màn hình phụ cho Mac. Bản xem trước phản chiếu màn hình cho Windows. Kết nối máy tính bảng Android qua USB; máy tính sẽ cài và mở ứng dụng trên máy tính bảng.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Tải về cho Mac</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Xem video<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Bản xem trước Windows</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Xem video<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">Phiên bản <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 trở lên · Apple silicon</p>
       <p class="after-download" data-after-download hidden>Mở tệp zip, di chuyển ứng dụng vào thư mục Ứng dụng rồi mở. Đối với lần kết nối đầu tiên, hãy xem <a href="#setup">Thiết lập</a>.</p>
-      <p class="not-mac-note">Ứng dụng này dành cho Mac. Hãy mở trang này trên máy Mac để tải về. <button class="link-button" type="button" data-send-link data-copied="Đã sao chép liên kết">Gửi liên kết sang máy Mac</button></p>
+      <p class="not-mac-note">Mở trang này trên máy tính để tải ứng dụng cho Mac hoặc Windows. <button class="link-button" type="button" data-send-link data-copied="Đã sao chép liên kết">Chia sẻ trang</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>Màn hình Mac trên Lenovo Pad Pro 12.7, được chụp ngay trên máy tính bảng.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Bản xem trước Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">Đã có trên Windows 11. Ứng dụng gốc cho Intel/AMD x64 và ARM64 trong một bản tải xuống.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">Phản chiếu ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">Bộ cài EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Ứng dụng Windows · Chế độ chẩn đoán phản chiếu USB" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>Ứng dụng Windows · Chế độ chẩn đoán phản chiếu USB</figcaption>
+        </figure>
+        <p class="windows-instructions">Giải nén toàn bộ ZIP rồi chạy Start-Mirroring.cmd. Trong máy ảo, dùng Start-Mirroring-VM.cmd. Bật gỡ lỗi USB trên máy tính bảng và cho phép kết nối. Bộ xử lý video tự tải khi mở lần đầu; cần Internet.</p>
+        <aside class="preview-note"><p>Bản xem trước này phản chiếu màn hình hiện có. Windows đã chặn cài trình điều khiển trong môi trường ARM64 thử nghiệm; hãy dùng ZIP trên máy bị ảnh hưởng. Màn hình mở rộng trên máy x64 thực chưa được xác minh.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Ghi chú phát hành và giới hạn</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>Các hướng dẫn, tính năng và số đo bên dưới dành cho bản Mac. Với Windows, xem hướng dẫn bản xem trước ở trên.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Máy Mac có Apple silicon, macOS 14 trở lên</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Bản xem trước Windows</a></dd></div>
           <div><dt>Máy tính bảng</dt><dd>Android 8.0 trở lên, trên thiết bị có thể bật gỡ lỗi USB</dd></div>
           <div><dt>Cáp</dt><dd>Cáp USB hỗ trợ truyền dữ liệu. Cáp chỉ sạc sẽ không kết nối được. Cổng trên chính máy Mac ổn định hơn bộ chia.</dd></div>
           <div><dt>Không dây</dt><dd>Máy Mac và máy tính bảng cần dùng cùng Wi‑Fi; nên dùng 5 GHz. Lần kết nối đầu tiên phải qua USB.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Câu hỏi thường gặp</h2>
       <div class="row-body faq">
+        <details><summary>Bản xem trước Windows</summary><p>Bản xem trước này phản chiếu màn hình hiện có. Windows đã chặn cài trình điều khiển trong môi trường ARM64 thử nghiệm; hãy dùng ZIP trên máy bị ảnh hưởng. Màn hình mở rộng trên máy x64 thực chưa được xác minh. <a href="#windows">Ghi chú phát hành và giới hạn</a></p></details>
         <details>
           <summary>Tôi có cần cài ứng dụng trên máy tính bảng không?</summary>
           <p>Không. Ứng dụng máy tính bảng nằm sẵn trong ứng dụng Mac, nên khi bạn cắm cáp, máy Mac sẽ cài đặt và mở ứng dụng đó. Khi bạn cập nhật ứng dụng Mac, ứng dụng máy tính bảng cũng được cập nhật theo ở lần kết nối tiếp theo.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Tải về cho Mac</a>
         </div>
-        <p class="not-mac-note">Ứng dụng này dành cho Mac. Hãy mở trang này trên máy Mac để tải về. <button class="link-button" type="button" data-send-link data-copied="Đã sao chép liên kết">Gửi liên kết sang máy Mac</button></p>
+        <p class="not-mac-note">Mở trang này trên máy tính để tải ứng dụng cho Mac hoặc Windows. <button class="link-button" type="button" data-send-link data-copied="Đã sao chép liên kết">Chia sẻ trang</button></p>
         <p class="note">Mở tệp zip, di chuyển ứng dụng vào thư mục Ứng dụng rồi mở. Đối với lần kết nối đầu tiên, hãy xem <a href="#setup">Thiết lập</a>.</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Bản xem trước Windows</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Ghi chú phát hành và giới hạn</a></p></div><a class="button button-secondary" href="#windows">Phản chiếu ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="Video BecomeMyScreen">
   <button class="film-close" type="button" aria-label="Đóng" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

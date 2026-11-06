@@ -1,9 +1,10 @@
-// BecomeMyScreen website. The app only runs on a Mac: on any other device, say so next to the download button.
+// Highlight the matching desktop download while keeping both platforms visible.
 (function () {
   var ua = navigator.userAgent || '';
-  // iPadOS also reports "Macintosh"; touch support tells them apart.
   var isMac = /Macintosh|Mac OS X/.test(ua) && !(navigator.maxTouchPoints > 1);
-  if (!isMac) document.documentElement.classList.add('not-mac');
+  var isWindows = /Windows NT/.test(ua);
+  if (!isMac && !isWindows) document.documentElement.classList.add('not-mac');
+  if (isWindows) document.documentElement.classList.add('on-windows');
 })();
 
 // The download buttons go straight to the zip of the latest GitHub release. The page itself may be older than that

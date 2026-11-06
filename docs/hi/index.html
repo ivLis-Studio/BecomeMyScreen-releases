@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — आपका Android टैबलेट, Mac के लिए दूसरा डिस्प्ले</title>
-  <meta name="description" content="Android टैबलेट को अपने Mac के दूसरे डिस्प्ले के रूप में इस्तेमाल करें। USB से कनेक्ट करें, या एक ही Wi‑Fi पर वायरलेस तरीके से। Mac ऐप टैबलेट ऐप को इंस्टॉल करके खोलता है, और USB पर मापी गई लेटेंसी लगभग 20–25 ms है।">
+  <title>BecomeMyScreen — Mac + Windows प्रीव्यू</title>
+  <meta name="description" content="Mac के लिए अतिरिक्त स्क्रीन। Windows के लिए स्क्रीन मिररिंग का प्रीव्यू। Android टैबलेट को USB से जोड़ें; कंप्यूटर टैबलेट ऐप इंस्टॉल करके खोल देगा।">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — आपका Android टैबलेट, Mac के लिए दूसरा डिस्प्ले">
-  <meta property="og:description" content="USB केबल से कनेक्ट करें, या एक ही Wi‑Fi पर वायरलेस तरीके से। Mac ऐप आपके लिए टैबलेट ऐप इंस्टॉल करके खोलता है।">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Windows प्रीव्यू">
+  <meta property="og:description" content="Mac के लिए अतिरिक्त स्क्रीन। Windows के लिए स्क्रीन मिररिंग का प्रीव्यू। Android टैबलेट को USB से जोड़ें; कंप्यूटर टैबलेट ऐप इंस्टॉल करके खोल देगा।">
   <meta property="og:locale" content="hi_IN">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/hi.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="इस पेज पर">
+      <a href="#windows">Windows</a>
       <a href="#setup">सेटअप</a>
       <a href="#speed">स्पीड</a>
       <a href="#wireless">वायरलेस</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>आपका Android टैबलेट,<br>Mac के लिए दूसरा डिस्प्ले।</h1>
-      <p class="lede">USB केबल लगाएं और टैबलेट आपके Mac का डिस्प्ले बन जाता है। केबल निकालें, तो स्क्रीन उसी Wi‑Fi पर चलती रहती है। Mac ऐप टैबलेट ऐप को इंस्टॉल करके खोलता है, और कोई अकाउंट बनाने की ज़रूरत नहीं है।</p>
+      <p class="platform-label">macOS <span>+</span> Windows प्रीव्यू</p>
+      <h1>आपका टैबलेट।<br>आपके कंप्यूटर की स्क्रीन।</h1>
+      <p class="lede">Mac के लिए अतिरिक्त स्क्रीन। Windows के लिए स्क्रीन मिररिंग का प्रीव्यू। Android टैबलेट को USB से जोड़ें; कंप्यूटर टैबलेट ऐप इंस्टॉल करके खोल देगा।</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac के लिए डाउनलोड करें</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>वीडियो देखें<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Windows प्रीव्यू</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>वीडियो देखें<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">वर्शन <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 या बाद का वर्शन · Apple silicon</p>
       <p class="after-download" data-after-download hidden>zip खोलें, ऐप को ऐप्लिकेशन फ़ोल्डर में ले जाएं और खोलें। पहले कनेक्शन के लिए <a href="#setup">सेटअप</a> देखें।</p>
-      <p class="not-mac-note">यह ऐप Mac के लिए है। इसे डाउनलोड करने के लिए यह पेज Mac पर खोलें। <button class="link-button" type="button" data-send-link data-copied="लिंक कॉपी हो गया">लिंक अपने Mac पर भेजें</button></p>
+      <p class="not-mac-note">Mac या Windows ऐप डाउनलोड करने के लिए यह पेज कंप्यूटर पर खोलें। <button class="link-button" type="button" data-send-link data-copied="लिंक कॉपी हो गया">पेज साझा करें</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>Lenovo Pad Pro 12.7 पर Mac की स्क्रीन, जिसे टैबलेट पर ही कैप्चर किया गया।</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Windows प्रीव्यू</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">अब Windows 11 पर। एक डाउनलोड में Intel/AMD x64 और ARM64 के लिए नेटिव ऐप।</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">मिररिंग ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">इंस्टॉलर EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Windows ऐप · USB मिररिंग डायग्नोस्टिक मोड" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>Windows ऐप · USB मिररिंग डायग्नोस्टिक मोड</figcaption>
+        </figure>
+        <p class="windows-instructions">पूरी ZIP फ़ाइल निकालकर Start-Mirroring.cmd चलाएँ। वर्चुअल मशीन में Start-Mirroring-VM.cmd इस्तेमाल करें। टैबलेट में USB डीबगिंग चालू करके कनेक्शन की अनुमति दें। पहली बार खोलने पर वीडियो इंजन अपने आप डाउनलोड होता है; इंटरनेट ज़रूरी है।</p>
+        <aside class="preview-note"><p>यह प्रीव्यू मौजूदा स्क्रीन की नकल दिखाता है। हमारे ARM64 परीक्षण परिवेश में Windows ने ड्राइवर इंस्टॉल करने से रोका; ऐसे कंप्यूटर पर ZIP इस्तेमाल करें। असली x64 कंप्यूटर पर विस्तारित स्क्रीन अभी सत्यापित नहीं है।</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">रिलीज़ नोट और ज्ञात सीमाएँ</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>नीचे दिए गए सेटअप, सुविधाएँ और प्रदर्शन माप Mac संस्करण के हैं। Windows के लिए ऊपर दी गई प्रीव्यू गाइड देखें।</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Apple silicon वाला Mac, macOS 14 या बाद का वर्शन</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Windows प्रीव्यू</a></dd></div>
           <div><dt>टैबलेट</dt><dd>Android 8.0 या बाद का वर्शन, ऐसे डिवाइस पर जिसमें USB डीबग करना चालू किया जा सके</dd></div>
           <div><dt>केबल</dt><dd>डेटा ट्रांसफ़र सपोर्ट करने वाला USB केबल। सिर्फ़ चार्जिंग वाले केबल कनेक्ट नहीं होंगे। हब की तुलना में Mac का अपना पोर्ट ज़्यादा भरोसेमंद है।</dd></div>
           <div><dt>वायरलेस</dt><dd>Mac और टैबलेट एक ही Wi‑Fi पर होने चाहिए; 5 GHz का सुझाव दिया जाता है। पहला कनेक्शन USB से होना चाहिए।</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">अक्सर पूछे जाने वाले सवाल</h2>
       <div class="row-body faq">
+        <details><summary>Windows प्रीव्यू</summary><p>यह प्रीव्यू मौजूदा स्क्रीन की नकल दिखाता है। हमारे ARM64 परीक्षण परिवेश में Windows ने ड्राइवर इंस्टॉल करने से रोका; ऐसे कंप्यूटर पर ZIP इस्तेमाल करें। असली x64 कंप्यूटर पर विस्तारित स्क्रीन अभी सत्यापित नहीं है। <a href="#windows">रिलीज़ नोट और ज्ञात सीमाएँ</a></p></details>
         <details>
           <summary>क्या मुझे टैबलेट पर कोई ऐप इंस्टॉल करना होगा?</summary>
           <p>नहीं। टैबलेट ऐप, Mac ऐप के अंदर ही आता है, इसलिए केबल लगाने पर Mac उसे इंस्टॉल करके खोल देता है। Mac ऐप अपडेट करने पर, अगले कनेक्शन पर टैबलेट ऐप भी साथ में अपडेट हो जाता है।</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Mac के लिए डाउनलोड करें</a>
         </div>
-        <p class="not-mac-note">यह ऐप Mac के लिए है। इसे डाउनलोड करने के लिए यह पेज Mac पर खोलें। <button class="link-button" type="button" data-send-link data-copied="लिंक कॉपी हो गया">लिंक अपने Mac पर भेजें</button></p>
+        <p class="not-mac-note">Mac या Windows ऐप डाउनलोड करने के लिए यह पेज कंप्यूटर पर खोलें। <button class="link-button" type="button" data-send-link data-copied="लिंक कॉपी हो गया">पेज साझा करें</button></p>
         <p class="note">zip खोलें, ऐप को ऐप्लिकेशन फ़ोल्डर में ले जाएं और खोलें। पहले कनेक्शन के लिए <a href="#setup">सेटअप</a> देखें।</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Windows प्रीव्यू</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">रिलीज़ नोट और ज्ञात सीमाएँ</a></p></div><a class="button button-secondary" href="#windows">मिररिंग ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="BecomeMyScreen वीडियो">
   <button class="film-close" type="button" aria-label="बंद करें" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>

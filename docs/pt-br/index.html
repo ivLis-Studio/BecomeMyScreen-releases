@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Seu tablet Android como segunda tela do Mac</title>
-  <meta name="description" content="Use um tablet Android como segunda tela do seu Mac. Conecte via USB ou sem fio na mesma rede Wi‑Fi. O app do Mac instala e abre o app do tablet, e a latência medida via USB é de cerca de 20–25 ms.">
+  <title>BecomeMyScreen — Mac + Prévia para Windows</title>
+  <meta name="description" content="Uma tela extra para o Mac. Uma prévia de espelhamento para Windows. Conecte o tablet Android por USB; o computador instala e abre o app do tablet.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Seu tablet Android como segunda tela do Mac">
-  <meta property="og:description" content="Conecte com um cabo USB ou sem fio na mesma rede Wi‑Fi. O app do Mac instala e abre o app do tablet para você.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Prévia para Windows">
+  <meta property="og:description" content="Uma tela extra para o Mac. Uma prévia de espelhamento para Windows. Conecte o tablet Android por USB; o computador instala e abre o app do tablet.">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/pt-BR.png">
   <meta property="og:image:width" content="1200">
@@ -72,6 +72,7 @@
   <div class="wrap top-inner">
     <a class="brand" href="#main"><img src="../assets/icon-128.png" alt="" width="28" height="28">BecomeMyScreen</a>
     <nav class="top-nav" aria-label="Nesta página">
+      <a href="#windows">Windows</a>
       <a href="#setup">Configuração</a>
       <a href="#speed">Velocidade</a>
       <a href="#wireless">Sem fio</a>
@@ -86,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <h1>Seu tablet Android<br>como segunda tela do Mac.</h1>
-      <p class="lede">Conecte um cabo USB e o tablet vira uma tela para o seu Mac. Desconecte e a tela continua na mesma rede Wi‑Fi. O app do Mac instala e abre o app do tablet, e não é preciso criar conta.</p>
+      <p class="platform-label">macOS <span>+</span> Prévia para Windows</p>
+      <h1>Seu tablet.<br>A tela do seu computador.</h1>
+      <p class="lede">Uma tela extra para o Mac. Uma prévia de espelhamento para Windows. Conecte o tablet Android por USB; o computador instala e abre o app do tablet.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Baixar para Mac</a>
-        <a class="film-link" href="../assets/BecomeMyScreen-promo.mp4" data-film>Assistir ao vídeo<svg aria-hidden="true"><use href="#play"/></svg></a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Prévia para Windows</a>
+        <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Assistir ao vídeo<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
       <p class="meta hero-meta">Versão <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 ou posterior · Apple Silicon</p>
       <p class="after-download" data-after-download hidden>Abra o zip, mova o app para a pasta Aplicativos e abra-o. Para a primeira conexão, consulte <a href="#setup">Configuração</a>.</p>
-      <p class="not-mac-note">Este app é para Mac. Abra esta página em um Mac para baixá-lo. <button class="link-button" type="button" data-send-link data-copied="Link copiado">Enviar o link para o seu Mac</button></p>
+      <p class="not-mac-note">Abra esta página no computador para baixar o app para Mac ou Windows. <button class="link-button" type="button" data-send-link data-copied="Link copiado">Compartilhar página</button></p>
     </div>
     <figure class="hero-shot">
       <div class="device">
@@ -107,6 +110,26 @@
       <figcaption>A tela do Mac em um Lenovo Pad Pro 12.7, capturada no próprio tablet.</figcaption>
     </figure>
   </section>
+
+  <section class="row windows-section" id="windows" aria-labelledby="windows-title">
+    <div class="wrap row-inner">
+      <div><p class="platform-label">1.0.0 Preview 1</p><h2 id="windows-title">Prévia para Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div class="row-body">
+        <p class="deck">Agora no Windows 11. Apps nativos para Intel/AMD x64 e ARM64 em um único download.</p>
+        <div class="cta windows-downloads">
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip" data-windows-download="portable">Espelhamento ZIP</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.0-preview.1/BecomeMyScreen-Windows-Setup-1.0.0.exe" data-windows-download="installer">Instalador EXE</a>
+        </div>
+        <figure class="windows-figure">
+          <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="App para Windows · Modo de diagnóstico de espelhamento USB" width="3098" height="1940" loading="lazy"></div>
+          <figcaption>App para Windows · Modo de diagnóstico de espelhamento USB</figcaption>
+        </figure>
+        <p class="windows-instructions">Extraia todo o ZIP e execute Start-Mirroring.cmd. Em máquinas virtuais, use Start-Mirroring-VM.cmd. Ative a depuração USB no tablet e autorize a conexão. O mecanismo de vídeo é baixado automaticamente na primeira abertura; é necessário acesso à Internet.</p>
+        <aside class="preview-note"><p>Esta prévia espelha a tela existente. O Windows bloqueou a instalação do driver em nosso ambiente ARM64; use o ZIP nos PCs afetados. A tela estendida em PCs x64 físicos ainda não foi validada.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Notas da versão e limitações</a></aside>
+      </div>
+    </div>
+  </section>
+  <div class="wrap mac-scope"><p>A configuração, os recursos e as medições abaixo são da versão para Mac. Para Windows, siga o guia da prévia acima.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -340,6 +363,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Mac com Apple Silicon e macOS 14 ou posterior</dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Prévia para Windows</a></dd></div>
           <div><dt>Tablet</dt><dd>Android 8.0 ou posterior, em um dispositivo em que a depuração USB possa ser ativada</dd></div>
           <div><dt>Cabo</dt><dd>Um cabo USB compatível com transferência de dados. Cabos só de carga não conectam. Uma porta do próprio Mac é mais confiável que um hub.</dd></div>
           <div><dt>Sem fio</dt><dd>O Mac e o tablet precisam estar na mesma rede Wi‑Fi; recomenda-se 5 GHz. A primeira conexão precisa ser via USB.</dd></div>
@@ -353,6 +377,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Perguntas frequentes</h2>
       <div class="row-body faq">
+        <details><summary>Prévia para Windows</summary><p>Esta prévia espelha a tela existente. O Windows bloqueou a instalação do driver em nosso ambiente ARM64; use o ZIP nos PCs afetados. A tela estendida em PCs x64 físicos ainda não foi validada. <a href="#windows">Notas da versão e limitações</a></p></details>
         <details>
           <summary>Preciso instalar um app no tablet?</summary>
           <p>Não. O app do tablet vem dentro do app do Mac; assim, quando você conecta o cabo, o Mac o instala e abre. Quando você atualiza o app do Mac, o app do tablet é atualizado junto na próxima conexão.</p>
@@ -410,8 +435,9 @@
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Baixar para Mac</a>
         </div>
-        <p class="not-mac-note">Este app é para Mac. Abra esta página em um Mac para baixá-lo. <button class="link-button" type="button" data-send-link data-copied="Link copiado">Enviar o link para o seu Mac</button></p>
+        <p class="not-mac-note">Abra esta página no computador para baixar o app para Mac ou Windows. <button class="link-button" type="button" data-send-link data-copied="Link copiado">Compartilhar página</button></p>
         <p class="note">Abra o zip, mova o app para a pasta Aplicativos e abra-o. Para a primeira conexão, consulte <a href="#setup">Configuração</a>.</p>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Prévia para Windows</p><p class="meta">1.0.0 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.0-preview.1">Notas da versão e limitações</a></p></div><a class="button button-secondary" href="#windows">Espelhamento ZIP</a></div>
       </div>
     </div>
   </section>
@@ -451,7 +477,7 @@
 
 <dialog class="film" id="film" aria-label="Vídeo do BecomeMyScreen">
   <button class="film-close" type="button" aria-label="Fechar" data-film-close><svg aria-hidden="true"><use href="#close"/></svg></button>
-  <video src="../assets/BecomeMyScreen-promo.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
+  <video src="../assets/BecomeMyScreen-promo-en.mp4" poster="../assets/promo-poster.jpg" width="1920" height="1080" controls playsinline preload="none"></video>
 </dialog>
 </body>
 </html>
