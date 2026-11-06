@@ -1,0 +1,75 @@
+name: Build Windows preview installer
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Draft Windows release tag
+        required: true
+        default: windows-v1.0.0-preview.1
+      payload_sha256:
+        description: SHA-256 of the universal portable ZIP
+        required: true
+permissions:
+  contents: write
+concurrency:
+  group: windows-installer
+  cancel-in-progress: false
+jobs:
+  installer:
+    runs-on: windows-2025
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ inputs.tag }}
+      PAYLOAD_SHA256: ${{ inputs.payload_sha256 }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Validate and unpack release payload
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          if ($env:RELEASE_TAG -ne 'windows-v1.0.0-preview.1') { throw 'Unexpected release tag' }
+          if ($env:PAYLOAD_SHA256 -notmatch '^[a-f0-9]{64}$') { throw 'Invalid payload hash' }
+          $release = gh release view $env:RELEASE_TAG --json isDraft | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0 -or !$release.isDraft) { throw 'A draft release is required' }
+          gh release download $env:RELEASE_TAG --pattern 'BecomeMyScreen-Windows-Portable-1.0.0-preview.1.zip' --dir payload-download
+          if ($LASTEXITCODE -ne 0) { throw 'Payload download failed' }
+          $archive = Get-Item payload-download/*.zip
+          if ((Get-FileHash $archive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $env:PAYLOAD_SHA256) { throw 'Payload hash mismatch' }
+          Expand-Archive $archive.FullName -DestinationPath payload
+          if (Get-ChildItem payload -Recurse -Filter ffmpeg.exe) { throw 'Encoder must be obtained directly from its publisher on first launch' }
+      - name: Validate native x64 app
+        shell: pwsh
+        run: |
+          $result = Join-Path $env:RUNNER_TEMP 'native-self-test.txt'
+          $app = Resolve-Path 'payload/win-x64/BecomeMyScreen.exe'
+          $p = Start-Process $app -ArgumentList @('--self-test', "`"$result`"") -PassThru -Wait
+          if ($p.ExitCode -ne 0 -or !(Test-Path $result)) { throw 'Native self-test failed' }
+          $text = Get-Content $result -Raw
+          Write-Host $text
+          if (!$text.StartsWith('PASS ') -or !$text.Contains('Architecture: X64')) { throw 'Native self-test did not pass' }
+      - name: Install pinned compiler
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $setup = Join-Path $env:RUNNER_TEMP 'innosetup.exe'
+          Invoke-WebRequest 'https://github.com/jrsoftware/issrc/releases/download/is-7_1_1/innosetup-7.1.1-x64.exe' -OutFile $setup
+          if ((Get-FileHash $setup -Algorithm SHA256).Hash.ToLowerInvariant() -ne '8a5a6711c3766a6e5fb74f280ba0e3551e719ce94538d901fdbd1f8f9920b3f0') { throw 'Compiler hash mismatch' }
+          if ((Get-AuthenticodeSignature $setup).Status -ne 'Valid') { throw 'Compiler signature invalid' }
+          $p = Start-Process $setup -ArgumentList @('/VERYSILENT', '/SUPPRESSMSGBOXES', '/NORESTART', '/CURRENTUSER', "/DIR=$env:RUNNER_TEMP\InnoSetup") -PassThru -Wait
+          if ($p.ExitCode -ne 0) { throw "Compiler installation failed: $($p.ExitCode)" }
+      - name: Build unsigned universal installer
+        shell: pwsh
+        run: |
+          ./windows-build/scripts/build-installer.ps1 -Version 1.0.0 -PayloadRoot (Resolve-Path payload).Path -Compiler "$env:RUNNER_TEMP/InnoSetup/ISCC.exe" -DownloadEncoderOnFirstRun
+      - name: Attach verified installer to draft
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $exe = Get-Item windows-build/artifacts/installer/BecomeMyScreen-Windows-Setup-1.0.0.exe
+          $hash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  $($exe.Name)" | Set-Content windows-build/artifacts/installer/SHA256SUMS-Setup.txt -Encoding ascii
+          gh release upload $env:RELEASE_TAG $exe.FullName ($exe.FullName + '.json') windows-build/artifacts/installer/SHA256SUMS-Setup.txt --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Installer upload failed' }
+          Write-Host "Installer SHA256: $hash"
