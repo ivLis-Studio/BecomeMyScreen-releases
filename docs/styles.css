@@ -14,17 +14,22 @@
   --wrap: 1040px;
   --pad: clamp(20px, 4vw, 40px);
   --label: 224px;
-  --font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  /* Latin, Cyrillic and Vietnamese pages: Noto Sans. */
+  --font: "Noto Sans Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Each script gets its own system font (a Korean font would draw Chinese and Japanese characters in Korean style). */
-html:lang(ko) { --font: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", "Malgun Gothic", "Helvetica Neue", sans-serif; }
-html:lang(ja) { --font: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif; }
-html:lang(zh-Hans) { --font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif; }
-html:lang(zh-Hant) { --font: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
-html:lang(th) { --font: -apple-system, BlinkMacSystemFont, Thonburi, "Noto Sans Thai", "Leelawadee UI", sans-serif; }
-html:lang(ar) { --font: -apple-system, BlinkMacSystemFont, "SF Arabic", "Geeza Pro", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif; }
-html:lang(hi) { --font: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Noto Sans Devanagari", "Nirmala UI", sans-serif; }
+/* Web fonts: each page loads the one its language uses (tools/i18n/generate.mjs). Pretendard for English and Korean,
+   Pretendard JP for Japanese, Noto Sans in its own version for every other script (a Korean font would draw Chinese
+   and Japanese characters in Korean style). The system fonts behind them show until the web font has loaded.
+   The rules match any element of that language, not only the page: the language menu names each language in its
+   own script, and those names take their language's fonts (see .lang-list). */
+html:lang(en), :lang(ko) { --font: "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", Roboto, "Noto Sans KR", "Malgun Gothic", sans-serif; }
+:lang(ja) { --font: "Pretendard JP Variable", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif; }
+:lang(zh-Hans) { --font: "Noto Sans SC Variable", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+:lang(zh-Hant) { --font: "Noto Sans TC Variable", -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif; }
+:lang(th) { --font: "Noto Sans Thai Variable", -apple-system, BlinkMacSystemFont, Thonburi, "Leelawadee UI", sans-serif; }
+:lang(ar) { --font: "Noto Sans Arabic Variable", -apple-system, BlinkMacSystemFont, "SF Arabic", "Geeza Pro", "Segoe UI", Tahoma, sans-serif; }
+:lang(hi) { --font: "Noto Sans Devanagari Variable", -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Nirmala UI", sans-serif; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -235,7 +240,7 @@ html:has(.film[open]) { overflow: hidden; }
 .row h2 {
   position: sticky; top: 76px; align-self: start;
   margin: 0;
-  font-size: 26px; line-height: 1.3; letter-spacing: -0.018em; font-weight: 700;
+  font-size: 26px; line-height: 1.3; letter-spacing: -0.018em; font-weight: 800;
 }
 .row-body { min-width: 0; }
 .row-body > :last-child { margin-bottom: 0; }
@@ -246,6 +251,7 @@ html:has(.film[open]) { overflow: hidden; }
   font-size: clamp(19px, 1.9vw, 22px);
   line-height: 1.55;
   letter-spacing: -0.012em;
+  font-weight: 600;
 }
 .row-body p { max-width: 37em; margin: 0 0 16px; color: var(--text-2); }
 .row-body p.deck { color: var(--text); }
@@ -413,7 +419,8 @@ figcaption { color: var(--muted); font-size: 14px; line-height: 1.5; }
   gap: 4px 24px;
   margin: 12px 0 0; padding: 0; list-style: none;
 }
-.lang-list a { color: var(--text-2); }
+/* Each name in its language's fonts: the page's font may lack that script or draw it in another language's style. */
+.lang-list a { color: var(--text-2); font-family: var(--font); }
 .lang-list a:hover { color: var(--text); }
 .lang-list a[aria-current] { color: var(--text); font-weight: 600; }
 
