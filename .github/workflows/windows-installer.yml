@@ -70,6 +70,12 @@ jobs:
           $text = Get-Content $result -Raw
           Write-Host $text
           if ($p.ExitCode -ne 0 -or !$text.StartsWith('PASS ')) { throw 'Display topology API check failed' }
+      - name: Exercise the shipped settings dialog in five languages
+        shell: pwsh
+        run: |
+          $result = Join-Path $env:RUNNER_TEMP 'settings-result.txt'
+          $p = Start-Process (Resolve-Path payload/win-x64/BecomeMyScreen.exe) -ArgumentList @('--settings-self-test', "`"$result`"") -Wait -PassThru
+          if ($p.ExitCode -ne 0 -or !(Test-Path $result) -or !(Select-String $result -Pattern '^PASS ')) { Get-Content $result; throw 'Settings check failed' }
       - name: Install pinned compiler
         shell: pwsh
         run: |
@@ -84,6 +90,21 @@ jobs:
         shell: pwsh
         run: |
           ./windows-build/scripts/build-installer.ps1 -Version $env:APP_VERSION -PayloadRoot (Resolve-Path payload).Path -Compiler "$env:RUNNER_TEMP/InnoSetup/ISCC.exe" -DownloadEncoderOnFirstRun
+      - name: Install, upgrade in place, and uninstall on Windows x64
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $exe = Get-Item "windows-build/artifacts/installer/BecomeMyScreen-Windows-Setup-$env:APP_VERSION.exe"
+          $dest = "$env:ProgramFiles/BecomeMyScreen-QA"
+          $flags = @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART',"/DIR=`"$dest`"")
+          foreach ($action in @('install','update')) {
+            $log = "$env:RUNNER_TEMP/$action.log"
+            $p = Start-Process $exe.FullName -ArgumentList ($flags + @("/LOG=`"$log`"")) -Wait -PassThru
+            if ($p.ExitCode -ne 0) { Get-Content $log -Tail 60; throw "Setup $action failed: $($p.ExitCode)" }
+            if (!(Test-Path "$dest/BecomeMyScreen.exe") -or (Get-Service BecomeMyScreenDisplay).Status -ne 'Running') { throw "Missing installed app or service after $action" }
+          }
+          $p = Start-Process "$dest/unins000.exe" -ArgumentList @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART') -Wait -PassThru
+          if ($p.ExitCode -ne 0 -or (Get-Service BecomeMyScreenDisplay -ErrorAction SilentlyContinue)) { throw 'Service uninstall failed' }
       - name: Attach verified installer to draft
         shell: pwsh
         run: |
