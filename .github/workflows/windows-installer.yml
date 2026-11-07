@@ -94,17 +94,31 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
+          function RunSetup([string]$exePath,[string[]]$flags,[string]$log,[int]$seconds=240) {
+            Write-Host "Starting $exePath"
+            $p=Start-Process $exePath -ArgumentList ($flags + "/LOG=`"$log`"") -PassThru
+            $until=[DateTime]::UtcNow.AddSeconds($seconds)
+            while (!$p.WaitForExit(10000)) {
+              if (Test-Path $log) { Get-Content $log -Tail 3 }
+              if ([DateTime]::UtcNow -gt $until) {
+                Get-Process | Where-Object { $_.Name -match 'pnputil|setup|unins|BecomeMyScreen' } | Select-Object Id,Name,MainWindowTitle
+                if (Test-Path $log) { Get-Content $log -Tail 55 }
+                throw "Setup timeout: $exePath"
+              }
+            }
+            if ($p.ExitCode -ne 0) { if(Test-Path $log){Get-Content $log -Tail 55}; throw "Setup failed: $($p.ExitCode)" }
+          }
           $exe = Get-Item "windows-build/artifacts/installer/BecomeMyScreen-Windows-Setup-$env:APP_VERSION.exe"
           $dest = "$env:ProgramFiles/BecomeMyScreen-QA"
-          $flags = @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART',"/DIR=`"$dest`"")
+          $flags = @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-',"/DIR=`"$dest`"")
           foreach ($action in @('install','update')) {
-            $log = "$env:RUNNER_TEMP/$action.log"
-            $p = Start-Process $exe.FullName -ArgumentList ($flags + @("/LOG=`"$log`"")) -Wait -PassThru
-            if ($p.ExitCode -ne 0) { Get-Content $log -Tail 60; throw "Setup $action failed: $($p.ExitCode)" }
+            RunSetup $exe.FullName $flags "$env:RUNNER_TEMP/$action.log"
             if (!(Test-Path "$dest/BecomeMyScreen.exe") -or (Get-Service BecomeMyScreenDisplay).Status -ne 'Running') { throw "Missing installed app or service after $action" }
           }
-          $p = Start-Process "$dest/unins000.exe" -ArgumentList @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART') -Wait -PassThru
-          if ($p.ExitCode -ne 0 -or (Get-Service BecomeMyScreenDisplay -ErrorAction SilentlyContinue)) { throw 'Service uninstall failed' }
+          RunSetup "$dest/unins000.exe" @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART') "$env:RUNNER_TEMP/uninstall.log"
+          # Inno may delegate cleanup to a temporary uninstaller process.
+          for ($i=0;$i -lt 45 -and (Get-Service BecomeMyScreenDisplay -ErrorAction SilentlyContinue);$i++) { Start-Sleep 1 }
+          if (Get-Service BecomeMyScreenDisplay -ErrorAction SilentlyContinue) { throw 'Service uninstall failed' }
       - name: Attach verified installer to draft
         shell: pwsh
         run: |
