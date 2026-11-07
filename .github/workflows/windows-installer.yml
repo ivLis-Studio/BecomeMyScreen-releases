@@ -121,8 +121,8 @@ jobs:
           $already = $testStore.Certificates.Find('FindByThumbprint',$cat.SignerCertificate.Thumbprint,$false).Count
           if (!$already) { $testStore.Add($cat.SignerCertificate) }
           try {
-          foreach ($action in @('install','update')) {
-            if ($action -eq 'update') {
+          foreach ($action in @('install','manual-update','update')) {
+            if ($action -ne 'install') {
               # Start two real ADB servers, both called adb.exe. Only the one
               # loaded from the installed tools folder should be stopped.
               $ownedAdb = "$dest/tools/adb.exe"
@@ -140,10 +140,10 @@ jobs:
               $hostApp = Start-Process "$dest/BecomeMyScreen.exe" -ArgumentList '--background' -PassThru
               Start-Sleep 2
               if ($hostApp.HasExited) { throw 'Host must be running before the update' }
-              $flags += '/UPDATE'
+              if ($action -eq 'update') { $flags += '/UPDATE' }
             }
             RunSetup $exe.FullName $flags "$env:RUNNER_TEMP/$action.log"
-            if ($action -eq 'update') {
+            if ($action -ne 'install') {
               if (!$hostApp.HasExited -or !$owned[0].HasExited -or $other[0].HasExited) { throw 'Host or owned ADB survived update, or independent SDK was killed' }
               Write-Host 'PASS running host and bundled ADB stopped; independent SDK ADB retained its PID'
               & $otherAdb -P 5068 kill-server
