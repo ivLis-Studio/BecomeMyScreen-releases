@@ -111,6 +111,16 @@ jobs:
           $exe = Get-Item "windows-build/artifacts/installer/BecomeMyScreen-Windows-Setup-$env:APP_VERSION.exe"
           $dest = "$env:ProgramFiles/BecomeMyScreen-QA"
           $flags = @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/SP-',"/DIR=`"$dest`"")
+          # This ephemeral, internal QA runner has no user to answer Windows' publisher
+          # prompt. Trust only the verified upstream signer for this job, never on an
+          # end user's PC. The shipped installer does not change certificate stores.
+          $cat = Get-AuthenticodeSignature (Resolve-Path 'payload/win-x64/driver/mttvdd.cat')
+          if ($cat.Status -ne 'Valid' -or $cat.SignerCertificate.Subject -notmatch 'SignPath Foundation') { throw 'Unexpected driver publisher' }
+          $testStore = [Security.Cryptography.X509Certificates.X509Store]::new('TrustedPublisher','LocalMachine')
+          $testStore.Open('ReadWrite')
+          $already = $testStore.Certificates.Find('FindByThumbprint',$cat.SignerCertificate.Thumbprint,$false).Count
+          if (!$already) { $testStore.Add($cat.SignerCertificate) }
+          try {
           foreach ($action in @('install','update')) {
             RunSetup $exe.FullName $flags "$env:RUNNER_TEMP/$action.log"
             if (!(Test-Path "$dest/BecomeMyScreen.exe") -or (Get-Service BecomeMyScreenDisplay).Status -ne 'Running') { throw "Missing installed app or service after $action" }
@@ -119,6 +129,10 @@ jobs:
           # Inno may delegate cleanup to a temporary uninstaller process.
           for ($i=0;$i -lt 45 -and (Get-Service BecomeMyScreenDisplay -ErrorAction SilentlyContinue);$i++) { Start-Sleep 1 }
           if (Get-Service BecomeMyScreenDisplay -ErrorAction SilentlyContinue) { throw 'Service uninstall failed' }
+          } finally {
+            if (!$already) { $testStore.Remove($cat.SignerCertificate) }
+            $testStore.Close()
+          }
       - name: Attach verified installer to draft
         shell: pwsh
         run: |

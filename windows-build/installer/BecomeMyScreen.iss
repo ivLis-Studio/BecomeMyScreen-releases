@@ -46,8 +46,8 @@ Name: "korean"; MessagesFile: "compiler:Languages\Korean.isl"
 [CustomMessages]
 english.WelcomeLabel2=Your tablet. Your second screen.%n%nSetup will install BecomeMyScreen and the display driver for this PC automatically. The tablet companion app is prepared when you connect by USB.%n%nYour tablet pairing and preferences are kept when updating.
 korean.WelcomeLabel2=태블릿을 Windows의 두 번째 화면으로.%n%n이 PC에 맞는 BecomeMyScreen과 디스플레이 드라이버를 자동으로 설치합니다. 태블릿 앱은 USB로 연결할 때 준비됩니다.%n%n업데이트할 때 태블릿 등록과 설정은 유지됩니다.
-english.DriverProgress=Preparing your display…
-korean.DriverProgress=디스플레이를 준비하고 있습니다…
+english.DriverProgress=Preparing your display… If Windows asks, review the SignPath Foundation driver and choose Install.
+korean.DriverProgress=디스플레이를 준비하고 있습니다… Windows가 묻는 경우 SignPath Foundation 드라이버를 확인한 뒤 설치를 선택하세요.
 english.DriverFailure=Windows did not accept the display driver. BecomeMyScreen has not been installed or updated.%n%nNo security settings were changed. Details: %1%n%nInstallation log: %2
 korean.DriverFailure=Windows에서 디스플레이 드라이버 설치를 허용하지 않았습니다. 앱 설치 또는 업데이트를 진행하지 않았습니다.%n%n보안 설정은 변경하지 않았습니다. 상세 정보: %1%n%n설치 기록: %2
 english.ArmHint=%n%nOn ARM64 Windows, this driver package may require a Microsoft-signed replacement. Repeated installation will not resolve that restriction.
@@ -63,6 +63,7 @@ korean.DesktopShortcut=바탕 화면 바로 가기 만들기
 Name: desktopicon; Description: "{cm:DesktopShortcut}"; Flags: unchecked
 
 [Files]
+Source: "stage-driver.ps1"; DestDir: "{tmp}"; Flags: dontcopy
 Source: "{#PayloadRoot}\win-x64\driver\*"; DestDir: "{tmp}\driver-x64"; Flags: dontcopy
 Source: "{#PayloadRoot}\win-arm64\driver\*"; DestDir: "{tmp}\driver-arm64"; Flags: dontcopy
 Source: "{#PayloadRoot}\win-x64\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Check: not IsArm64
@@ -92,7 +93,7 @@ end;
 
 function PrepareToInstall(var NeedsRestart: Boolean): String;
 var
-  Arch, InfPath: String;
+  Arch, InfPath, Args: String;
   ExitCode: Integer;
   Started: Boolean;
 begin
@@ -104,8 +105,12 @@ begin
   InfPath := ExpandConstant('{tmp}\driver-' + Arch + '\MttVDD.inf');
   DriverOutput := '';
   { PnP verifies the signed catalog and payload. Never change test signing, Secure Boot or trust stores. }
-  Started := ExecAndLogOutputWithNativeSysDir(ExpandConstant('{sys}\pnputil.exe'),
-    '/add-driver "' + InfPath + '" /install', '', SW_HIDE, ewWaitUntilTerminated, ExitCode, @DriverLog);
+  ExtractTemporaryFile('stage-driver.ps1');
+  Args := '-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "' + ExpandConstant('{tmp}\stage-driver.ps1') +
+    '" -Inf "' + InfPath + '" -ParentWindow ' + IntToStr(WizardForm.Handle);
+  if WizardSilent then Args := Args + ' -QuietMode 1';
+  Started := ExecAndLogOutputWithNativeSysDir(ExpandConstant('{sys}\WindowsPowerShell\v1.0\powershell.exe'),
+    Args, '', SW_HIDE, ewWaitUntilTerminated, ExitCode, @DriverLog);
   if Started and ((ExitCode = 0) or (ExitCode = 3010)) then begin
     DriverReady := True;
     if ExitCode = 3010 then DriverNeedsRestart := True;
