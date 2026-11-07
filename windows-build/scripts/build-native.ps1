@@ -17,6 +17,8 @@ $compilerArch = if ($hostArch -eq $targetArch) { $hostArch } else { "${hostArch}
 $source = Join-Path $root 'native/SoftwareDeviceBridge.c'
 # /MT keeps this small user-mode DLL independent of an installed VC++ runtime.
 $command = "`"$vcvars`" $compilerArch && cl.exe /nologo /W4 /WX /O2 /MT /LD /guard:cf `"$source`" /Fo`"$OutputDirectory\SoftwareDeviceBridge.obj`" /link /OUT:`"$OutputDirectory\BecomeMyScreen.Native.dll`" /IMPLIB:`"$OutputDirectory\BecomeMyScreen.Native.lib`" /DYNAMICBASE /NXCOMPAT /guard:cf swdevice.lib"
+$serviceSource = Join-Path $root 'native/DisplayService.cpp'
+$command += " && cl.exe /nologo /W4 /WX /O2 /MT /EHsc /guard:cf /DUNICODE /D_UNICODE `"$serviceSource`" /Fo`"$OutputDirectory\DisplayService.obj`" /link /OUT:`"$OutputDirectory\BecomeMyScreen.DisplayService.exe`" /DYNAMICBASE /NXCOMPAT /guard:cf advapi32.lib swdevice.lib setupapi.lib uuid.lib shell32.lib ole32.lib"
 # Pass the cmd command line verbatim: PowerShell 7's native argument quoting
 # otherwise adds a second layer around a Visual Studio path containing spaces.
 $start = [Diagnostics.ProcessStartInfo]::new($env:ComSpec)
@@ -29,3 +31,5 @@ try {
 } finally { $process.Dispose() }
 . (Join-Path $PSScriptRoot 'package-validation.ps1')
 Assert-PeArchitecture (Join-Path $OutputDirectory 'BecomeMyScreen.Native.dll') $Runtime
+
+Assert-PeArchitecture (Join-Path $OutputDirectory 'BecomeMyScreen.DisplayService.exe') $Runtime

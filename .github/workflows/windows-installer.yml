@@ -1,11 +1,11 @@
-name: Build Windows preview installer
+name: Build Windows installer
 on:
   workflow_dispatch:
     inputs:
       tag:
         description: Draft Windows release tag
         required: true
-        default: windows-v1.0.2-preview.1
+        default: windows-v1.1.0
       payload_sha256:
         description: SHA-256 of the universal portable ZIP
         required: true
@@ -29,7 +29,7 @@ jobs:
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          if ($env:RELEASE_TAG -notmatch '^windows-v(\d+\.\d+\.\d+)-preview\.\d+$') { throw 'Unexpected release tag' }
+          if ($env:RELEASE_TAG -notmatch '^windows-v(\d+\.\d+\.\d+)$') { throw 'Unexpected release tag' }
           "APP_VERSION=$($Matches[1])" | Out-File -FilePath $env:GITHUB_ENV -Append
           $assetVersion = $env:RELEASE_TAG.Substring('windows-v'.Length)
           if ($env:PAYLOAD_SHA256 -notmatch '^[a-f0-9]{64}$') { throw 'Invalid payload hash' }

@@ -75,6 +75,9 @@ Name: "{autodesktop}\BecomeMyScreen"; Filename: "{app}\BecomeMyScreen.exe"; Task
 [Run]
 Filename: "{app}\BecomeMyScreen.exe"; Description: "{cm:OpenApp}"; Flags: nowait postinstall skipifsilent runasoriginaluser
 
+[UninstallRun]
+Filename: "{app}\BecomeMyScreen.DisplayService.exe"; Parameters: "--uninstall"; Flags: runhidden waituntilterminated; RunOnceId: "RemoveBecomeMyScreenDisplay"
+
 [Code]
 var
   DriverReady: Boolean;
@@ -109,6 +112,16 @@ begin
   end else begin
     Result := FmtMessage(CustomMessage('DriverFailure'), [IntToStr(ExitCode), ExpandConstant('{log}')]);
     if IsArm64 then Result := Result + CustomMessage('ArmHint');
+  end;
+end;
+
+procedure CurStepChanged(CurStep: TSetupStep);
+var
+  ExitCode: Integer;
+begin
+  if CurStep = ssPostInstall then begin
+    if not Exec(ExpandConstant('{app}\BecomeMyScreen.DisplayService.exe'), '--install', '', SW_HIDE, ewWaitUntilTerminated, ExitCode) or (ExitCode <> 0) then
+      RaiseException(Format('BecomeMyScreen Display service setup failed (%d).', [ExitCode]));
   end;
 end;
 
