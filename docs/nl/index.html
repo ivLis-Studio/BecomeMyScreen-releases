@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>BecomeMyScreen — Mac + Windows-preview</title>
-  <meta name="description" content="Een extra scherm voor je Mac. Een voorproefje van schermspiegeling voor Windows. Verbind je Android-tablet via USB; de computer installeert en opent de tablet-app.">
+  <title>BecomeMyScreen — Mac + Windows</title>
+  <meta name="description" content="Gebruik je Android-tablet als tweede scherm voor Mac of Windows. Sluit hem aan via USB om de tablet-app automatisch te installeren en openen.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
@@ -12,8 +12,8 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BecomeMyScreen">
-  <meta property="og:title" content="BecomeMyScreen — Mac + Windows-preview">
-  <meta property="og:description" content="Een extra scherm voor je Mac. Een voorproefje van schermspiegeling voor Windows. Verbind je Android-tablet via USB; de computer installeert en opent de tablet-app.">
+  <meta property="og:title" content="BecomeMyScreen — Mac + Windows">
+  <meta property="og:description" content="Gebruik je Android-tablet als tweede scherm voor Mac of Windows. Sluit hem aan via USB om de tablet-app automatisch te installeren en openen.">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:image" content="https://ivlis-studio.github.io/BecomeMyScreen-releases/assets/og/nl.png">
   <meta property="og:image:width" content="1200">
@@ -87,15 +87,17 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <p class="platform-label">macOS <span>+</span> Windows-preview</p>
+      <p class="platform-label">macOS <span>+</span> Windows</p>
       <h1>Je tablet.<br>Je computerscherm.</h1>
-      <p class="lede">Een extra scherm voor je Mac. Een voorproefje van schermspiegeling voor Windows. Verbind je Android-tablet via USB; de computer installeert en opent de tablet-app.</p>
+      <p class="lede">Gebruik je Android-tablet als tweede scherm voor Mac of Windows. Sluit hem aan via USB om de tablet-app automatisch te installeren en openen.</p>
       <div class="cta">
         <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Download voor Mac</a>
-        <a class="button button-secondary" href="#windows" data-windows-cta>Windows-preview</a>
+        <a class="button button-secondary" href="#windows" data-windows-cta>Windows · Download</a>
         <a class="film-link" href="../assets/BecomeMyScreen-promo-en.mp4" data-film>Bekijk de video<svg aria-hidden="true"><use href="#play"/></svg></a>
       </div>
-      <p class="meta hero-meta">Versie <span data-release="version">1.1.0</span> · <span data-release="size">11.4 MB</span> · macOS 14 of nieuwer · Apple silicon</p>
+      <p class="meta hero-meta hero-mac-meta">Versie <span data-release="version">1.2.0</span> · <span data-release="size">11.6 MB</span> · macOS 14 of nieuwer · Apple silicon</p>
+      <p class="meta hero-meta hero-win-meta">Windows 1.1.0 · Windows 11 · Intel / AMD x64 · ARM64</p>
+      <p class="meta decode-metric"><strong>≈3 ms</strong> · Decodeertijd via USB · Galaxy S25 · H.264</p>
       <p class="after-download" data-after-download hidden>Open het zip-bestand, zet de app in de map Apps en open hem. Zie <a href="#setup">Instellen</a> voor de eerste verbinding.</p>
       <p class="not-mac-note">Open deze pagina op je computer om de Mac- of Windows-app te downloaden. <button class="link-button" type="button" data-send-link data-copied="Link gekopieerd">Pagina delen</button></p>
     </div>
@@ -113,23 +115,23 @@
 
   <section class="row windows-section" id="windows" aria-labelledby="windows-title">
     <div class="wrap row-inner">
-      <div><p class="platform-label">1.0.2 Preview 1</p><h2 id="windows-title">Windows-preview</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
+      <div><p class="platform-label">1.1.0</p><h2 id="windows-title">Windows</h2><p class="meta">Windows 11<br>Intel / AMD x64 · ARM64</p></div>
       <div class="row-body">
         <p class="deck">Nu voor Windows 11. Native apps voor Intel/AMD x64 en ARM64 in één download.</p>
         <div class="cta windows-downloads">
-          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.2-preview.1/BecomeMyScreen-Windows-Portable-1.0.2-preview.1.zip" data-windows-download="portable">Spiegeling ZIP</a>
-          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.0.2-preview.1/BecomeMyScreen-Windows-Setup-1.0.2.exe" data-windows-download="installer">Installatie EXE</a>
+          <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.1.0/BecomeMyScreen-Windows-Setup-1.1.0.exe" data-windows-download="installer">Installatie EXE</a>
+          <a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.1.0/BecomeMyScreen-Windows-Portable-1.1.0.zip" data-windows-download="portable">Portable ZIP</a>
         </div>
         <figure class="windows-figure">
           <div class="windows-capture"><img src="../assets/windows-preview-capture.jpg" alt="Windows-app · Diagnosemodus voor USB-spiegeling" width="3098" height="1940" loading="lazy"></div>
           <figcaption>Windows-app · Diagnosemodus voor USB-spiegeling</figcaption>
         </figure>
-        <p class="windows-instructions">Pak de hele ZIP uit en start Start-Mirroring.cmd. Gebruik in een virtuele machine Start-Mirroring-VM.cmd. Schakel USB-foutopsporing in op de tablet en sta de verbinding toe. De video-engine wordt bij de eerste start automatisch gedownload; internet is nodig.</p>
-        <aside class="preview-note"><p>Deze preview spiegelt het bestaande scherm. Windows blokkeerde de stuurprogramma-installatie in onze ARM64-testomgeving; gebruik daar de ZIP. Een uitgebreid scherm op fysieke x64-pc’s is nog niet geverifieerd.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.2-preview.1">Releaseopmerkingen en bekende beperkingen</a></aside>
+        <p class="windows-instructions">Start het installatieprogramma, sluit je tablet aan en sta USB-foutopsporing toe. De video-engine wordt bij de eerste start gedownload.</p>
+        <aside class="platform-note"><p>Als Windows ARM64 het stuurprogramma blokkeert, gebruik dan Start-Mirroring.cmd uit het ZIP-bestand om het scherm te spiegelen.</p><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.1.0">Releaseopmerkingen en bekende beperkingen</a></aside>
       </div>
     </div>
   </section>
-  <div class="wrap mac-scope"><p>De instellingen, functies en metingen hieronder gelden voor de Mac-versie. Volg voor Windows de previewgids hierboven.</p></div>
+  <div class="wrap mac-scope"><p>De metingen hieronder zijn gedaan op een Mac.</p></div>
 
   <section class="row" id="setup" aria-labelledby="setup-title">
     <div class="wrap row-inner">
@@ -363,7 +365,7 @@
       <div class="row-body">
         <dl class="specs">
           <div><dt>Mac</dt><dd>Mac met Apple silicon, macOS 14 of nieuwer</dd></div>
-          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Windows-preview</a></dd></div>
+          <div><dt>Windows</dt><dd>Windows 11 · Intel / AMD x64 · ARM64 · <a href="#windows">Windows</a></dd></div>
           <div><dt>Tablet</dt><dd>Android 8.0 of nieuwer, op een apparaat waarop USB-foutopsporing kan worden aangezet</dd></div>
           <div><dt>Kabel</dt><dd>Een USB-kabel die gegevensoverdracht ondersteunt. Kabels die alleen kunnen opladen, maken geen verbinding. Een poort op de Mac zelf is betrouwbaarder dan een hub.</dd></div>
           <div><dt>Draadloos</dt><dd>De Mac en de tablet moeten op hetzelfde Wi‑Fi-netwerk zitten; 5 GHz wordt aanbevolen. De eerste verbinding moet via USB.</dd></div>
@@ -377,7 +379,7 @@
     <div class="wrap row-inner">
       <h2 id="faq-title">Veelgestelde vragen</h2>
       <div class="row-body faq">
-        <details><summary>Windows-preview</summary><p>Deze preview spiegelt het bestaande scherm. Windows blokkeerde de stuurprogramma-installatie in onze ARM64-testomgeving; gebruik daar de ZIP. Een uitgebreid scherm op fysieke x64-pc’s is nog niet geverifieerd. <a href="#windows">Releaseopmerkingen en bekende beperkingen</a></p></details>
+        <details><summary>Windows</summary><p>Als Windows ARM64 het stuurprogramma blokkeert, gebruik dan Start-Mirroring.cmd uit het ZIP-bestand om het scherm te spiegelen. <a href="#windows">Releaseopmerkingen en bekende beperkingen</a></p></details>
         <details>
           <summary>Moet ik een app op de tablet installeren?</summary>
           <p>Nee. De tablet-app zit in de Mac-app, dus als je de kabel aansluit, installeert en opent de Mac hem. Als je de Mac-app bijwerkt, wordt de tablet-app bij de volgende verbinding meteen mee bijgewerkt.</p>
@@ -429,15 +431,15 @@
         <div class="get">
           <img src="../assets/icon-128.png" alt="" width="72" height="72">
           <div class="get-text">
-            <p class="get-name">BecomeMyScreen <span data-release="version">1.1.0</span></p>
-            <p class="meta"><span data-release="size">11.4 MB</span> · macOS 14 of nieuwer · Apple silicon · Genotariseerd door Apple</p>
+            <p class="get-name">BecomeMyScreen <span data-release="version">1.2.0</span></p>
+            <p class="meta"><span data-release="size">11.6 MB</span> · macOS 14 of nieuwer · Apple silicon · Genotariseerd door Apple</p>
             <p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest" data-release="notes">Nieuw in deze versie</a></p>
           </div>
           <a class="button" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/latest/download/BecomeMyScreen.zip" data-download>Download voor Mac</a>
         </div>
         <p class="not-mac-note">Open deze pagina op je computer om de Mac- of Windows-app te downloaden. <button class="link-button" type="button" data-send-link data-copied="Link gekopieerd">Pagina delen</button></p>
         <p class="note">Open het zip-bestand, zet de app in de map Apps en open hem. Zie <a href="#setup">Instellen</a> voor de eerste verbinding.</p>
-        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Windows-preview</p><p class="meta">1.0.2 Preview 1 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.0.2-preview.1">Releaseopmerkingen en bekende beperkingen</a></p></div><a class="button button-secondary" href="#windows">Spiegeling ZIP</a></div>
+        <div class="get windows-get"><img src="../assets/icon-128.png" alt="" width="72" height="72"><div class="get-text"><p class="get-name">Windows</p><p class="meta">1.1.0 · Windows 11 · x64 / ARM64</p><p class="meta"><a href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/tag/windows-v1.1.0">Releaseopmerkingen en bekende beperkingen</a></p></div><a class="button button-secondary" href="https://github.com/ivLis-Studio/BecomeMyScreen-releases/releases/download/windows-v1.1.0/BecomeMyScreen-Windows-Setup-1.1.0.exe">Installatie EXE</a></div>
       </div>
     </div>
   </section>
