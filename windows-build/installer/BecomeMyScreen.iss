@@ -126,7 +126,7 @@ var
   ExitCode: Integer;
 begin
   if CurStep = ssPostInstall then begin
-    if not Exec(ExpandConstant('{app}\BecomeMyScreen.DisplayService.exe'), '--install', '', SW_HIDE, ewWaitUntilTerminated, ExitCode) or (ExitCode <> 0) then
+    if not ExecAndLogOutput(ExpandConstant('{app}\BecomeMyScreen.DisplayService.exe'), '--install', '', SW_HIDE, ewWaitUntilTerminated, ExitCode, @DriverLog) or (ExitCode <> 0) then
       RaiseException(Format('BecomeMyScreen Display service setup failed (%d).', [ExitCode]));
   end;
 end;
