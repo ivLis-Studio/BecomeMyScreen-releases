@@ -122,7 +122,32 @@ jobs:
           if (!$already) { $testStore.Add($cat.SignerCertificate) }
           try {
           foreach ($action in @('install','update')) {
+            if ($action -eq 'update') {
+              # Start two real ADB servers, both called adb.exe. Only the one
+              # loaded from the installed tools folder should be stopped.
+              $ownedAdb = "$dest/tools/adb.exe"
+              $otherDir = "$env:RUNNER_TEMP/other-android-sdk"
+              New-Item $otherDir -ItemType Directory -Force | Out-Null
+              Copy-Item "$dest/tools/adb.exe","$dest/tools/AdbWinApi.dll","$dest/tools/AdbWinUsbApi.dll" $otherDir
+              $otherAdb = "$otherDir/adb.exe"
+              & $ownedAdb -P 5067 start-server
+              if ($LASTEXITCODE -ne 0) {throw 'Bundled ADB startup failed'}
+              & $otherAdb -P 5068 start-server
+              if ($LASTEXITCODE -ne 0) {throw 'Independent SDK startup failed'}
+              $owned = @(Get-Process adb | Where-Object { $_.Path -eq [IO.Path]::GetFullPath($ownedAdb) })
+              $other = @(Get-Process adb | Where-Object { $_.Path -eq [IO.Path]::GetFullPath($otherAdb) })
+              if ($owned.Count -ne 1 -or $other.Count -ne 1) { throw 'Both ADB servers must be running before the update' }
+              $hostApp = Start-Process "$dest/BecomeMyScreen.exe" -ArgumentList '--background' -PassThru
+              Start-Sleep 2
+              if ($hostApp.HasExited) { throw 'Host must be running before the update' }
+              $flags += '/UPDATE'
+            }
             RunSetup $exe.FullName $flags "$env:RUNNER_TEMP/$action.log"
+            if ($action -eq 'update') {
+              if (!$hostApp.HasExited -or !$owned[0].HasExited -or $other[0].HasExited) { throw 'Host or owned ADB survived update, or independent SDK was killed' }
+              Write-Host 'PASS running host and bundled ADB stopped; independent SDK ADB retained its PID'
+              & $otherAdb -P 5068 kill-server
+            }
             try {
               if (!(Test-Path "$dest/BecomeMyScreen.exe")) { throw "Installed EXE missing: $dest" }
               $service = Get-Service BecomeMyScreenDisplay

@@ -31,7 +31,7 @@ SolidCompression=no
 SetupLogging=yes
 CloseApplications=yes
 RestartApplications=no
-CloseApplicationsFilter=BecomeMyScreen.exe,BecomeMyScreen.dll,BecomeMyScreen.Core.dll,ffmpeg.exe
+CloseApplicationsFilter=BecomeMyScreen.exe,BecomeMyScreen.dll,BecomeMyScreen.Core.dll,adb.exe,AdbWinApi.dll,AdbWinUsbApi.dll,ffmpeg.exe
 VersionInfoVersion={#AppVersion}
 ; App Authenticode is optional. The updater accepts fixed-repository GitHub assets verified by SHA-256.
 #ifdef SignedRelease
@@ -52,6 +52,8 @@ english.DriverFailure=Windows did not accept the display driver. BecomeMyScreen 
 korean.DriverFailure=Windows에서 디스플레이 드라이버 설치를 허용하지 않았습니다. 앱 설치 또는 업데이트를 진행하지 않았습니다.%n%n보안 설정은 변경하지 않았습니다. 상세 정보: %1%n%n설치 기록: %2
 english.ArmHint=%n%nOn ARM64 Windows, this driver package may require a Microsoft-signed replacement. Repeated installation will not resolve that restriction.
 korean.ArmHint=%n%nARM64 Windows에서는 Microsoft 서명이 적용된 드라이버 패키지가 필요할 수 있습니다. 설치를 반복해도 해당 제한은 해결되지 않습니다.
+english.ToolsFailure=Setup could not close the application or its bundled ADB. Close BecomeMyScreen and try again. Details: %1
+korean.ToolsFailure=앱이나 함께 설치된 ADB를 종료하지 못했습니다. BecomeMyScreen을 종료한 뒤 다시 시도해 주세요. 상세 정보: %1
 english.DriverReady=Display driver and app will be installed together.
 korean.DriverReady=디스플레이 드라이버와 앱을 함께 설치합니다.
 english.OpenApp=Open BecomeMyScreen
@@ -63,6 +65,7 @@ korean.DesktopShortcut=바탕 화면 바로 가기 만들기
 Name: desktopicon; Description: "{cm:DesktopShortcut}"; Flags: unchecked
 
 [Files]
+Source: "close-host-tools.ps1"; DestDir: "{tmp}"; Flags: dontcopy
 Source: "stage-driver.ps1"; DestDir: "{tmp}"; Flags: dontcopy
 Source: "{#PayloadRoot}\win-x64\driver\*"; DestDir: "{tmp}\driver-x64"; Flags: dontcopy
 Source: "{#PayloadRoot}\win-arm64\driver\*"; DestDir: "{tmp}\driver-arm64"; Flags: dontcopy
@@ -99,7 +102,7 @@ var
   Started: Boolean;
 begin
   Result := '';
-  if DriverReady then exit;
+  if not DriverReady then begin
   if IsArm64 then Arch := 'arm64' else Arch := 'x64';
   WizardForm.PreparingLabel.Caption := CustomMessage('DriverProgress');
   ExtractTemporaryFiles('{tmp}\driver-' + Arch + '\*');
@@ -119,6 +122,17 @@ begin
     if Trim(DriverOutput) = '' then DriverOutput := IntToStr(ExitCode);
     Result := FmtMessage(CustomMessage('DriverFailure'), [Trim(DriverOutput), ExpandConstant('{log}')]);
     if IsArm64 then Result := Result + CustomMessage('ArmHint');
+  end;
+  end;
+  if Result <> '' then exit;
+  if FileExists(ExpandConstant('{app}\BecomeMyScreen.exe')) or FileExists(ExpandConstant('{app}\tools\adb.exe')) then begin
+    ExtractTemporaryFile('close-host-tools.ps1');
+    DriverOutput := '';
+    Args := '-NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "' + ExpandConstant('{tmp}\close-host-tools.ps1') +
+      '" -InstallDir "' + ExpandConstant('{app}') + '"';
+    if not ExecAndLogOutputWithNativeSysDir(ExpandConstant('{sys}\WindowsPowerShell\v1.0\powershell.exe'),
+        Args, '', SW_HIDE, ewWaitUntilTerminated, ExitCode, @DriverLog) or (ExitCode <> 0) then
+      Result := FmtMessage(CustomMessage('ToolsFailure'), [Trim(DriverOutput)]);
   end;
 end;
 
