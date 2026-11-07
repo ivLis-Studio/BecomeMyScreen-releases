@@ -74,7 +74,7 @@ Name: "{autoprograms}\BecomeMyScreen"; Filename: "{app}\BecomeMyScreen.exe"
 Name: "{autodesktop}\BecomeMyScreen"; Filename: "{app}\BecomeMyScreen.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\BecomeMyScreen.exe"; Description: "{cm:OpenApp}"; Flags: nowait postinstall skipifsilent runasoriginaluser
+Filename: "{app}\BecomeMyScreen.exe"; Description: "{cm:OpenApp}"; Flags: nowait postinstall skipifsilent runasoriginaluser; Check: CanLaunch
 
 [UninstallRun]
 Filename: "{app}\BecomeMyScreen.DisplayService.exe"; Parameters: "--uninstall"; Flags: runhidden waituntilterminated; RunOnceId: "RemoveBecomeMyScreenDisplay"
@@ -84,6 +84,7 @@ var
   DriverReady: Boolean;
   DriverNeedsRestart: Boolean;
   DriverOutput: String;
+  ServiceSetupFailed: Boolean;
 
 procedure DriverLog(const S: String; const Error, FirstLine: Boolean);
 begin
@@ -126,9 +127,21 @@ var
   ExitCode: Integer;
 begin
   if CurStep = ssPostInstall then begin
+    ServiceSetupFailed := True;
     if not ExecAndLogOutput(ExpandConstant('{app}\BecomeMyScreen.DisplayService.exe'), '--install', '', SW_HIDE, ewWaitUntilTerminated, ExitCode, @DriverLog) or (ExitCode <> 0) then
       RaiseException(Format('BecomeMyScreen Display service setup failed (%d).', [ExitCode]));
+    ServiceSetupFailed := False;
   end;
+end;
+
+function GetCustomSetupExitCode: Integer;
+begin
+  if ServiceSetupFailed then Result := 20 else Result := 0;
+end;
+
+function CanLaunch: Boolean;
+begin
+  Result := not ServiceSetupFailed;
 end;
 
 function NeedRestart: Boolean;
