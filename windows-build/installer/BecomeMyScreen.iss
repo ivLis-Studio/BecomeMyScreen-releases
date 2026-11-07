@@ -115,7 +115,8 @@ begin
     DriverReady := True;
     if ExitCode = 3010 then DriverNeedsRestart := True;
   end else begin
-    Result := FmtMessage(CustomMessage('DriverFailure'), [IntToStr(ExitCode), ExpandConstant('{log}')]);
+    if Trim(DriverOutput) = '' then DriverOutput := IntToStr(ExitCode);
+    Result := FmtMessage(CustomMessage('DriverFailure'), [Trim(DriverOutput), ExpandConstant('{log}')]);
     if IsArm64 then Result := Result + CustomMessage('ArmHint');
   end;
 end;

@@ -123,7 +123,16 @@ jobs:
           try {
           foreach ($action in @('install','update')) {
             RunSetup $exe.FullName $flags "$env:RUNNER_TEMP/$action.log"
-            if (!(Test-Path "$dest/BecomeMyScreen.exe") -or (Get-Service BecomeMyScreenDisplay).Status -ne 'Running') { throw "Missing installed app or service after $action" }
+            try {
+              if (!(Test-Path "$dest/BecomeMyScreen.exe")) { throw "Installed EXE missing: $dest" }
+              $service = Get-Service BecomeMyScreenDisplay
+              $service.WaitForStatus('Running',[TimeSpan]::FromSeconds(30))
+              Write-Host "$action OK: installed executable present, display service running"
+            } catch {
+              Get-Content "$env:RUNNER_TEMP/$action.log" -Tail 85
+              Get-CimInstance Win32_Service -Filter "Name='BecomeMyScreenDisplay'" | Select-Object State,ExitCode,ServiceSpecificExitCode,PathName
+              throw
+            }
           }
           RunSetup "$dest/unins000.exe" @('/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART') "$env:RUNNER_TEMP/uninstall.log"
           # Inno may delegate cleanup to a temporary uninstaller process.
